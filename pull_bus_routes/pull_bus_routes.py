@@ -1,63 +1,73 @@
-
-
-
 import json
+import os
+import requests
+import pprint
+import datetime
 import urllib
-from urllib.parse import urlparse
+from urlprase import urlparse
+import httplib2 as http
 
-import httplib2 as http #External library
-if __name__=="__main__":
 
- #Authentication parameters
- headers = { 'AccountKey' : '4BXSLAQ5T+C4NJ6TA9/qjA==',
-             'accept' : 'application/json'} #this is by default
+API_KEY = "4BXSLAQ5T+C4NJ6TA9/qjA=="
 
- #API parameters
- uri = 'http://datamall2.mytransport.sg/' #Resource URL
- path = '/ltaodataservice/BusRoutes?'
+#for authentication
+headers = {
+	'AccountKey': API_KEY,
+	'accept': 'application/json'
+}	
 
- #Build query string & specify type of API call
- str target = urlparse(uri + path)
- print target.geturl() 
- method = 'GET'
- body = ''
+stop_codes_list = json.loads(open("stop_codes.json").read())
 
- #Get handle to http
- h = http.Http()
+stop_codes = set()
 
- #Obtain results
- response, content = h.request(
- target.geturl(),
- method,
- body,
- headers)
+for code in stop_codes_list:
+	stop_codes.add(code)
 
- #Parse JSON to print
- jsonObj = json.loads(content)
- print json.dumps(jsonObj, sort_keys=True, indent=4)
 
- #Save result to file
- with open("bus_routes.json","w") as outfile:
+##http://datamall2.mytransport.sg/ltaodataservice/BusRoutes 
+    #Returns detailed route information for all services currently in operation,
+    #including: all bus stops along each route, first/last bus timings for each stop.
 
- #Saving jsonObj["d"]
- json.dump(jsonObj, outfile, sort_keys=True, indent=4,
-ensure_ascii=False)
+    ##TODO: 1) list bus stop 2) find buses approaching 3) find buses leaving _can use array to test(?)
+def collecting_order_of_bus_stops(interchange_name,selected_bus):
+    
+
+    data = requests.get(
+        url = "http://datamall2.mytransport.sg/ltaodataservice/BusArrivalv2",
+		headers = headers,
+		params = {"BusStopCode" : }
+	).json()['Services']
 
 
 
-#import json
-#import urllib 
-#from urllib.parse import urlparse
 
-#import httplib2 as http
 
-#if __name__=="__main__":
+    return
 
-#    headers = { 'AccountKey' : '6HsAmP1e0R/EkEYWOcjKg==',
-#                'accept' : 'application/json'} #this is by default
 
-#    uri = 'http://datamall2.mytransport.sg/'
-#    path = 'ltaodataservice/BusRoutes'
 
-#    target = urlparse(uri + path)
-#    print geturl()
+
+
+
+
+
+
+
+
+
+
+
+## KIV for timing bus time taken
+#def time_to_min(bustimestring_tuple): #does not handle special cases when the arrival time will cross midnight
+#	bustimestring = bustimestring_tuple[0]
+#	if bustimestring == "": #check if correct condition, not sure
+#		return "No Estimate Available"
+#	datetimestring = str(datetime.datetime.utcnow())
+#	hourdiff = int(bustimestring[11:13]) - int(datetimestring[11:13]) - 8 #converting hours difference from UTC to UTC+8
+#	mindiff = int(bustimestring[14:16]) - int(datetimestring[14:16])
+#	secdiff = int(bustimestring[17:19]); - int(datetimestring[17:19])
+#	arrivaltime_sec = hourdiff*60*60 + mindiff*60 + secdiff #arrival time in seconds
+#	arrivaltime_min = int(arrivaltime_sec/60) #arrival time in minutes, rounded down
+#	if (arrivaltime_min <= 0):
+#		return ("Arriving",bustimestring_tuple[1])
+#	return (str(arrivaltime_min) + " min",bustimestring_tuple[1])

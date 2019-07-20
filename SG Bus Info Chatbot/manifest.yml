@@ -1,0 +1,11 @@
+applications:
+- path: .
+  memory: 256M
+  instances: 1
+  domain: mybluemix.net
+  name: Test-visual-tam-3
+  host: Test-visual-tam-3
+  disk_quota: 1024M
+  services:
+  - availability-monitoring-auto
+  buildpack: https://github.com/LeoKotschenreuther/python-tesseract-buildpack.git
