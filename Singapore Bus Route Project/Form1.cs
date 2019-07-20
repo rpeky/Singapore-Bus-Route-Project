@@ -16,5 +16,10 @@ namespace Singapore_Bus_Route_Project
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
