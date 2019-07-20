@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Visual Classification Demo</title>
+  <style>
+		div.container {
+		    width: 100%;
+		    border: 1px solid gray;
+		}
+		
+		header, footer {
+		    padding: 1em;
+		    color: white;
+		    background-color: black;
+		    clear: left;
+		    text-align: center;
+		}
+		main {
+		    margin-left: 170px;
+		    border-left: 1px solid gray;
+		    padding: 1em;
+		    overflow: hidden;
+		}
+</style>
+<body>
+	<header> 
+		<h1>Visual Classification Demo</h1>
+	</header>
+<main>
+	
+<h1> Upload a text file with picture</h1>
+	<form action="analyze" method ="POST" enctype = "multipart/form-data">
+		 Select the classification model to use
+	    <select name="scoring_model">
+	    	<option value="85dfc9x224-nlc-8161">85dfc9x224-nlc-8161</option>
+	    </select><br>
+		 <input type = "file" name = "file" /><br>
+         <input type = "submit"/>
+	</form>
+
+</main>
+<footer> Powered by IBM</footer>
+</body>
+</html>
