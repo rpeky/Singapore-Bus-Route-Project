@@ -31,7 +31,7 @@ for code in stop_codes_list:
     ##TODO: 1) list bus stop 2) find buses approaching 3) find buses leaving _can use array to test(?)
 def collecting_order_of_bus_stops(interchange_name,selected_bus):
     
-
+    #use array to test?
     data = requests.get(
         url = "http://datamall2.mytransport.sg/ltaodataservice/BusArrivalv2",
 		headers = headers,
