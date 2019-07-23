@@ -2,16 +2,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>85722edf-b62f-4013-9136-281706ed61f9</ProjectGuid>
+    <ProjectGuid>ef511c65-a97e-4e59-96dd-e6756ffeae3a</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>pull_bus_routes.py</StartupFile>
+    <StartupFile>testbench.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
-    <Name>pull_bus_routes</Name>
-    <RootNamespace>pull_bus_routes</RootNamespace>
-    <InterpreterId>Global|PythonCore|3.6</InterpreterId>
+    <Name>testbench</Name>
+    <RootNamespace>testbench</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -22,16 +21,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="class1.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="testbench.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="pull_bus_routes.py" />
-  </ItemGroup>
-  <ItemGroup>
-    <InterpreterReference Include="Global|PythonCore|3.6" />
+    <Compile Include="testbench.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
