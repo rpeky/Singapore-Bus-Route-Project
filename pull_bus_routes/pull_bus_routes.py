@@ -4,7 +4,11 @@ import requests
 import pprint
 import datetime
 import urllib
-from urlprase import urlparse
+#from urlprase import urlparse  #not sure what this module does tbh
+try:
+    import urlparse
+except ImportError:
+    import urllib.parse as urlparse
 import httplib2 as http
 
 
@@ -16,23 +20,21 @@ headers = {
 	'accept': 'application/json'
 }	
 
-stop_codes_list = json.loads(open("stop_codes.json").read())
 
-stop_codes = set()
-
-for code in stop_codes_list:
-	stop_codes.add(code)
-
-def check_direction(bus_service_number):
-    direction_1_or_2 = json.loads(open('direction_1_or_2.json').read())
-    data = requests.getattr(
+#check if bus is to or away (??) test attribute anyways
+def check_direction(bus_service_number): 
+    direction_1_or_2 = ""
+    data = requests.get(
         url = "http://datamall2.mytransport.sg/ltaodataservice/BusServices",
         headers = headers,
         params = {"Direction" : direction_1_or_2}
-        ).json()['Services']
+        ).json()
+
     return direction_1_or_2
 
-
+if __name__ == "__main__":
+    testdata = check_direction("225w") #check
+    print(testdata)
 
 
 
