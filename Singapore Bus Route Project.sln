@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Singapore Bus Route Project
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "pull_bus_routes", "pull_bus_routes\pull_bus_routes.pyproj", "{85722EDF-B62F-4013-9136-281706ED61F9}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Calculations", "Calculations\Calculations.vcxproj", "{BD45869E-0B27-4B2F-9D84-A355B3DAA57C}"
-EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "testbench", "testbench\testbench.pyproj", "{EF511C65-A97E-4E59-96DD-E6756FFEAE3A}"
 EndProject
 Global
@@ -39,16 +37,6 @@ Global
 		{85722EDF-B62F-4013-9136-281706ED61F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{85722EDF-B62F-4013-9136-281706ED61F9}.Release|x64.ActiveCfg = Release|Any CPU
 		{85722EDF-B62F-4013-9136-281706ED61F9}.Release|x86.ActiveCfg = Release|Any CPU
-		{BD45869E-0B27-4B2F-9D84-A355B3DAA57C}.Debug|Any CPU.ActiveCfg = Debug|Win32
-		{BD45869E-0B27-4B2F-9D84-A355B3DAA57C}.Debug|x64.ActiveCfg = Debug|x64
-		{BD45869E-0B27-4B2F-9D84-A355B3DAA57C}.Debug|x64.Build.0 = Debug|x64
-		{BD45869E-0B27-4B2F-9D84-A355B3DAA57C}.Debug|x86.ActiveCfg = Debug|Win32
-		{BD45869E-0B27-4B2F-9D84-A355B3DAA57C}.Debug|x86.Build.0 = Debug|Win32
-		{BD45869E-0B27-4B2F-9D84-A355B3DAA57C}.Release|Any CPU.ActiveCfg = Release|Win32
-		{BD45869E-0B27-4B2F-9D84-A355B3DAA57C}.Release|x64.ActiveCfg = Release|x64
-		{BD45869E-0B27-4B2F-9D84-A355B3DAA57C}.Release|x64.Build.0 = Release|x64
-		{BD45869E-0B27-4B2F-9D84-A355B3DAA57C}.Release|x86.ActiveCfg = Release|Win32
-		{BD45869E-0B27-4B2F-9D84-A355B3DAA57C}.Release|x86.Build.0 = Release|Win32
 		{EF511C65-A97E-4E59-96DD-E6756FFEAE3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EF511C65-A97E-4E59-96DD-E6756FFEAE3A}.Debug|x64.ActiveCfg = Debug|Any CPU
 		{EF511C65-A97E-4E59-96DD-E6756FFEAE3A}.Debug|x86.ActiveCfg = Debug|Any CPU

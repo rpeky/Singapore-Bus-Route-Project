@@ -22,12 +22,6 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="class1.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="testbench.py">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="pull_bus_routes.py" />
   </ItemGroup>
   <ItemGroup>

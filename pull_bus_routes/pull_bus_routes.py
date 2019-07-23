@@ -32,9 +32,14 @@ def check_direction(bus_service_number):
 
     return direction_1_or_2
 
+
 if __name__ == "__main__":
-    testdata = check_direction("225w") #check
+    testdata = check_direction("225w") #check for return
+    if testdata is None: #nani no value, maybe its at night no data?
+        print("desu")
+    print("abc")
     print(testdata)
+    print("abc")
 
 
 
