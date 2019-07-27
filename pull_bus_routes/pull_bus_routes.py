@@ -13,7 +13,7 @@ import httplib2 as http
 
 
 API_KEY = "4BXSLAQ5T+C4NJ6TA9/qjA=="
-
+#API_KEY = "V3Vgr4XCSiCOCLGwxt6QbQ=="
 #for authentication
 headers = {
 	'AccountKey': API_KEY,
@@ -35,11 +35,18 @@ def check_direction(bus_service_number):
 
 if __name__ == "__main__":
     testdata = check_direction("225w") #check for return
+    testdata2 = check_direction("12") #check for return
+    testdata3 = check_direction("229") #check for return
     if testdata is None: #nani no value, maybe its at night no data?
         print("desu")
     print("abc")
     print(testdata)
-    print("abc")
+    print("efg")
+    print(testdata2)
+    print("hij")
+    print(testdata3)
+    print("klm")
+    
 
 
 
