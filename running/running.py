@@ -26,8 +26,7 @@ if __name__=="__main__":
         target.geturl(),
         method,
         body,
-        headers,
-       # params = {"BusStopCode" : desu}
+        headers
         )
 
     jsonObj = json.loads(content)
