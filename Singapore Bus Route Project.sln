@@ -11,6 +11,8 @@ Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "testbench", "testbench\test
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "running", "running\running.pyproj", "{454C19BE-C652-4A64-8536-F0A0C895481E}"
 EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "stringsort", "stringsort\stringsort.pyproj", "{27201E5D-5ADB-43CA-92F6-A21B11B9915B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,12 @@ Global
 		{454C19BE-C652-4A64-8536-F0A0C895481E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{454C19BE-C652-4A64-8536-F0A0C895481E}.Release|x64.ActiveCfg = Release|Any CPU
 		{454C19BE-C652-4A64-8536-F0A0C895481E}.Release|x86.ActiveCfg = Release|Any CPU
+		{27201E5D-5ADB-43CA-92F6-A21B11B9915B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27201E5D-5ADB-43CA-92F6-A21B11B9915B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{27201E5D-5ADB-43CA-92F6-A21B11B9915B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{27201E5D-5ADB-43CA-92F6-A21B11B9915B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27201E5D-5ADB-43CA-92F6-A21B11B9915B}.Release|x64.ActiveCfg = Release|Any CPU
+		{27201E5D-5ADB-43CA-92F6-A21B11B9915B}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
