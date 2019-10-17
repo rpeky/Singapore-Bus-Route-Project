@@ -9,15 +9,8 @@ headers = {'AccountKey' : 'V3Vgr4XCSiCOCLGwxt6QbQ==',
            'accept' : 'application/json'  
           }
 
-
-def busstopcodedata(stopcode):
-    #, service_no
-    #http://datamall2.mytransport.sg/ltaodataservice/BusArrivalv2
-    uri = 'http://datamall2.mytransport.sg/'
-    path_bsc = 'ltaodataservice/BusArrivalv2?BusStopCode='
-    #path_sn = ',ServiceNo='
-    
-    target = urlparse('http://datamall2.mytransport.sg/ltaodataservice/BusArrivalv2?BusStopCode=83139') #+path_sn+service_no  +'ServiceNo=12'
+def busstopcodedata():
+    target = urlparse('http://datamall2.mytransport.sg/ltaodataservice/BusArrivalv2?BusStopCode=83139') 
     target.geturl()
     method = 'GET'
     body = ''      
@@ -32,11 +25,10 @@ def busstopcodedata(stopcode):
         )
 
     jsonObj = json.loads(content)
-    jsonprintingxd = json.dumps(jsonObj, sort_keys=True, indent = 4)
-    print (jsonprintingxd)
-   
-    with open("bus_routesstringsort.json","w") as outfile:
+    print(json.dumps(jsonObj, sort_keys=True, indent = 4))
+    with open("bus_stop_code_data.json","w") as outfile:
         json.dump(jsonObj, outfile, sort_keys=True, indent=4, ensure_ascii=False)
+
 
         #2d array/list storage format
         #list[a][b]
@@ -46,13 +38,8 @@ def busstopcodedata(stopcode):
         #b2 = previous bus stop  
 
 if __name__ == "main":
-    busstop = '85091'
-    x = busstopcodedata(busstop)
-    print(x)
+    print(busstopcodedata())
 
-
-    print()
-    
          
 
     
