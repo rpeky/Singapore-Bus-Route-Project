@@ -9,6 +9,27 @@ headers = {'AccountKey' : '4BXSLAQ5T+C4NJ6TA9/qjA==',
            'accept' : 'application/json'  
           }
 
+def getbusstop():
+    target = urlparse('http://datamall2.mytransport.sg/ltaodataservice/BusStops')
+    target.geturl()
+    method = 'GET'
+    body = ''
+
+    h = http.Http()
+
+    response, content = h.request(
+        target.geturl(),
+        method,
+        body,
+        headers
+        )
+    
+    jsonObj = json.loads(content)
+    print(json.dumps(jsonObj, sort_keys=True, indent=4))
+
+    with open("bus_stop_no_info.json","w") as outfile:
+        json.dump(jsonObj, outfile, sort_keys=True, indent=4, ensure_ascii=False)
+
 #can use to obtain bus stop data, just put all the bus stop codes into a list and recall function
 def bus_stop_bus_info(busstopno):
     target = urlparse('http://datamall2.mytransport.sg/ltaodataservice/BusArrivalv2?BusStopCode='+busstopno)
@@ -25,47 +46,47 @@ def bus_stop_bus_info(busstopno):
         headers
         )
 
-    for bus in content['Services']:
-        print(json.dumps(bus, sort_keys=True, indent=4))
-
-    print('hi0')
     jsonObj = json.loads(content)
-    print('hi1')
-    print(json.dumps(jsonObj, sort_keys=True, indent=4))
-    print('hi2')
-    
+    #print(json.dumps(jsonObj, sort_keys=True, indent=4))
 
     with open("bus_arrivals.json","w") as outfile:
         json.dump(jsonObj, outfile, sort_keys=True, indent=4, ensure_ascii=False)
 
-    #with open('bus_arrivals.json') as f:
-    #    data = json.load(f)
+def busanddestination(): #file name   -->  bus_arrivals.json
+    with open("bus_arrivals.json") as f:
+        data = json.load(f)
 
-    #print(data["ServiceNo"])
+    x = 0
+    for i in data['Services']:
+        print(data['Services'][x]['ServiceNo'])
+        print(data['Services'][x]['NextBus']['DestinationCode'])
+        x+=1
 
-#def getfile(fname):
-#    with open(fname) as f:
-#        data = json.load(f)
+def allbusanddestination():
+    with open("bus_stop_no_info.json") as f:
+        busstopinfo = json.load(f)
 
-#    for bus in data:
-#        print(ServiceNo['ServiceNo'],)
-
-
-
-
-    
+    i = 0
+    temp_bus_stop_code = ''
+    for a in busstopinfo['value']:
+        temp_bus_stop_code = busstopinfo['value'][i]['BusStopCode']
+        print(temp_bus_stop_code)
+        print("\n")
+        bus_stop_bus_info(temp_bus_stop_code)
+        busanddestination()
+        print("\n\n\n")
+        i+=1
 
 
 
 
 if __name__ == "__main__":
-    #tempstrbusno can be a list
-    tempstrbusno = '85091'
-    bus_stop_bus_info(tempstrbusno)
-
-    #getfile('bus_arrivals.json')
+    allbusanddestination()
     
-    #servicenoget('bus_arrivals.json')
+    
+    
+    
+  
 
 
 
