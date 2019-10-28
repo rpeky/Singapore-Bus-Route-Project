@@ -3,16 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Singapore Bus Route Project", "Singapore Bus Route Project\Singapore Bus Route Project.csproj", "{D3E50047-1158-4208-AF3E-A6832D1E3EC9}"
-EndProject
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "pull_bus_routes", "pull_bus_routes\pull_bus_routes.pyproj", "{85722EDF-B62F-4013-9136-281706ED61F9}"
-EndProject
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "testbench", "testbench\testbench.pyproj", "{EF511C65-A97E-4E59-96DD-E6756FFEAE3A}"
-EndProject
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "running", "running\running.pyproj", "{454C19BE-C652-4A64-8536-F0A0C895481E}"
-EndProject
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "stringsort", "stringsort\stringsort.pyproj", "{27201E5D-5ADB-43CA-92F6-A21B11B9915B}"
-EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "bus routing", "bus routing\bus routing.pyproj", "{A373FA6B-36C0-42A3-A673-0311A62E9DFA}"
 EndProject
 Global
@@ -25,42 +15,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D3E50047-1158-4208-AF3E-A6832D1E3EC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D3E50047-1158-4208-AF3E-A6832D1E3EC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D3E50047-1158-4208-AF3E-A6832D1E3EC9}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{D3E50047-1158-4208-AF3E-A6832D1E3EC9}.Debug|x64.Build.0 = Debug|Any CPU
-		{D3E50047-1158-4208-AF3E-A6832D1E3EC9}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{D3E50047-1158-4208-AF3E-A6832D1E3EC9}.Debug|x86.Build.0 = Debug|Any CPU
-		{D3E50047-1158-4208-AF3E-A6832D1E3EC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D3E50047-1158-4208-AF3E-A6832D1E3EC9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D3E50047-1158-4208-AF3E-A6832D1E3EC9}.Release|x64.ActiveCfg = Release|Any CPU
-		{D3E50047-1158-4208-AF3E-A6832D1E3EC9}.Release|x64.Build.0 = Release|Any CPU
-		{D3E50047-1158-4208-AF3E-A6832D1E3EC9}.Release|x86.ActiveCfg = Release|Any CPU
-		{D3E50047-1158-4208-AF3E-A6832D1E3EC9}.Release|x86.Build.0 = Release|Any CPU
-		{85722EDF-B62F-4013-9136-281706ED61F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{85722EDF-B62F-4013-9136-281706ED61F9}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{85722EDF-B62F-4013-9136-281706ED61F9}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{85722EDF-B62F-4013-9136-281706ED61F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{85722EDF-B62F-4013-9136-281706ED61F9}.Release|x64.ActiveCfg = Release|Any CPU
-		{85722EDF-B62F-4013-9136-281706ED61F9}.Release|x86.ActiveCfg = Release|Any CPU
-		{EF511C65-A97E-4E59-96DD-E6756FFEAE3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EF511C65-A97E-4E59-96DD-E6756FFEAE3A}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{EF511C65-A97E-4E59-96DD-E6756FFEAE3A}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{EF511C65-A97E-4E59-96DD-E6756FFEAE3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EF511C65-A97E-4E59-96DD-E6756FFEAE3A}.Release|x64.ActiveCfg = Release|Any CPU
-		{EF511C65-A97E-4E59-96DD-E6756FFEAE3A}.Release|x86.ActiveCfg = Release|Any CPU
-		{454C19BE-C652-4A64-8536-F0A0C895481E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{454C19BE-C652-4A64-8536-F0A0C895481E}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{454C19BE-C652-4A64-8536-F0A0C895481E}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{454C19BE-C652-4A64-8536-F0A0C895481E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{454C19BE-C652-4A64-8536-F0A0C895481E}.Release|x64.ActiveCfg = Release|Any CPU
-		{454C19BE-C652-4A64-8536-F0A0C895481E}.Release|x86.ActiveCfg = Release|Any CPU
-		{27201E5D-5ADB-43CA-92F6-A21B11B9915B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{27201E5D-5ADB-43CA-92F6-A21B11B9915B}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{27201E5D-5ADB-43CA-92F6-A21B11B9915B}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{27201E5D-5ADB-43CA-92F6-A21B11B9915B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{27201E5D-5ADB-43CA-92F6-A21B11B9915B}.Release|x64.ActiveCfg = Release|Any CPU
-		{27201E5D-5ADB-43CA-92F6-A21B11B9915B}.Release|x86.ActiveCfg = Release|Any CPU
 		{A373FA6B-36C0-42A3-A673-0311A62E9DFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A373FA6B-36C0-42A3-A673-0311A62E9DFA}.Debug|x64.ActiveCfg = Debug|Any CPU
 		{A373FA6B-36C0-42A3-A673-0311A62E9DFA}.Debug|x86.ActiveCfg = Debug|Any CPU
