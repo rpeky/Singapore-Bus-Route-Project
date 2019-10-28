@@ -58,30 +58,41 @@ def busanddestination(): #file name   -->  bus_arrivals.json
 
     x = 0
     for i in data['Services']:
-        print(data['Services'][x]['ServiceNo'])
-        print(data['Services'][x]['NextBus']['DestinationCode'])
+        #print(data['Services'][x]['ServiceNo'])
+        #print(data['Services'][x]['NextBus']['DestinationCode'])
+        filetowrite.write(data['Services'][x]['ServiceNo'])
+        filetowrite.write("\n")
+        filetowrite.write(data['Services'][x]['NextBus']['DestinationCode'])
+        filetowrite.write("\n")
         x+=1
 
 def allbusanddestination():
     with open("bus_stop_no_info.json") as f:
         busstopinfo = json.load(f)
 
+
     i = 0
     temp_bus_stop_code = ''
     for a in busstopinfo['value']:
         temp_bus_stop_code = busstopinfo['value'][i]['BusStopCode']
-        print(temp_bus_stop_code)
-        print("\n")
+        filetowrite.write(temp_bus_stop_code)
+        filetowrite.write("\n")
+        #print(temp_bus_stop_code)
+        #print("\n")
         bus_stop_bus_info(temp_bus_stop_code)
         busanddestination()
-        print("\n\n\n")
+        filetowrite.write("\n\n\n")
+        #print("\n\n\n")
         i+=1
 
 
 
 
 if __name__ == "__main__":
+    filetowrite = open('busstop_busno_destination.txt', 'w')
     allbusanddestination()
+    filetowrite.close()
+    print("done :)")
     
     
     
