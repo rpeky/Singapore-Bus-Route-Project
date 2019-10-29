@@ -1,3 +1,10 @@
 Suggestion from malvin: find bus stops with smallest number of buses, theres only 1 or little ways to pass thru
 
 What if we use mrt train lines as subset? Smaller sample size 
+
+Function to find route(stop no, bus to use, stop weight, stopid)
+Route id:stopnostopnostopno + stopno
+Loop through busses available in stop
+Might not need stop no, can read from stupid
+Add next stop by bus on id, read current stop using last 5 (?) digits 
+Recall function until next stop= first 5(?) Digits
