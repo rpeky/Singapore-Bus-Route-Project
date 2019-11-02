@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "bus routing", "bus routing\bus routing.pyproj", "{A373FA6B-36C0-42A3-A673-0311A62E9DFA}"
 EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "function testbench", "function testbench\function testbench.pyproj", "{348BC317-666B-4911-89B6-AAFEE6C65121}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,12 @@ Global
 		{A373FA6B-36C0-42A3-A673-0311A62E9DFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A373FA6B-36C0-42A3-A673-0311A62E9DFA}.Release|x64.ActiveCfg = Release|Any CPU
 		{A373FA6B-36C0-42A3-A673-0311A62E9DFA}.Release|x86.ActiveCfg = Release|Any CPU
+		{348BC317-666B-4911-89B6-AAFEE6C65121}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{348BC317-666B-4911-89B6-AAFEE6C65121}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{348BC317-666B-4911-89B6-AAFEE6C65121}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{348BC317-666B-4911-89B6-AAFEE6C65121}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{348BC317-666B-4911-89B6-AAFEE6C65121}.Release|x64.ActiveCfg = Release|Any CPU
+		{348BC317-666B-4911-89B6-AAFEE6C65121}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
