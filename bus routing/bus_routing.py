@@ -27,7 +27,7 @@ def getbusstop(skips): #need to loop 12 times   #bus_stop_no_info.json
             )
     
         jsonObj = json.loads(content)
-        print(json.dumps(jsonObj, sort_keys=True, indent=4))
+        #print(json.dumps(jsonObj, sort_keys=True, indent=4))
 
         with open("bus_stop_no_info.json","w") as outfile:
             json.dump(jsonObj, outfile, sort_keys=True, indent=4, ensure_ascii=False)
@@ -48,7 +48,7 @@ def getbusstop(skips): #need to loop 12 times   #bus_stop_no_info.json
             )
     
         jsonObj = json.loads(content)
-        print(json.dumps(jsonObj, sort_keys=True, indent=4))
+        #print(json.dumps(jsonObj, sort_keys=True, indent=4))
 
         with open("bus_stop_no_info.json","w") as outfile:
             json.dump(jsonObj, outfile, sort_keys=True, indent=4, ensure_ascii=False)
@@ -92,10 +92,12 @@ def busanddestination(): #file name   -->  bus_arrivals.json
 def allbusanddestination():
 
     for t in range(0,12):
+        print("loop #"+str(t))        
         getbusstop(t)
         with open("bus_stop_no_info.json") as f:
             busstopinfo = json.load(f)
         i=0
+        print("output to file #"+str(t))
         temp_bus_stop_code = ''
         for a in busstopinfo['value']:
             temp_bus_stop_code = busstopinfo['value'][i]['BusStopCode']
