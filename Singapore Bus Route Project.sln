@@ -7,6 +7,8 @@ Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "bus routing", "bus routing\
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "function testbench", "function testbench\function testbench.pyproj", "{348BC317-666B-4911-89B6-AAFEE6C65121}"
 EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "get all bus no", "PythonApplication1\get all bus no.pyproj", "{E4748B0E-FA40-40ED-8FDE-BE28DFF2452A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,12 @@ Global
 		{348BC317-666B-4911-89B6-AAFEE6C65121}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{348BC317-666B-4911-89B6-AAFEE6C65121}.Release|x64.ActiveCfg = Release|Any CPU
 		{348BC317-666B-4911-89B6-AAFEE6C65121}.Release|x86.ActiveCfg = Release|Any CPU
+		{E4748B0E-FA40-40ED-8FDE-BE28DFF2452A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4748B0E-FA40-40ED-8FDE-BE28DFF2452A}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{E4748B0E-FA40-40ED-8FDE-BE28DFF2452A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E4748B0E-FA40-40ED-8FDE-BE28DFF2452A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4748B0E-FA40-40ED-8FDE-BE28DFF2452A}.Release|x64.ActiveCfg = Release|Any CPU
+		{E4748B0E-FA40-40ED-8FDE-BE28DFF2452A}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

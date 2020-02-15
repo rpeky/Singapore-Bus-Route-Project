@@ -9,56 +9,55 @@ headers = {'AccountKey' : '4BXSLAQ5T+C4NJ6TA9/qjA==',
            'accept' : 'application/json'  
           }
 
+#def busroutesfn(skipno):
+#    skippos = str(skipno*500)
+#    target = urlparse('http://datamall2.mytransport.sg/ltaodataservice/BusRoutes?$skip='+skippos)
+#    target.geturl()
+#    method = 'GET'
+#    body = ''
 
-def getbusstop(skips):
-    skippos = str((skips-1)*500)
-    if skippos == 0:
-        target = urlparse('http://datamall2.mytransport.sg/ltaodataservice/BusStops')
-        target.geturl()
-        method = 'GET'
-        body = ''
+#    h = http.Http()
 
-        h = http.Http()
+#    response, content = h.request(
+#        target.geturl(),
+#        method,
+#        body,
+#        headers
+#        )
 
-        response, content = h.request(
-            target.geturl(),
-            method,
-            body,
-            headers
-            )
-    
-        jsonObj = json.loads(content)
-        print(json.dumps(jsonObj, sort_keys=True, indent=4))
+#    jsonObj = json.loads(content)
+#    print(json.dumps(jsonObj, sort_keys=True, indent=4))
 
-        with open("bus_stop_no_info.json","w") as outfile:
-            json.dump(jsonObj, outfile, sort_keys=True, indent=4, ensure_ascii=False)
+#    with open("rotueinfo"+skipno+".json","w") as outfile:
+#        json.dump(jsonObj, outfile, sort_keys=True, indent=4, ensure_ascii=False)
 
-    else:
-        target = urlparse('http://datamall2.mytransport.sg/ltaodataservice/BusStops?$skip='+skippos)
-        target.geturl()
-        method = 'GET'
-        body = ''
+#def listofbusstopsinroutes():
 
-        h = http.Http()
 
-        response, content = h.request(
-            target.geturl(),
-            method,
-            body,
-            headers
-            )
-    
-        jsonObj = json.loads(content)
-        print(json.dumps(jsonObj, sort_keys=True, indent=4))
 
-        with open("testbenchinfo.json","w") as outfile:
-            json.dump(jsonObj, outfile, sort_keys=True, indent=4, ensure_ascii=False)
+
+#def savebusrouteunderbusname():
+
+
 
 
 if __name__ == "__main__":
-    i=1
-    for i in range(12):
-        getbusstop(i)
-
-    print('done')
+    busroutesfn()
+    print("done :)")
     
+    
+    
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
