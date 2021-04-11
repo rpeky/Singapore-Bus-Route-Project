@@ -115,12 +115,6 @@ def allbusanddestination():
     
     
 
-
-    
-
-
-
-
 if __name__ == "__main__":
     filetowrite = open('busstop_busno_destination.txt', 'w')
     allbusanddestination()
