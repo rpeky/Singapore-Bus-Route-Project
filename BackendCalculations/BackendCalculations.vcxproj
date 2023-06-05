@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\vcpkg.C.Users.Ryan.Desktop.VCPKG.1.0.0\build\native\vcpkg.C.Users.Ryan.Desktop.VCPKG.props" Condition="Exists('..\packages\vcpkg.C.Users.Ryan.Desktop.VCPKG.1.0.0\build\native\vcpkg.C.Users.Ryan.Desktop.VCPKG.props')" />
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -70,6 +71,16 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Label="Vcpkg">
+    <VcpkgEnabled>true</VcpkgEnabled>
+    <VcpkgEnableManifest>false</VcpkgEnableManifest>
+    <VcpkgManifestInstall>true</VcpkgManifestInstall>
+    <VcpkgAutoLink>true</VcpkgAutoLink>
+  </PropertyGroup>
+  <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <VcpkgConfiguration>
+    </VcpkgConfiguration>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -104,10 +115,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\Ryan\Desktop\VCPKG\packages\jsoncpp_x86-windows\include\json;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\Ryan\Desktop\VCPKG\packages\jsoncpp_x86-windows\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -128,11 +141,24 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CalculationMain.cpp" />
+    <ClCompile Include="jsonprocessing.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GlobalDef.h" />
+    <ClInclude Include="jsonprocessingfunctions.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\packages\vcpkg.C.Users.Ryan.Desktop.VCPKG.1.0.0\build\native\vcpkg.C.Users.Ryan.Desktop.VCPKG.targets" Condition="Exists('..\packages\vcpkg.C.Users.Ryan.Desktop.VCPKG.1.0.0\build\native\vcpkg.C.Users.Ryan.Desktop.VCPKG.targets')" />
   </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\vcpkg.C.Users.Ryan.Desktop.VCPKG.1.0.0\build\native\vcpkg.C.Users.Ryan.Desktop.VCPKG.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\vcpkg.C.Users.Ryan.Desktop.VCPKG.1.0.0\build\native\vcpkg.C.Users.Ryan.Desktop.VCPKG.props'))" />
+    <Error Condition="!Exists('..\packages\vcpkg.C.Users.Ryan.Desktop.VCPKG.1.0.0\build\native\vcpkg.C.Users.Ryan.Desktop.VCPKG.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\vcpkg.C.Users.Ryan.Desktop.VCPKG.1.0.0\build\native\vcpkg.C.Users.Ryan.Desktop.VCPKG.targets'))" />
+  </Target>
 </Project>

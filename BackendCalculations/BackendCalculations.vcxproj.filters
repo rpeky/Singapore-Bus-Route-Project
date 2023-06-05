@@ -18,10 +18,21 @@
     <ClCompile Include="CalculationMain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="jsonprocessing.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GlobalDef.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="jsonprocessingfunctions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
