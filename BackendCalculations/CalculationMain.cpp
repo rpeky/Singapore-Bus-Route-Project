@@ -2,29 +2,39 @@
 #include <map>
 #include <utility>
 
-#include "jsonprocessingfunctions.h" // to use jsonprocessing functions from jsonprocessing.cpp
+#include "jsonprocessingfunctions.h" // to use json processing functions from jsonprocessing.cpp
+#include "businfocalc.h"			 // to use calculations from BusCalculations.cpp
 
-
+/* MAP START */
+// for Bus_Stop class mapping
 // mapofbusstopinfo < position_5numcode, key>
 // key = 0 - check if exist if == 1
 // 
 
+std::map<std::pair<int, int>, int> mapofbusstopinfo; 
+std::map<std::pair<int, int>, int> mapofbusid_eachstop;
+std::map<std::pair<int, int>, std::string> mapofbusstopnames;
 
-std::map<std::pair<int,int>, int> mapofbusstopinfo; 
+/* MAP END */
 
 
+/* CLASS START */
 // bus stop properties
 class Bus_Stop {
 
 public:
-	// mapofbusstopinfo pair left values
+	// mapofbusstopinfo pair key identities {00000 - 5 number bus stop id, 1/2/3/4/5/6/7/8 - which map value needed}
 	// 0 left for checking if map exist
 	int BusStopCode;		 //map 1
 	int Direction;			 //map 2
 	int Distance;			 //map 3
 	int StopSequence;        //map 4
-	int TimesVisited;		 //map 5
-	int noofbus;			 //map 6
+	int noofbus;			 //map 5
+	int TimesVisited;		 //map 6
+
+	std::string Description; //Bus Stop name (e.g. Opp Bugis Stn Exit C)
+
+	
 
 
 private:
@@ -43,18 +53,46 @@ private:
 
 	// add info to map 
 	void addstoptomap(int position_5numcode) {
+
+		Direction = getdirection();
+		Distance = getdistance();
+		StopSequence = getstopsequence();
+		noofbus = getnoofbus();
+		TimesVisited = 1;
+
 		mapofbusstopinfo[{position_5numcode, 0}] = 1;
 		mapofbusstopinfo[{position_5numcode, 1}] = position_5numcode;
-		mapofbusstopinfo[{position_5numcode, 2}] = getdirection();
-		mapofbusstopinfo[{position_5numcode, 3}] = getdistance();
-		mapofbusstopinfo[{position_5numcode, 4}] = getstopsequence();
+		mapofbusstopinfo[{position_5numcode, 2}] = Direction;
+		mapofbusstopinfo[{position_5numcode, 3}] = Distance;
+		mapofbusstopinfo[{position_5numcode, 4}] = StopSequence;
+		mapofbusstopinfo[{position_5numcode, 5}] = noofbus;
+		mapofbusstopinfo[{position_5numcode, 6}] = TimesVisited;
+
+
+
+		Description = getDescription();
+
+		mapofbusstopnames[{position_5numcode, 1}] = Description;
+
+
+		for (int i = 0; i < noofbus; i++) {
+			mapofbusid_eachstop[{position_5numcode, i}] = addbustobusstop(position_5numcode, noofbus);
+		}
 
 	};
 
-	// add 1 everytime this busstop is visited
+	// add 1 everytime this busstop is visited, refresh value of times visited
 	void Addvisit() {
 		TimesVisited++;
+		mapofbusstopinfo[{BusStopCode, 6}] = TimesVisited;
 	};
+
+	void Displaybusinstop() {
+		for (int i = 0; i < noofbus; i++) {
+			
+		}
+		
+	}
 
 };
 
@@ -63,43 +101,47 @@ class Traveller {
 public:
 	int CurrentPosition_5numstopcode;
 	int TotalDistanceTravelled;	
-	int StopsVisited;
+	int StopsVisited= 0; //initial stops visited is 0
 	int currentbusno;
+	int Stored_Dist = 0; //initial distance travelled is 0
 	
 private:
-	void Addvisit();
-	void adddistance(int Curr_dist, int Stored_dist);
-	void takebus();
-	void leavebus();
-	void nextbusdecision();
+	void Addvisit() {
+		StopsVisited++;
+	}
+	void adddistance() {
+		int disttoadd = distance_travelled_tothisstop(Stored_Dist);
+		TotalDistanceTravelled += disttoadd;
+	}
+
+	void newstop_makedecision() {
+
+	}
+
+	void stayonbus() {
+		Addvisit();
+	}
+
+	void leavebus() {
+
+	}
+
+	void takebus() {
+
+	}
+
+	void idle_atstop_nextbusdecision() {
+
+	}
 	
 };
 
-void Traveller::Addvisit() {
-	StopsVisited++;
 
-}
-
-void Traveller::adddistance(int Curr_dist, int Stored_dist){
-	TotalDistanceTravelled += (Curr_dist - Stored_dist);
-}
-
-void Traveller::takebus() {
-
-}
-
-void Traveller::leavebus() {
-
-}
-
-void Traveller::nextbusdecision() {
-
-}
-
-
+/* CLASS END */
 
 int main() {
 
+	Traveller persononbus;
 
 
 

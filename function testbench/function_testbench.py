@@ -41,9 +41,9 @@ headers = {'AccountKey' : '4BXSLAQ5T+C4NJ6TA9/qjA==',
 
 
 
-if __name__ == "__main__":
-    busroutesfn()
-    print("done :)")
+#if __name__ == "__main__":
+#    busroutesfn()
+#    print("done :)")
     
     
     

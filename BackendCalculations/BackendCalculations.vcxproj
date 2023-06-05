@@ -140,11 +140,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BusCalculations.cpp" />
     <ClCompile Include="CalculationMain.cpp" />
     <ClCompile Include="jsonprocessing.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GlobalDef.h" />
+    <ClInclude Include="businfocalc.h" />
+    <ClInclude Include="definitions.h" />
     <ClInclude Include="jsonprocessingfunctions.h" />
   </ItemGroup>
   <ItemGroup>
