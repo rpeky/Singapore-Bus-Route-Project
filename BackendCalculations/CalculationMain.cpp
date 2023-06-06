@@ -87,11 +87,16 @@ private:
 		mapofbusstopinfo[{BusStopCode, 6}] = TimesVisited;
 	};
 
-	void Displaybusinstop() {
+	// look up all the bus that go to this stop
+	void Displaybusinstop() { 
 		for (int i = 0; i < noofbus; i++) {
 			
 		}
 		
+	}
+
+	std::string Displaybusstop_description() {
+		return mapofbusstopnames[{BusStopCode, 1}];
 	}
 
 };
@@ -99,7 +104,7 @@ private:
 
 class Traveller {
 public:
-	int CurrentPosition_5numstopcode;
+	int CurrentPosition_5numstopcode; //must give initial bus stop code
 	int TotalDistanceTravelled;	
 	int StopsVisited= 0; //initial stops visited is 0
 	int currentbusno;
@@ -139,9 +144,29 @@ private:
 
 /* CLASS END */
 
+
 int main() {
+	bool allvisited = false;
 
 	Traveller persononbus;
+	
+	Bus_Stop stop12345;
+
+
+
+
+	while (allvisited != true) {
+
+	}
+
+
+
+
+
+
+
+
+
 
 
 
