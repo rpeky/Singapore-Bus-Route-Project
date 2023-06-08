@@ -15,6 +15,8 @@ Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "refresher code", "refresher
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BackendCalculations", "BackendCalculations\BackendCalculations.vcxproj", "{146291C0-3C37-4BD1-BA99-9FCCD9C6D3EB}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cpp testbench", "cpp testbench\cpp testbench.vcxproj", "{65B1DF23-1C46-4535-B205-37F8FB997A4D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +69,18 @@ Global
 		{146291C0-3C37-4BD1-BA99-9FCCD9C6D3EB}.Release|x64.Build.0 = Release|x64
 		{146291C0-3C37-4BD1-BA99-9FCCD9C6D3EB}.Release|x86.ActiveCfg = Release|Win32
 		{146291C0-3C37-4BD1-BA99-9FCCD9C6D3EB}.Release|x86.Build.0 = Release|Win32
+		{65B1DF23-1C46-4535-B205-37F8FB997A4D}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{65B1DF23-1C46-4535-B205-37F8FB997A4D}.Debug|Any CPU.Build.0 = Debug|x64
+		{65B1DF23-1C46-4535-B205-37F8FB997A4D}.Debug|x64.ActiveCfg = Debug|x64
+		{65B1DF23-1C46-4535-B205-37F8FB997A4D}.Debug|x64.Build.0 = Debug|x64
+		{65B1DF23-1C46-4535-B205-37F8FB997A4D}.Debug|x86.ActiveCfg = Debug|Win32
+		{65B1DF23-1C46-4535-B205-37F8FB997A4D}.Debug|x86.Build.0 = Debug|Win32
+		{65B1DF23-1C46-4535-B205-37F8FB997A4D}.Release|Any CPU.ActiveCfg = Release|x64
+		{65B1DF23-1C46-4535-B205-37F8FB997A4D}.Release|Any CPU.Build.0 = Release|x64
+		{65B1DF23-1C46-4535-B205-37F8FB997A4D}.Release|x64.ActiveCfg = Release|x64
+		{65B1DF23-1C46-4535-B205-37F8FB997A4D}.Release|x64.Build.0 = Release|x64
+		{65B1DF23-1C46-4535-B205-37F8FB997A4D}.Release|x86.ActiveCfg = Release|Win32
+		{65B1DF23-1C46-4535-B205-37F8FB997A4D}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

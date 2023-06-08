@@ -11,7 +11,7 @@
 // key = 0 - check if exist if == 1
 // 
 
-std::map<std::pair<int, int>, int> mapofbusstopinfo; 
+std::map<std::pair<int, int>, float> mapofbusstopinfo; 
 std::map<std::pair<int, int>, int> mapofbusid_eachstop;
 std::map<std::pair<int, int>, std::string> mapofbusstopnames;
 
@@ -25,81 +25,131 @@ class Bus_Stop {
 public:
 	// mapofbusstopinfo pair key identities {00000 - 5 number bus stop id, 1/2/3/4/5/6/7/8 - which map value needed}
 	// 0 left for checking if map exist
-	int BusStopCode;		 //map 1
-	int Direction;			 //map 2
-	int Distance;			 //map 3
-	int StopSequence;        //map 4
-	int noofbus;			 //map 5
-	int TimesVisited;		 //map 6
+	float BusStopCode;		 //map 1
+	float Direction;		 //map 2
+	float Distance;			 //map 3
+	float StopSequence;      //map 4
+	float noofbus;			 //map 5
+	float TimesVisited;		 //map 6
 
 	std::string Description; //Bus Stop name (e.g. Opp Bugis Stn Exit C)
 
-	
+	//public update functions - tested in testbench works
+	void update_busstopcode(int stopcode_5num) {
+		BusStopCode = stopcode_5num;
+	}
 
+	void update_direction(int dir) {
+		Direction = dir;
+	}
 
-private:
-	// check if exists on map (self explainatory)
-	void checkifmapofstopexists_meansvisitedbefore(int position_5numcode) {
-																			// stop exists in map -> add a visit
-		if (mapofbusstopinfo[{position_5numcode,0}] == 1) {					
-			Addvisit();
-		}
-																			// stop does not exist in map -> generate stop in map
-		else {																
-			addstoptomap(position_5numcode);
-		}
+	void update_distance(float distfromint) {
+		Distance = distfromint;
+	}
 
-	};
+	void update_stopsequence(int seq) {
+		StopSequence = seq;
+	}
+
+	void update_noofbus(int busno) {
+		noofbus = busno;
+	}
+
+	void update_timesvisited(int visited) {
+		TimesVisited = visited;
+	}
+
+	void update_description(std::string desc) {
+		Description = desc;
+	}
+
+	void update_addstoptomap() { // to figure out if this should be private or public, and how to get input from the json files
+		// getinfo() json functions
+		/*will use hard values here to test map*/
+
+		mapofbusstopinfo[{BusStopCode, 0}] = 1;
+		mapofbusstopinfo[{BusStopCode, 1}] = BusStopCode;
+		mapofbusstopinfo[{BusStopCode, 2}] = Direction;
+		mapofbusstopinfo[{BusStopCode, 3}] = Distance; //*10
+		mapofbusstopinfo[{BusStopCode, 4}] = StopSequence;
+		mapofbusstopinfo[{BusStopCode, 5}] = noofbus;
+		mapofbusstopinfo[{BusStopCode, 6}] = TimesVisited;
+		mapofbusstopnames[{BusStopCode, 0}] = "1";
+		mapofbusstopnames[{BusStopCode, 1}] = Description;
+
+	}
+
+	//private:
+
+	//// check if exists on map (self explainatory)
+	//void checkifmapofstopexists_meansvisitedbefore() {
+	//																		// stop exists in map -> add a visit
+	//	if (mapofbusstopinfo[{BusStopCode,0}] == 1) {					/*check if entry exists in map first --> to update and do to add in git commit message to do*/
+	//		Addvisit();
+	//	}
+	//																		// stop does not exist in map -> generate stop in map
+	//	else {																
+	//		addstoptomap(BusStopCode);
+	//	}
+
+	//};
 
 	// add info to map 
-	void addstoptomap(int position_5numcode) {
+	//void addstoptomap(int position_5numcode) {
 
-		Direction = getdirection();
-		Distance = getdistance();
-		StopSequence = getstopsequence();
-		noofbus = getnoofbus();
-		TimesVisited = 1;
+	//	Direction = getdirection();
+	//	Distance = getdistance();
+	//	StopSequence = getstopsequence();
+	//	noofbus = getnoofbus();
+	//	TimesVisited = 1;
 
-		mapofbusstopinfo[{position_5numcode, 0}] = 1;
-		mapofbusstopinfo[{position_5numcode, 1}] = position_5numcode;
-		mapofbusstopinfo[{position_5numcode, 2}] = Direction;
-		mapofbusstopinfo[{position_5numcode, 3}] = Distance;
-		mapofbusstopinfo[{position_5numcode, 4}] = StopSequence;
-		mapofbusstopinfo[{position_5numcode, 5}] = noofbus;
-		mapofbusstopinfo[{position_5numcode, 6}] = TimesVisited;
-
-
-
-		Description = getDescription();
-
-		mapofbusstopnames[{position_5numcode, 1}] = Description;
+	//	mapofbusstopinfo[{position_5numcode, 0}] = 1;
+	//	mapofbusstopinfo[{position_5numcode, 1}] = position_5numcode;
+	//	mapofbusstopinfo[{position_5numcode, 2}] = Direction;
+	//	mapofbusstopinfo[{position_5numcode, 3}] = Distance;
+	//	mapofbusstopinfo[{position_5numcode, 4}] = StopSequence;
+	//	mapofbusstopinfo[{position_5numcode, 5}] = noofbus;
+	//	mapofbusstopinfo[{position_5numcode, 6}] = TimesVisited;
 
 
-		for (int i = 0; i < noofbus; i++) {
-			mapofbusid_eachstop[{position_5numcode, i}] = addbustobusstop(position_5numcode, noofbus);
-		}
 
-	};
+	//	Description = getDescription();
+
+	//	mapofbusstopnames[{position_5numcode, 1}] = Description;
+
+
+	//	for (int i = 0; i < noofbus; i++) {
+	//		mapofbusid_eachstop[{position_5numcode, i}] = addbustobusstop(position_5numcode, noofbus);
+	//	}
+
+	//};
 
 	// add 1 everytime this busstop is visited, refresh value of times visited
-	void Addvisit() {
-		TimesVisited++;
-		mapofbusstopinfo[{BusStopCode, 6}] = TimesVisited;
-	};
+	//void Addvisit() {
+	//	TimesVisited++;
+	//	mapofbusstopinfo[{BusStopCode, 6}] = TimesVisited;
+	//};
 
-	// look up all the bus that go to this stop
-	void Displaybusinstop() { 
-		for (int i = 0; i < noofbus; i++) {
-			
-		}
-		
-	}
+	//// look up all the bus that go to this stop
+	//void Displaybusinstop() { 
+	//	for (int i = 0; i < noofbus; i++) {
+	//		
+	//	}
+	//	
+	//}
 
-	std::string Displaybusstop_description() {
-		return mapofbusstopnames[{BusStopCode, 1}];
-	}
+	//// return description of bus stop
+	//std::string Displaybusstop_description() {
+	//	return mapofbusstopnames[{BusStopCode, 1}];
+	//}
 
 };
+
+void update_additionalvisit(int BusStopCode) { // adds a visit to the stop if revisited
+	float visits = mapofbusstopinfo[{BusStopCode, 6}];
+	visits++;
+	mapofbusstopinfo[{BusStopCode, 6}] = visits;
+}
 
 
 class Traveller {
@@ -148,16 +198,12 @@ private:
 int main() {
 	bool allvisited = false;
 
-	Traveller persononbus;
-	
-	Bus_Stop stop12345;
+	Bus_Stop thisisastop;
+	float bsc, dir, dist, ss, nob, tv;
+	std::string name;
 
 
 
-
-	while (allvisited != true) {
-
-	}
 
 
 
