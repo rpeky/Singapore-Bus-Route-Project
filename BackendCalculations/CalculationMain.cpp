@@ -5,20 +5,19 @@
 #include "jsonprocessingfunctions.h" // to use json processing functions from jsonprocessing.cpp
 #include "businfocalc.h"			 // to use calculations from BusCalculations.cpp
 #include "BusStopClass.h"
+#include "TravellerClass.h"
+
 /* MAP START */
 // for Bus_Stop class mapping
 // mapofbusstopinfo < position_5numcode, key>
 // key = 0 - check if exist if == 1
-// 
 
 std::map<std::pair<int, int>, float> mapofbusstopinfo; 
 std::map<std::pair<int, int>, int> mapofbusid_eachstop;
 std::map<std::pair<int, int>, std::string> mapofbusstopnames;
 
-/* MAP END */
-
 /* Bus Stop Class Functions*/
-void busstop::update_addstoptomap() {
+void Bus_Stop::update_addstoptomap() {
 	// getinfo() json functions
 	/*will use hard values here to test map*/
 
@@ -34,70 +33,76 @@ void busstop::update_addstoptomap() {
 
 }
 
-void busstop::update_busstopcode(float stopcode_5num) {
+void Bus_Stop::update_busstopcode(float stopcode_5num) {
 	BusStopCode = stopcode_5num;
 }
 
-void busstop::update_direction(float dir) {
+void Bus_Stop::update_direction(float dir) {
 	Direction = dir;
 }
 
-void busstop::update_distance(float distfromint) {
+void Bus_Stop::update_distance(float distfromint) {
 	Distance = distfromint;
 }
 
-void busstop::update_stopsequence(float seq) {
+void Bus_Stop::update_stopsequence(float seq) {
 	StopSequence = seq;
 }
 
-void busstop::update_noofbus(float busno) {
+void Bus_Stop::update_noofbus(float busno) {
 	noofbus = busno;
 }
 
-void busstop::update_timesvisited(float visited) {
+void Bus_Stop::update_timesvisited(float visited) {
 	TimesVisited = visited;
 }
 
-void busstop::update_description(std::string desc) {
+void Bus_Stop::update_description(std::string desc) {
 	Description = desc;
 }
 
-void update_additionalvisit(int BusStopCode) {
-	mapofbusstopinfo[{BusStopCode, 6}] += 1;
-
+Bus_Stop::Bus_Stop() {
+	BusStopCode = 0;
+	Direction = 0;
+	Distance = 0;
+	StopSequence = 0;
+	noofbus = 0;
+	TimesVisited = 0;
+	Description = "";
+	std::cout << "Creating new bus stop" << std::endl;
 }
 
+Bus_Stop::~Bus_Stop() {
+	std::cout << "Bus Stop added to map, deleting this stop, refer to map for values" << std::endl;
+}
 
+/* Traveller Class Functions*/
+void Traveller::update_addstopvisited() {
+	StopsVisited++;
+}
+
+void Traveller::update_TotalDistanceTravelled(float dist) {
+	float currstopdist = dist;
+	TotalDistanceTravelled += (dist - Stored_Dist);
+	Stored_Dist = dist;
+}
+
+Traveller::Traveller() {
+	TotalDistanceTravelled = 0;
+	StopsVisited = 0;
+	currentbusno = 0;
+	Stored_Dist = 0;
+	std::cout << "Creating new Traveller to take the bus" << std::endl;
+}
+
+Traveller::~Traveller() {
+	std::cout << "Traveller did it! He visited all the bus stops" << std::endl;
+}
+
+/* Map Update Functions*/
 void update_additionalvisit(int BusStopCode) {
 	mapofbusstopinfo[{BusStopCode, 6}] += 1;
 }
-
-
-class Traveller {
-public:
-
-	float TotalDistanceTravelled = 0;
-	int StopsVisited = 0; //initial stops visited is 0
-	int currentbusno = 0;
-	float Stored_Dist = 0; //initial distance travelled is 0
-
-	void update_addstopvisited() {
-		StopsVisited++;
-	}
-
-	void update_TotalDistanceTravelled(float dist) {
-		float currstopdist = dist;
-		TotalDistanceTravelled += (dist - Stored_Dist);
-		Stored_Dist = dist;
-	}
-
-private:
-
-	
-};
-
-
-/* CLASS END */
 
 
 int main() {
@@ -105,24 +110,9 @@ int main() {
 
 	Bus_Stop thisisastop;
 	Traveller persononbus;
-	float bsc, dir, dist, ss, nob, tv;
-	std::string name;
+	float BusStopCode, Direction, Distance, StopSequence, NumberOfBus, TimesVisited;
+	std::string DescriptionOfStop;
 
 
-
-	//bool All_visited = false;
-	//int position_5numcode; // end goal is to make this a variable to test all bus stops
-	//int distance = 0;
-	//int stops_visited = 0;
-	//int DistNew = 0;
-	//int DistStored = 0;
-
-
-	//while (All_visited != true) {
-	//	position_5numcode = ;
-	//	distance += (DistNew - DistStored);
-	//	stops_visited += 1;
-
-	//}
-
+	return 0;
 }

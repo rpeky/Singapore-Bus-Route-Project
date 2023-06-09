@@ -20,7 +20,7 @@ std::map<std::pair<int, int>, float> mapofbusstopinfo;
 std::map<std::pair<int, int>, std::string> mapofbusstopnames;
 
 /* Bus Stop Class Functions*/
-void busstop::update_addstoptomap() {
+void Bus_Stop::update_addstoptomap() {
 	// getinfo() json functions
 	/*will use hard values here to test map*/
 
@@ -36,32 +36,47 @@ void busstop::update_addstoptomap() {
 
 }
 
-void busstop::update_busstopcode(float stopcode_5num) {
+void Bus_Stop::update_busstopcode(float stopcode_5num) {
 	BusStopCode = stopcode_5num;
 }
 
-void busstop::update_direction(float dir) {
+void Bus_Stop::update_direction(float dir) {
 	Direction = dir;
 }
 
-void busstop::update_distance(float distfromint) {
+void Bus_Stop::update_distance(float distfromint) {
 	Distance = distfromint;
 }
 
-void busstop::update_stopsequence(float seq) {
+void Bus_Stop::update_stopsequence(float seq) {
 	StopSequence = seq;
 }
 
-void busstop::update_noofbus(float busno) {
+void Bus_Stop::update_noofbus(float busno) {
 	noofbus = busno;
 }
 
-void busstop::update_timesvisited(float visited) {
+void Bus_Stop::update_timesvisited(float visited) {
 	TimesVisited = visited;
 }
 
-void busstop::update_description(std::string desc) {
+void Bus_Stop::update_description(std::string desc) {
 	Description = desc;
+}
+
+Bus_Stop::Bus_Stop() {
+	BusStopCode = 0;
+	Direction = 0;
+	Distance = 0;
+	StopSequence = 0;
+	noofbus = 0;
+	TimesVisited = 0;
+	Description = "";
+	std::cout << "Creating new bus stop" << std::endl;
+}
+
+Bus_Stop::~Bus_Stop() {
+	std::cout << "Bus Stop added to map, deleting this stop, refer to map for values" << std::endl;	 
 }
 
 /* Traveller Class Functions*/
@@ -76,7 +91,20 @@ void Traveller::update_TotalDistanceTravelled(float dist) {
 }
 
 void Traveller::decision_tomake() { 
-	
+	 
+}
+
+Traveller::Traveller() {
+	TotalDistanceTravelled = 0;
+	StopsVisited = 0;
+	currentbusno = 0;
+	Stored_Dist = 0;
+	AllStopsVisited = false;
+	std::cout << "Creating new Traveller to take the bus" << std::endl;
+}
+
+Traveller::~Traveller() {
+	std::cout << "Traveller did it! He visited all the bus stops" << std::endl;
 }
 
 /* Map Update Functions*/
@@ -100,12 +128,12 @@ int main() {
 	//	"WD_FirstBus" : "0500",
 	//	"WD_LastBus" : "2300"
 
-	busstop thisisastop;
+	Bus_Stop thisisastop;
 	Traveller persononbus;
 	float bsc, dir, dist, ss, nob, tv;
 	std::string name;
 
-	//stop 1
+	//stop 1 - simulates get values from json files
 	std::cout << "enter stopcode 75009\n";
 	std::cin >> bsc;
 	thisisastop.update_busstopcode(bsc);

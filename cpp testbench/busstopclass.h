@@ -1,7 +1,7 @@
 #pragma once
 #include<iostream>
 
-class busstop {
+class Bus_Stop {
 
 public:
 	// mapofbusstopinfo pair key identities {00000 - 5 number bus stop id, 1/2/3/4/5/6/7/8 - which map value needed}
@@ -13,6 +13,9 @@ public:
 	float noofbus;			 //map 5
 	float TimesVisited;		 //map 6
 	std::string Description; //Bus Stop name (e.g. Opp Bugis Stn Exit C)
+
+	Bus_Stop();
+	~Bus_Stop();
 
 	void update_addstoptomap();
 	void update_busstopcode(float stopcode_5num);
