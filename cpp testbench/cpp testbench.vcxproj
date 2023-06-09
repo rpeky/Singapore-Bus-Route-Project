@@ -132,7 +132,8 @@
     <ClCompile Include="testbench.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="benchheader.h" />
+    <ClInclude Include="busstopclass.h" />
+    <ClInclude Include="travellerclass.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\BackendCalculations\packages.config" />

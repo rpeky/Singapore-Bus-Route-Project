@@ -6,6 +6,9 @@
 
 #include<json.h>
 
+#include"busstopclass.h"
+#include"travellerclass.h"
+
 /* MAP START */
 // for Bus_Stop class mapping
 // mapofbusstopinfo < position_5numcode, key>
@@ -16,89 +19,70 @@ std::map<std::pair<int, int>, float> mapofbusstopinfo;
 //std::map<std::pair<int, int>, int> mapofbusid_eachstop;
 std::map<std::pair<int, int>, std::string> mapofbusstopnames;
 
-class busstop {
+/* Bus Stop Class Functions*/
+void busstop::update_addstoptomap() {
+	// getinfo() json functions
+	/*will use hard values here to test map*/
 
-public:
-	// mapofbusstopinfo pair key identities {00000 - 5 number bus stop id, 1/2/3/4/5/6/7/8 - which map value needed}
-	// 0 left for checking if map exist
-	float BusStopCode;		 //map 1
-	float Direction;		 //map 2
-	float Distance;			 //map 3
-	float StopSequence;      //map 4
-	float noofbus;			 //map 5
-	float TimesVisited;		 //map 6
-	std::string Description; //Bus Stop name (e.g. Opp Bugis Stn Exit C)
+	mapofbusstopinfo[{BusStopCode, 0}] = 1;
+	mapofbusstopinfo[{BusStopCode, 1}] = BusStopCode;
+	mapofbusstopinfo[{BusStopCode, 2}] = Direction;
+	mapofbusstopinfo[{BusStopCode, 3}] = Distance;
+	mapofbusstopinfo[{BusStopCode, 4}] = StopSequence;
+	mapofbusstopinfo[{BusStopCode, 5}] = noofbus;
+	mapofbusstopinfo[{BusStopCode, 6}] = TimesVisited;
+	mapofbusstopnames[{BusStopCode, 0}] = "1";
+	mapofbusstopnames[{BusStopCode, 1}] = Description;
 
-	void update_addstoptomap() {
-		// getinfo() json functions
-		/*will use hard values here to test map*/
-
-		mapofbusstopinfo[{BusStopCode, 0}] = 1;
-		mapofbusstopinfo[{BusStopCode, 1}] = BusStopCode;
-		mapofbusstopinfo[{BusStopCode, 2}] = Direction;
-		mapofbusstopinfo[{BusStopCode, 3}] = Distance; //*10
-		mapofbusstopinfo[{BusStopCode, 4}] = StopSequence;
-		mapofbusstopinfo[{BusStopCode, 5}] = noofbus;
-		mapofbusstopinfo[{BusStopCode, 6}] = TimesVisited;
-		mapofbusstopnames[{BusStopCode, 0}] = "1";
-		mapofbusstopnames[{BusStopCode, 1}] = Description;
-
-	} 
-
-	void update_busstopcode(int stopcode_5num) {
-		BusStopCode = stopcode_5num;
-	}
-
-	void update_direction(int dir) {
-		Direction = dir;
-	}
-
-	void update_distance(float distfromint) {
-		Distance = distfromint;
-	}
-
-	void update_stopsequence(int seq) {
-		StopSequence = seq;
-	}
-
-	void update_noofbus(int busno) {
-		noofbus = busno;
-	}
-
-	void update_timesvisited(int visited) {
-		TimesVisited = visited;
-	}
-
-	void update_description(std::string desc) {
-		Description = desc;
-	}
-
-private: 
-
-
-
-
-};
-
-void update_additionalvisit(int BusStopCode) {
-	float visits = mapofbusstopinfo[{BusStopCode, 6}];
-	visits++;
-	mapofbusstopinfo[{BusStopCode, 6}] = visits;
 }
 
+void busstop::update_busstopcode(float stopcode_5num) {
+	BusStopCode = stopcode_5num;
+}
 
+void busstop::update_direction(float dir) {
+	Direction = dir;
+}
 
-//class Traveller {
-//public:
-//	int CurrentPosition_5numstopcode; //must give initial bus stop code
-//	int TotalDistanceTravelled;
-//	int StopsVisited = 0; //initial stops visited is 0
-//	int currentbusno;
-//	int Stored_Dist = 0; //initial distance travelled is 0
-//
-//private:
-//
-//};
+void busstop::update_distance(float distfromint) {
+	Distance = distfromint;
+}
+
+void busstop::update_stopsequence(float seq) {
+	StopSequence = seq;
+}
+
+void busstop::update_noofbus(float busno) {
+	noofbus = busno;
+}
+
+void busstop::update_timesvisited(float visited) {
+	TimesVisited = visited;
+}
+
+void busstop::update_description(std::string desc) {
+	Description = desc;
+}
+
+/* Traveller Class Functions*/
+void Traveller::update_addstopvisited() {
+	StopsVisited++;
+}
+
+void Traveller::update_TotalDistanceTravelled(float dist) {
+	float currstopdist = dist;
+	TotalDistanceTravelled += (dist - Stored_Dist);
+	Stored_Dist = dist;
+}
+
+void Traveller::decision_tomake() { 
+	
+}
+
+/* Map Update Functions*/
+void update_additionalvisit(int BusStopCode) {
+	mapofbusstopinfo[{BusStopCode, 6}] += 1;
+}
 
 int main() {
 
@@ -117,8 +101,10 @@ int main() {
 	//	"WD_LastBus" : "2300"
 
 	busstop thisisastop;
+	Traveller persononbus;
 	float bsc, dir, dist, ss, nob, tv;
 	std::string name;
+
 	//stop 1
 	std::cout << "enter stopcode 75009\n";
 	std::cin >> bsc;
@@ -129,6 +115,7 @@ int main() {
 	std::cout << "enter distance 0\n";
 	std::cin >> dist;
 	thisisastop.update_distance(dist);
+	persononbus.update_TotalDistanceTravelled(dist);
 	std::cout << "enter stopseq 1\n";
 	std::cin >> ss;
 	thisisastop.update_stopsequence(ss);
@@ -138,12 +125,15 @@ int main() {
 	std::cout << "enter timesvisited 1\n";
 	std::cin >> tv;
 	thisisastop.update_timesvisited(tv);
+	persononbus.update_addstopvisited();
 	std::cout << "enter name Tampines Int\n";
 	std::cin.ignore();
 	std::getline(std::cin, name, '\n');
 	thisisastop.update_description(name);
 
 	thisisastop.update_addstoptomap();
+
+
 
 	for (int i = 0; i < 7; i++) {
 		std::cout << i<< "bus stop map value: " << mapofbusstopinfo[{bsc, i}] << std::endl;
@@ -152,57 +142,9 @@ int main() {
 	for (int j = 0; j < 2; j++) {
 		std::cout << j<< "bus name map value: " << mapofbusstopnames[{bsc, j}] << std::endl;
 	}
-	//"BusStopCode": "76059",
-	//	"Direction" : 1,
-	//	"Distance" : 0.6,
-	//	"Operator" : "SBST",
-	//	"SAT_FirstBus" : "0502",
-	//	"SAT_LastBus" : "2302",
-	//	"SUN_FirstBus" : "0502",
-	//	"SUN_LastBus" : "2302",
-	//	"ServiceNo" : "10",
-	//	"StopSequence" : 2,
-	//	"WD_FirstBus" : "0502",
-	//	"WD_LastBus" : "2302"
-	//stop 2
-	std::cout << "enter stopcode 76059\n";
-	std::cin >> bsc;
-	thisisastop.update_busstopcode(bsc);
-	std::cout << "enter direction 2\n";
-	std::cin >> dir;
-	thisisastop.update_direction(dir);
-	std::cout << "enter distance 0.6\n";
-	std::cin >> dist;
-	thisisastop.update_distance(dist);
-	std::cout << "enter stopseq 2\n";
-	std::cin >> ss;
-	thisisastop.update_stopsequence(ss);
-	std::cout << "enter nofbus 15\n";
-	std::cin >> nob;
-	thisisastop.update_noofbus(nob);
-	std::cout << "enter timesvisited 1\n";
-	std::cin >> tv;
-	thisisastop.update_timesvisited(tv);
-	std::cout << "enter name Opp Our Tampines Hub\n";
-	std::cin.ignore();
-	std::getline(std::cin, name, '\n');
-	thisisastop.update_description(name);
 
-	thisisastop.update_addstoptomap();
-
-	for (int i = 0; i < 7; i++) {
-		std::cout << i << "bus stop map value: " << mapofbusstopinfo[{bsc, i}] << std::endl;
-	}
-
-	for (int j = 0; j < 2; j++) {
-		std::cout << j << "bus name map value: " << mapofbusstopnames[{bsc, j}] << std::endl;
-	}
-
-	std::cout << "secondvisittostoptest" << std::endl;
-	update_additionalvisit(76059);
-	std::cout << "stop1 visits: " << mapofbusstopinfo[{75009, 6}] << std::endl << "stop2 visits: " << mapofbusstopinfo[{76059, 6}]; 
-
-
+	std::cout << "person visited: " << persononbus.StopsVisited << "stops" << std::endl;
+	std::cout << "person travelled: " << persononbus.TotalDistanceTravelled << " km" << std::endl;
 
 	return 0;
 
@@ -210,3 +152,118 @@ int main() {
 
 
 }
+
+
+
+
+// additional stuff
+//
+////"BusStopCode": "76059",
+////	"Direction" : 1,
+////	"Distance" : 0.6,
+////	"Operator" : "SBST",
+////	"SAT_FirstBus" : "0502",
+////	"SAT_LastBus" : "2302",
+////	"SUN_FirstBus" : "0502",
+////	"SUN_LastBus" : "2302",
+////	"ServiceNo" : "10",
+////	"StopSequence" : 2,
+////	"WD_FirstBus" : "0502",
+////	"WD_LastBus" : "2302"
+////stop 2
+//std::cout << "enter stopcode 76059\n";
+//std::cin >> bsc;
+//thisisastop.update_busstopcode(bsc);
+//std::cout << "enter direction 1\n";
+//std::cin >> dir;
+//thisisastop.update_direction(dir);
+//std::cout << "enter distance 0.6\n";
+//std::cin >> dist;
+//thisisastop.update_distance(dist);
+//persononbus.update_TotalDistanceTravelled(dist);
+//std::cout << "enter stopseq 2\n";
+//std::cin >> ss;
+//thisisastop.update_stopsequence(ss);
+//std::cout << "enter nofbus 15\n";
+//std::cin >> nob;
+//thisisastop.update_noofbus(nob);
+//std::cout << "enter timesvisited 1\n";
+//std::cin >> tv;
+//thisisastop.update_timesvisited(tv);
+//persononbus.update_addstopvisited();
+//std::cout << "enter name Opp Our Tampines Hub\n";
+//std::cin.ignore();
+//std::getline(std::cin, name, '\n');
+//thisisastop.update_description(name);
+//
+//thisisastop.update_addstoptomap();
+//
+//
+//
+//for (int i = 0; i < 7; i++) {
+//	std::cout << i << "bus stop map value: " << mapofbusstopinfo[{bsc, i}] << std::endl;
+//}
+//
+//for (int j = 0; j < 2; j++) {
+//	std::cout << j << "bus name map value: " << mapofbusstopnames[{bsc, j}] << std::endl;
+//}
+//
+////std::cout << "secondvisittostoptest" << std::endl;
+////update_additionalvisit(75009);
+////std::cout << "stop1 visits: " << mapofbusstopinfo[{75009, 6}] << std::endl << "stop2 visits: " << mapofbusstopinfo[{76059, 6}]; 
+//std::cout << "person visited: " << persononbus.StopsVisited << " stops" << std::endl;
+//std::cout << "person travelled: " << persononbus.TotalDistanceTravelled << " km" << std::endl;
+//
+////"BusStopCode": "76069",
+////	"Direction" : 1,
+////	"Distance" : 1.1,
+////	"Operator" : "SBST",
+////	"SAT_FirstBus" : "0504",
+////	"SAT_LastBus" : "2304",
+////	"SUN_FirstBus" : "0503",
+////	"SUN_LastBus" : "2304",
+////	"ServiceNo" : "10",
+////	"StopSequence" : 3,
+////	"WD_FirstBus" : "0504",
+////	"WD_LastBus" : "2304"
+//
+//
+//std::cout << "enter stopcode 76069\n";
+//std::cin >> bsc;
+//thisisastop.update_busstopcode(bsc);
+//std::cout << "enter direction 1\n";
+//std::cin >> dir;
+//thisisastop.update_direction(dir);
+//std::cout << "enter distance 1.1\n";
+//std::cin >> dist;
+//thisisastop.update_distance(dist);
+//persononbus.update_TotalDistanceTravelled(dist);
+//std::cout << "enter stopseq 3\n";
+//std::cin >> ss;
+//thisisastop.update_stopsequence(ss);
+//std::cout << "enter nofbus 15\n";
+//std::cin >> nob;
+//thisisastop.update_noofbus(nob);
+//std::cout << "enter timesvisited 1\n";
+//std::cin >> tv;
+//thisisastop.update_timesvisited(tv);
+//persononbus.update_addstopvisited();
+//std::cout << "enter name Blk 147\n";
+//std::cin.ignore();
+//std::getline(std::cin, name, '\n');
+//thisisastop.update_description(name);
+//
+//thisisastop.update_addstoptomap();
+//
+//
+//
+//for (int i = 0; i < 7; i++) {
+//	std::cout << i << "bus stop map value: " << mapofbusstopinfo[{bsc, i}] << std::endl;
+//}
+//
+//for (int j = 0; j < 2; j++) {
+//	std::cout << j << "bus name map value: " << mapofbusstopnames[{bsc, j}] << std::endl;
+//}
+//
+//std::cout << "person visited: " << persononbus.StopsVisited << " stops" << std::endl;
+//std::cout << "person travelled: " << persononbus.TotalDistanceTravelled << " km" << std::endl;
