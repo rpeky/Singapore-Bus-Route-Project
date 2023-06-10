@@ -80,6 +80,8 @@
   <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <VcpkgConfiguration>
     </VcpkgConfiguration>
+    <VcpkgInstalledDir>
+    </VcpkgInstalledDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -115,7 +117,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Ryan\Desktop\VCPKG\packages\jsoncpp_x86-windows\include\json;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>
+      </AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -140,11 +143,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BusCalculations.cpp" />
-    <ClCompile Include="CalculationMain.cpp" />
-    <ClCompile Include="jsonprocessing.cpp" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="businfocalc.h" />
     <ClInclude Include="definitions.h" />
     <ClInclude Include="BusStopClass.h" />
@@ -153,6 +151,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="BusCalculations.cpp" />
+    <ClCompile Include="BusStopClass.cpp" />
+    <ClCompile Include="CalculationMain.cpp" />
+    <ClCompile Include="jsonprocessing.cpp" />
+    <ClCompile Include="TravellerClass.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

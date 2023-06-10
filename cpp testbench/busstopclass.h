@@ -26,6 +26,4 @@ public:
 	void update_timesvisited(float visited);
 	void update_description(std::string desc);
 
-
-
 };

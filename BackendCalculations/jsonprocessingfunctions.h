@@ -1,11 +1,13 @@
 #pragma once
 #include <iostream>
 #include <fstream>
-#include <json.h>
+#include <json/json.h>
 
-int jsonretriever(std::string filename, std::string keyword);
-int getdirection();
-int getdistance();
-int getstopsequence();
-int getnoofbus();
-std::string getDescription();
+Json::Value get_jsonfileretriever(std::string filename);
+float get_busstopcode(Json::Value JsonData);
+//float getdirection();
+//float getdistance();
+//float getstopsequence();
+//float getnoofbus();
+//void addbustobusstop(int position_5numcode, int noofbus);
+//std::string getDescription();

@@ -15,10 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="testbench.cpp">
+    <ClCompile Include="bench2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="bench2.cpp">
+    <ClCompile Include="testbench.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -29,8 +29,14 @@
     <ClInclude Include="travellerclass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="jsonstuff.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\BackendCalculations\packages.config" />
+    <None Include="bus_route_info_0.json">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
