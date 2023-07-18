@@ -19,12 +19,12 @@ class Bus_Stop():
     TimesVisited = None
     Description = None
 
-    
+    # update functions
     def update_busstopcode(self, bsc):
         self.BusStopCode = bsc
 
-    def update_direction(self, dir):
-        self.Direction = dir
+    def update_direction(self, direc):
+        self.Direction = direc
 
     def update_distance(self, distfromint):
         self.Distance = distfromint
@@ -40,11 +40,17 @@ class Bus_Stop():
 
     def update_description(self, desc):
         self.Description = desc
+            
 
 
 
-    def __init__(self, bsc=None, dir=None, distfromint=None, seq=None, busno=None, visited=None, desc=None):
+
+    def __init__(self, bsc=None, direc=None, distfromint=None, seq=None, busno=None, visited=None, desc=None):
         print("Made a new Bus Stop")
+
+    def __del__(self):
+        print("Reached Destructor")
+        print("Bus Stop added to map/list/json, deleting this stop, refer to map for values")
 
 
 

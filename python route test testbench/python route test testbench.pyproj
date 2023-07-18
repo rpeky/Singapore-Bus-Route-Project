@@ -21,7 +21,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="BusCalculations.py" />
     <Compile Include="BusStopClass.py" />
+    <Compile Include="JsonProcessingFunctions.py" />
     <Compile Include="python_route_test_testbench.py" />
     <Compile Include="TravellerClass.py" />
   </ItemGroup>
