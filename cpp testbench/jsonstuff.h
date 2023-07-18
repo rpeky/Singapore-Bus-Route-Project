@@ -3,4 +3,4 @@
 #include<fstream>
 #include<json/json.h>
 
-Json::Value jsonretriever(std::string filename);
+//Json::Value jsonretriever(std::string filename);
