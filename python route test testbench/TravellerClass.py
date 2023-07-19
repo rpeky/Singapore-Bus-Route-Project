@@ -2,23 +2,25 @@ class Traveller():
 
 	"""
 	TotalDistanceTravelled = float
-	StopsVisited = int
+	TotalStopsVisited = int
 	currentbusno = str
 	Stored_Dist = float
 	AllStopsVisited = bool
 	OnBus = bool
+	StopsVisited = list (of stops(int))
 	"""
 
 	TotalDistanceTravelled = 0
-	StopsVisited = 0
+	TotalStopsVisited = 0
 	currentbusno = ""
 	Stored_Dist = 0
 	AllStopsVisited = False
 	OnBus = False
+	StopsVisited = []
 
 	# update functions
 	def update_addstopvisited(self):
-		self.StopsVisited+=1
+		self.TotalStopsVisited+=1
 		return
 
 	def update_TotalDistanceTravelled(self, dist):
@@ -27,16 +29,19 @@ class Traveller():
 		return
 
 	def update_alightbus(self):
-		OnBus = False
+		self.OnBus = False
 		return
 
 	def update_takebus(self):
-		OnBus = True
+		self.OnBus = True
 		return
 
 	def update_newbus(self, newbusno):
 		self.currentbusno = newbusno
 		return
+
+	def update_newstopvisited_addstop(self, bsc):
+		self.StopsVisited.append(bsc)
 
     # decision functions
 	def decision_stayonbus(self):
@@ -61,6 +66,10 @@ class Traveller():
 
 	def check_nextbus(self):
 		pass
+
+	def check_currentstop(self):
+		pass
+
 
 
 

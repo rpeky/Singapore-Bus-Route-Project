@@ -9,15 +9,15 @@ import BusCalculations
 if __name__ == "__main__":
     thisisastop = BusStopClass.Bus_Stop()
     persononbus = TravellerClass.Traveller()
-    initialstop = 85039
+    initialstop = None
 
-    persononbus.update_addstopvisited()
-    persononbus.update_addstopvisited()
-    persononbus.update_addstopvisited()
+    # to generate map of the bus stops
+    # 
+    mapofbusstopinfo = None
+    
 
-    stop = persononbus.StopsVisited
-    print(stop)
-    #apofbusstopinfo = {}
+   
+
 
 
     
