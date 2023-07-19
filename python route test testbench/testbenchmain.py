@@ -1,5 +1,4 @@
 # import other .py files (for classes/functions)
-from operator import index
 import BusStopClass
 import TravellerClass
 import JsonProcessingFunctions
@@ -21,20 +20,20 @@ def temp_jsonfile_info():
     jsonobj = json.loads(f)
     return jsonobj
 
-def find_busstop_from_route(stop):
-    #go through every route_info file until BusStopCode matches stop, return index, 
-    index
-    return index
+#def find_busstop_from_route(stop):
+#    #go through every route_info file until BusStopCode matches stop, return index, 
+#    indexpos
+#    return indexpos
 
-def find_busstop_from_info(stop):
-    #go through every route_info file until BusStopCode matches stop, return index, 
-    index
-    return index
+#def find_busstop_from_info(stop):
+#    #go through every route_info file until BusStopCode matches stop, return index, 
+#    indexpos
+#    return indexpos
 
-def find_busstop_from_route(stop):
-    #go through every route_info file until BusStopCode matches stop, return index, 
-    index
-    return index
+#def find_busstop_from_route(stop):
+#    #go through every route_info file until BusStopCode matches stop, return index, 
+#    indexpos
+#    return indexpos
 
 
 
