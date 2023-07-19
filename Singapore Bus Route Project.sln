@@ -17,7 +17,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BackendCalculations", "Back
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cpp testbench", "cpp testbench\cpp testbench.vcxproj", "{65B1DF23-1C46-4535-B205-37F8FB997A4D}"
 EndProject
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "python route test testbench", "python route test testbench\python route test testbench.pyproj", "{FB28EE11-34A6-4227-A88D-A04C6993B3B7}"
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "python route test testbench main using this", "python route test testbench\python route test testbench main using this.pyproj", "{FB28EE11-34A6-4227-A88D-A04C6993B3B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -60,7 +60,6 @@ Global
 		{61B9D15B-8EE7-49F9-85BE-659EBE457F50}.Release|x64.ActiveCfg = Release|Any CPU
 		{61B9D15B-8EE7-49F9-85BE-659EBE457F50}.Release|x86.ActiveCfg = Release|Any CPU
 		{146291C0-3C37-4BD1-BA99-9FCCD9C6D3EB}.Debug|Any CPU.ActiveCfg = Debug|x64
-		{146291C0-3C37-4BD1-BA99-9FCCD9C6D3EB}.Debug|Any CPU.Build.0 = Debug|x64
 		{146291C0-3C37-4BD1-BA99-9FCCD9C6D3EB}.Debug|x64.ActiveCfg = Debug|x64
 		{146291C0-3C37-4BD1-BA99-9FCCD9C6D3EB}.Debug|x64.Build.0 = Debug|x64
 		{146291C0-3C37-4BD1-BA99-9FCCD9C6D3EB}.Debug|x86.ActiveCfg = Debug|Win32
@@ -72,7 +71,6 @@ Global
 		{146291C0-3C37-4BD1-BA99-9FCCD9C6D3EB}.Release|x86.ActiveCfg = Release|Win32
 		{146291C0-3C37-4BD1-BA99-9FCCD9C6D3EB}.Release|x86.Build.0 = Release|Win32
 		{65B1DF23-1C46-4535-B205-37F8FB997A4D}.Debug|Any CPU.ActiveCfg = Debug|x64
-		{65B1DF23-1C46-4535-B205-37F8FB997A4D}.Debug|Any CPU.Build.0 = Debug|x64
 		{65B1DF23-1C46-4535-B205-37F8FB997A4D}.Debug|x64.ActiveCfg = Debug|x64
 		{65B1DF23-1C46-4535-B205-37F8FB997A4D}.Debug|x64.Build.0 = Debug|x64
 		{65B1DF23-1C46-4535-B205-37F8FB997A4D}.Debug|x86.ActiveCfg = Debug|Win32

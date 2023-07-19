@@ -8,24 +8,27 @@ class Traveller():
 	AllStopsVisited = bool
 	OnBus = bool
 	StopsVisited = list (of stops(int))
+	Tracker = list (of strings describing every action)
 	"""
 
 	TotalDistanceTravelled = 0
 	TotalStopsVisited = 0
 	currentbusno = ""
-	Stored_Dist = 0
+	#Stored_Dist = 0
 	AllStopsVisited = False
 	OnBus = False
 	StopsVisited = []
+	#tracker is for me to print to follow the actions irl - will track every action
+	Tracker = []
 
-	# update functions
+	## update functions
 	def update_addstopvisited(self):
 		self.TotalStopsVisited+=1
 		return
 
 	def update_TotalDistanceTravelled(self, dist):
-		self.TotalDistanceTravelled += (dist - self.Stored_Dist)
-		self.Stored_Dist = dist
+		self.TotalDistanceTravelled += dist
+		#self.Stored_Dist = dist
 		return
 
 	def update_alightbus(self):
@@ -42,8 +45,15 @@ class Traveller():
 
 	def update_newstopvisited_addstop(self, bsc):
 		self.StopsVisited.append(bsc)
+		return
 
-    # decision functions
+	def update_addactiontotracker(self, action):
+		self.Tracker.append(action)
+		return
+
+
+
+    ## decision functions
 	def decision_stayonbus(self):
 		pass
 	
@@ -53,22 +63,35 @@ class Traveller():
 	def decision_takebus(self):
 		return self.update_takebus()
 
-	#implies not on bus, will return decision_takebus() and update_bus
+	# need logic to choose bus based on availiable bus - last bus taken
 	def decision_choosebus(self):
-		pass
+		if(self.OnBus==True):
+			raise ValueError("Not Supposed to be on the bus and choosing a bus! Something went wrong somewhere")
+		else:
+			pass
 
-	# check functions
+
+
+	## check functions
 	def check_completedallstops(self):
 		pass
 
 	def check_onbus_or_onstop(self):
 		return self.OnBus
 
-	def check_nextbus(self):
+	def check_availiablebus(self):
 		pass
 
 	def check_currentstop(self):
-		pass
+		return 
+
+
+	## action functions
+
+
+	## search functions
+	
+
 
 
 
