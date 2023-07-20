@@ -1,22 +1,22 @@
 # import other .py files (for classes/functions)
 import BusStopClass
 import TravellerClass
-import JsonProcessingFunctions
+#import JsonProcessingFunctions
 import BusCalculations
 import json
 
 def temp_jsonfile_arrivals():
-    f = open('bus_arrivals.json')
+    f = open('bus_arrivals-test.json')
     jsonobj = json.loads(f)
     return jsonobj
 
 def temp_jsonfile_route():
-    f = open('')
+    f = open('routeinfo.json')
     jsonobj = json.loads(f)
     return jsonobj
 
 def temp_jsonfile_info():
-    f = open('')
+    f = open('bus_stop_no_info-test.json')
     jsonobj = json.loads(f)
     return jsonobj
 
@@ -89,15 +89,12 @@ def convert_mapintojson(maptouse):
     print("Map converted")
     return
 
+# import os
 
 if __name__ == "__main__":
-    
-    thisisastop = create_BusStopobj()
-    persononbus = create_Travellerobj()
+    print("Starting")
+    #thisisastop = create_BusStopobj()
+    #persononbus = create_Travellerobj()
     
     #initialstop = int(input("Enter Initial Stop:\n"))
-    initialstop = None #insert test value
-
-
-
-
+    #initialstop = None #insert test value
