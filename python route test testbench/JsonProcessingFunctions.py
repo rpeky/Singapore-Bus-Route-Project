@@ -128,3 +128,14 @@ def allbusanddestination():
     return
 
 
+def open_jsondatafile_returnsjsonobj(filetype):
+    #filetypes expect int
+    #arrivals - 1
+    #info     - 2
+    #route    - 3
+
+    filename = None
+
+    f = open(filename)
+    jsonobj = json.loads(f)
+    return jsonobj
