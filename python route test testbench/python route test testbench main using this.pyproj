@@ -12,6 +12,7 @@
     <OutputPath>.</OutputPath>
     <Name>python route test testbench main using this</Name>
     <RootNamespace>python route test testbench</RootNamespace>
+    <TestFramework>Pytest</TestFramework>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>

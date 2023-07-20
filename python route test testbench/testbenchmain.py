@@ -1,24 +1,26 @@
 # import other .py files (for classes/functions)
 import BusStopClass
 import TravellerClass
-#import JsonProcessingFunctions
+import JsonProcessingFunctions
 import BusCalculations
 import json
 
 def temp_jsonfile_arrivals():
     f = open('bus_arrivals-test.json')
-    jsonobj = json.loads(f)
+    jsonobj = json.load(f)
     return jsonobj
 
 def temp_jsonfile_route():
     f = open('routeinfo.json')
-    jsonobj = json.loads(f)
+    jsonobj = json.load(f)
     return jsonobj
 
 def temp_jsonfile_info():
     f = open('bus_stop_no_info-test.json')
-    jsonobj = json.loads(f)
+    jsonobj = json.load(f)
     return jsonobj
+
+
 
 #def find_busstop_from_route(stop):
 #    #go through every route_info file until BusStopCode matches stop, return index, 
@@ -44,12 +46,12 @@ def generate_initialBusStopData(thisisastop, initialstop):
     #Direction = None       -> bus_route_info           //
     #Distance = None        -> bus_route_info           //
     #StopSequence = None    -> bus_route_info           //
-    #IDofBus = None         -> bus_arrivals             //
+    #IDofBus = None         -> bus_arrivals             //done
     #TimesVisited = None    -> 1                        //done
     #Description = None     -> bus_stop_no              //
 
     initialdata_arrivalsdata = JsonProcessingFunctions.generate_jsonobj_bus_stop_bus_info(initialstop)
-    IDofBus = None
+    IDofBus = JsonProcessingFunctions.generate_jsonobj_busstop_busidinstop_returnslistofid(temp_jsonfile_arrivals())
 
 
     BusStopCode = initialstop 
@@ -57,9 +59,7 @@ def generate_initialBusStopData(thisisastop, initialstop):
     
     Description = None
 
-    
-    for i in len(initialdata_arrivalsdata["Services"][0]['ServiceNo']):
-        IDofBus.apend(initialdata_arrivalsdata['Services'][0]['ServiceNo'])
+
 
     TimesVisited = 1
 
@@ -98,3 +98,17 @@ if __name__ == "__main__":
     
     #initialstop = int(input("Enter Initial Stop:\n"))
     #initialstop = None #insert test value
+
+    JsonProcessingFunctions.generate_all_BusServicesRequest_info_jsonfile()
+    JsonProcessingFunctions.generate_all_BusRoutesRequest_info_jsonfile()
+    JsonProcessingFunctions.generate_all_BusStopsRequest_info_jsonfile()
+
+    JsonProcessingFunctions.generate_BusArrivalData_returnsBusServiceID(85039)
+
+
+
+
+
+
+    
+

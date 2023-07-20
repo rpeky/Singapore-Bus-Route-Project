@@ -71,7 +71,7 @@ class Bus_Stop():
 
             #may need to rename file name to search in future?
             #or make super file
-            makenewfilename = "busstop_"+self.BusStopCode+"_data.json"
+            makenewfilename = str(self.BusStopCode)+"_busstop_data.json"
             with open(makenewfilename, 'w') as outfile:
                 json.dump(stoptoadd_jsondata, outfile, sort_keys=False, indent=4, ensure_ascii=False)
             print("Created new stop file "+makenewfilename+"!\n")

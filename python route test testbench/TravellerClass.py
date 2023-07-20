@@ -26,9 +26,9 @@ class Traveller():
 		self.TotalStopsVisited+=1
 		return
 
+	#get dist calculated from bus stop
 	def update_TotalDistanceTravelled(self, dist):
 		self.TotalDistanceTravelled += dist
-		#self.Stored_Dist = dist
 		return
 
 	def update_alightbus(self):
@@ -83,11 +83,7 @@ class Traveller():
 		pass
 
 	def check_currentstop(self):
-		return 
-
-
-	## action functions
-
+		return int(self.StopsVisited[self.TotalStopsVisited])
 
 	## search functions
 	
