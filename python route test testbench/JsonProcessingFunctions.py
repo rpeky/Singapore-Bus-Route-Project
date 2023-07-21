@@ -15,12 +15,9 @@ import httplib2 as http
     #TimesVisited = int   //map 6
     #Description = str    //map 7 - Bus Stop Name
 
-
-
 headers = {'AccountKey' : '4BXSLAQ5T+C4NJ6TA9/qjA==',
            'accept' : 'application/json'  
           }
-
 
 ##API 2.1 Bus Arrival Request
 #can use to obtain bus stop data, just put all the bus stop codes into a list and recall function
@@ -91,8 +88,6 @@ def generate_BusServicesData_returnsUnsure(skips):
         with open(str(skips)+"_BusServicesRequest_data.json","w") as outfile:
             json.dump(jsonObj, outfile, sort_keys=True, indent=4, ensure_ascii=False)
 
-
-
 ##API 2.3 Bus Routes Request
 def generate_BusRoutesData_returnsUnsure(skips):
     skippos = str(skips*500)
@@ -136,9 +131,6 @@ def generate_BusRoutesData_returnsUnsure(skips):
         with open(str(skips)+"_BusRoutesRequest_data.json","w") as outfile:
             json.dump(jsonObj, outfile, sort_keys=True, indent=4, ensure_ascii=False)
     return
-
-
-
 
 ##API 2.4 Bus Stops Request
 #obtain Description from BusStopCode here
@@ -185,58 +177,24 @@ def generate_BusStopsRequest_togetallbusstop(skips): #need to loop 10 times (0 t
             json.dump(jsonObj, outfile, sort_keys=True, indent=4, ensure_ascii=False)
     return
 
-
-
-
-
-#def busanddestination(): #file name   -->  bus_arrivals.json
-#    with open("bus_arrivals.json") as f:
-#        data = json.load(f)
-
-#    x = 0
-#    for i in data['Services']:
-#        #print(data['Services'][x]['ServiceNo'])
-#        #print(data['Services'][x]['NextBus']['DestinationCode'])
-#        filetowrite.write(data['Services'][x]['ServiceNo'])
-#        filetowrite.write("\n")
-#        filetowrite.write(data['Services'][x]['NextBus']['DestinationCode'])
-#        filetowrite.write("\n")
-#        x+=1
-
-#def allbusanddestination():
-
-#    for t in range(0,12):
-#        print("loop #"+str(t))        
-#        getbusstop(t)
-#        with open("bus_stop_no_info.json") as f:
-#            busstopinfo = json.load(f)
-#        i=0
-#        print("output to file #"+str(t))
-#        temp_bus_stop_code = ''
-#        for a in busstopinfo['value']:
-#            temp_bus_stop_code = busstopinfo['value'][i]['BusStopCode']
-#            filetowrite.write(temp_bus_stop_code)
-#            filetowrite.write("\n")
-#            #print(temp_bus_stop_code)
-#            #print("\n")
-#            bus_stop_bus_info(temp_bus_stop_code)
-#            busanddestination()
-#            filetowrite.write("\n\n\n")
-#            #print("\n\n\n")
-#            i+=1
-#    return
-
-#to decide how to format
-def open_jsondatafile_returnsjsonobj(filetype, filename):
+#loads json obj from json file
+def open_jsondatafile_returnsjsonobj(identifier, indextoload):
     #filetypes expect int
-    #arrivals - 1
-    #info     - 2
-    #route    - 3
+    #error    - 0 unexpected error // for matching api index with load index
+    #arrivals - 1 API 2.1 Bus Arrival Request
+    #services - 2 API 2.2 Bus Services Request
+    #routes   - 3 API 2.3 Bus Routes Request
+    #stops    - 4 API 2.4 Bus Stops Request
 
+    jsondatafilenamingsuffix = ['errorindex', '_BusArrivalRequest_BusStop_data.json', '_BusServicesRequest_data.json', \
+                                '_BusRoutesRequest_data.json', '_BusStopsRequest_bus_stop_info.json' ]
+
+    filename = str(identifier)+str(jsondatafilenamingsuffix[int(indextoload)])
     f = open(filename)
     jsonobj = json.load(f)
     return jsonobj
 
+#Works, able to obtain Bus ID (Services) from Bus Stop
 def generate_jsonobj_busstop_busidinstop_returnslistofid(jsonobjtoload):
     listofbusid = []
     for i in jsonobjtoload['Services']:

@@ -51,7 +51,8 @@ def generate_initialBusStopData(thisisastop, initialstop):
     #Description = None     -> bus_stop_no              //
 
     initialdata_arrivalsdata = JsonProcessingFunctions.generate_jsonobj_bus_stop_bus_info(initialstop)
-    IDofBus = JsonProcessingFunctions.generate_jsonobj_busstop_busidinstop_returnslistofid(temp_jsonfile_arrivals())
+    IDofBus = JsonProcessingFunctions.generate_jsonobj_busstop_busidinstop_returnslistofid(\
+              JsonProcessingFunctions.open_jsondatafile_returnsjsonobj('85039_BusArrivalRequest_BusStop_data.json'))
 
 
     BusStopCode = initialstop 
@@ -99,12 +100,13 @@ if __name__ == "__main__":
     #initialstop = int(input("Enter Initial Stop:\n"))
     #initialstop = None #insert test value
 
-    JsonProcessingFunctions.generate_all_BusServicesRequest_info_jsonfile()
-    JsonProcessingFunctions.generate_all_BusRoutesRequest_info_jsonfile()
-    JsonProcessingFunctions.generate_all_BusStopsRequest_info_jsonfile()
+    #JsonProcessingFunctions.generate_all_BusServicesRequest_info_jsonfile()
+    #JsonProcessingFunctions.generate_all_BusRoutesRequest_info_jsonfile()
+    #JsonProcessingFunctions.generate_all_BusStopsRequest_info_jsonfile()
 
-    JsonProcessingFunctions.generate_BusArrivalData_returnsBusServiceID(85039)
+    #JsonProcessingFunctions.generate_BusArrivalData_returnsBusServiceID(85039)
 
+    JsonProcessingFunctions.open_jsondatafile_returnsjsonobj(85039, 1)
 
 
 
