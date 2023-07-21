@@ -94,19 +94,9 @@ def convert_mapintojson(maptouse):
 
 if __name__ == "__main__":
     print("Starting")
-    #thisisastop = create_BusStopobj()
-    #persononbus = create_Travellerobj()
-    
-    #initialstop = int(input("Enter Initial Stop:\n"))
-    #initialstop = None #insert test value
 
-    #JsonProcessingFunctions.generate_all_BusServicesRequest_info_jsonfile()
-    #JsonProcessingFunctions.generate_all_BusRoutesRequest_info_jsonfile()
-    #JsonProcessingFunctions.generate_all_BusStopsRequest_info_jsonfile()
 
-    #JsonProcessingFunctions.generate_BusArrivalData_returnsBusServiceID(85039)
-
-    JsonProcessingFunctions.open_jsondatafile_returnsjsonobj(85039, 1)
+    print('Ending')
 
 
 

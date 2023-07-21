@@ -172,9 +172,27 @@ def generate_BusStopsRequest_togetallbusstop(skips): #need to loop 10 times (0 t
             )
     
         jsonObj = json.loads(content)
-
+        #create file to read in future
         with open(str(skips)+"_BusStopsRequest_bus_stop_info.json","w") as outfile:
             json.dump(jsonObj, outfile, sort_keys=True, indent=4, ensure_ascii=False)
+    return
+
+def generate_all_BusStopsRequest_info_jsonfile():
+    for i in range(11):
+        generate_BusStopsRequest_togetallbusstop(i)
+        print('done with generate_all_BusStopsRequest_info_jsonfile #'+str(i))
+    return
+
+def generate_all_BusServicesRequest_info_jsonfile():
+    for i in range(1):
+        generate_BusServicesData_returnsUnsure(i)
+        print('done with generate_all_BusServicesRequest_info_jsonfile #'+str(i))
+    return
+
+def generate_all_BusRoutesRequest_info_jsonfile():
+    for i in range(1):
+        generate_BusRoutesData_returnsUnsure(i)
+        print('done with generate_all_BusRoutesRequest_info_jsonfile #'+str(i))
     return
 
 #loads json obj from json file
@@ -194,29 +212,20 @@ def open_jsondatafile_returnsjsonobj(identifier, indextoload):
     jsonobj = json.load(f)
     return jsonobj
 
+
+##Search functions
 #Works, able to obtain Bus ID (Services) from Bus Stop
-def generate_jsonobj_busstop_busidinstop_returnslistofid(jsonobjtoload):
+def search_jsonobj_busstop_busidinstop_returnslistofid(jsonobjtoload):
     listofbusid = []
     for i in jsonobjtoload['Services']:
         listofbusid.append(i['ServiceNo'])
     return listofbusid
 
-def generate_all_BusStopsRequest_info_jsonfile():
-    for i in range(11):
-        generate_BusStopsRequest_togetallbusstop(i)
-        print('done with generate_all_BusStopsRequest_info_jsonfile #'+str(i))
-    return
-
-def generate_all_BusServicesRequest_info_jsonfile():
-    for i in range(1):
-        generate_BusServicesData_returnsUnsure(i)
-        print('done with generate_all_BusServicesRequest_info_jsonfile #'+str(i))
-    return
-
-def generate_all_BusRoutesRequest_info_jsonfile():
-    for i in range(1):
-        generate_BusRoutesData_returnsUnsure(i)
-        print('done with generate_all_BusRoutesRequest_info_jsonfile #'+str(i))
-    return
+#will comb through the busroutes dataset to find busstopcode
+def search_jsonobj_busroutes_busstopcode_returnslistofbsc(jsonobjtoload):
+    listofbsc = []
+    for i in jsonobjtoload['Value']:
+        listofbsc.append(i['BusStopCode'])
+    return listofbsc
 
 

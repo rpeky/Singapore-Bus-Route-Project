@@ -5,13 +5,7 @@ VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "bus routing", "bus routing\bus routing.pyproj", "{A373FA6B-36C0-42A3-A673-0311A62E9DFA}"
 EndProject
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "function testbench", "function testbench\function testbench.pyproj", "{348BC317-666B-4911-89B6-AAFEE6C65121}"
-EndProject
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "get all bus no", "PythonApplication1\get all bus no.pyproj", "{E4748B0E-FA40-40ED-8FDE-BE28DFF2452A}"
-EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Bus stop list per bus", "PythonApplication2\Bus stop list per bus.pyproj", "{F78E9895-57D5-4A31-BB05-F3BC3DE5E857}"
-EndProject
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "refresher code", "refresher code\refresher code.pyproj", "{61B9D15B-8EE7-49F9-85BE-659EBE457F50}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BackendCalculations", "BackendCalculations\BackendCalculations.vcxproj", "{146291C0-3C37-4BD1-BA99-9FCCD9C6D3EB}"
 EndProject
@@ -35,30 +29,12 @@ Global
 		{A373FA6B-36C0-42A3-A673-0311A62E9DFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A373FA6B-36C0-42A3-A673-0311A62E9DFA}.Release|x64.ActiveCfg = Release|Any CPU
 		{A373FA6B-36C0-42A3-A673-0311A62E9DFA}.Release|x86.ActiveCfg = Release|Any CPU
-		{348BC317-666B-4911-89B6-AAFEE6C65121}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{348BC317-666B-4911-89B6-AAFEE6C65121}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{348BC317-666B-4911-89B6-AAFEE6C65121}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{348BC317-666B-4911-89B6-AAFEE6C65121}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{348BC317-666B-4911-89B6-AAFEE6C65121}.Release|x64.ActiveCfg = Release|Any CPU
-		{348BC317-666B-4911-89B6-AAFEE6C65121}.Release|x86.ActiveCfg = Release|Any CPU
-		{E4748B0E-FA40-40ED-8FDE-BE28DFF2452A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E4748B0E-FA40-40ED-8FDE-BE28DFF2452A}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{E4748B0E-FA40-40ED-8FDE-BE28DFF2452A}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{E4748B0E-FA40-40ED-8FDE-BE28DFF2452A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E4748B0E-FA40-40ED-8FDE-BE28DFF2452A}.Release|x64.ActiveCfg = Release|Any CPU
-		{E4748B0E-FA40-40ED-8FDE-BE28DFF2452A}.Release|x86.ActiveCfg = Release|Any CPU
 		{F78E9895-57D5-4A31-BB05-F3BC3DE5E857}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F78E9895-57D5-4A31-BB05-F3BC3DE5E857}.Debug|x64.ActiveCfg = Debug|Any CPU
 		{F78E9895-57D5-4A31-BB05-F3BC3DE5E857}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{F78E9895-57D5-4A31-BB05-F3BC3DE5E857}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F78E9895-57D5-4A31-BB05-F3BC3DE5E857}.Release|x64.ActiveCfg = Release|Any CPU
 		{F78E9895-57D5-4A31-BB05-F3BC3DE5E857}.Release|x86.ActiveCfg = Release|Any CPU
-		{61B9D15B-8EE7-49F9-85BE-659EBE457F50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{61B9D15B-8EE7-49F9-85BE-659EBE457F50}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{61B9D15B-8EE7-49F9-85BE-659EBE457F50}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{61B9D15B-8EE7-49F9-85BE-659EBE457F50}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{61B9D15B-8EE7-49F9-85BE-659EBE457F50}.Release|x64.ActiveCfg = Release|Any CPU
-		{61B9D15B-8EE7-49F9-85BE-659EBE457F50}.Release|x86.ActiveCfg = Release|Any CPU
 		{146291C0-3C37-4BD1-BA99-9FCCD9C6D3EB}.Debug|Any CPU.ActiveCfg = Debug|x64
 		{146291C0-3C37-4BD1-BA99-9FCCD9C6D3EB}.Debug|x64.ActiveCfg = Debug|x64
 		{146291C0-3C37-4BD1-BA99-9FCCD9C6D3EB}.Debug|x64.Build.0 = Debug|x64
