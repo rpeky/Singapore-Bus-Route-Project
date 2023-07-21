@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "bus routing", "bus routing\bus routing.pyproj", "{A373FA6B-36C0-42A3-A673-0311A62E9DFA}"
-EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Bus stop list per bus", "PythonApplication2\Bus stop list per bus.pyproj", "{F78E9895-57D5-4A31-BB05-F3BC3DE5E857}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BackendCalculations", "BackendCalculations\BackendCalculations.vcxproj", "{146291C0-3C37-4BD1-BA99-9FCCD9C6D3EB}"
@@ -23,12 +21,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A373FA6B-36C0-42A3-A673-0311A62E9DFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A373FA6B-36C0-42A3-A673-0311A62E9DFA}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{A373FA6B-36C0-42A3-A673-0311A62E9DFA}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{A373FA6B-36C0-42A3-A673-0311A62E9DFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A373FA6B-36C0-42A3-A673-0311A62E9DFA}.Release|x64.ActiveCfg = Release|Any CPU
-		{A373FA6B-36C0-42A3-A673-0311A62E9DFA}.Release|x86.ActiveCfg = Release|Any CPU
 		{F78E9895-57D5-4A31-BB05-F3BC3DE5E857}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F78E9895-57D5-4A31-BB05-F3BC3DE5E857}.Debug|x64.ActiveCfg = Debug|Any CPU
 		{F78E9895-57D5-4A31-BB05-F3BC3DE5E857}.Debug|x86.ActiveCfg = Debug|Any CPU
