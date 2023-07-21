@@ -98,16 +98,3 @@ class Traveller():
 	def __del__(self):
 		print("Reached Destructor")
 		print("Traveller did it! He visited all the bus stops")
-
-
-
-
-
-
-
-
-
-
-
-
-

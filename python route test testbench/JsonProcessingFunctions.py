@@ -1,4 +1,5 @@
 import json
+from unittest import skip
 import urllib
 import urllib.request
 from urllib.parse import urlparse
@@ -7,7 +8,7 @@ import httplib2 as http
 
 #Functions to generate Bus Stop data
 # Stuff to obtain
-    #BusStopCode = int    //map 1
+    #BusStopCode = str    //map 1 changed to string beacuse int cant start with 0 error
     #Direction = int      //map 2
     #Distance = float     //map 3
     #StopSequence = int   //map 4
@@ -69,7 +70,7 @@ def generate_BusServicesData_returnsUnsure(skips):
             json.dump(jsonObj, outfile, sort_keys=True, indent=4, ensure_ascii=False)
 
     else:
-        target = urlparse('http://datamall2.mytransport.sg/ltaodataservice/BusServices?skip='+skippos)
+        target = urlparse('http://datamall2.mytransport.sg/ltaodataservice/BusServices?$skip='+skippos)
         target.geturl()
         method = 'GET'
         body = ''
@@ -112,7 +113,7 @@ def generate_BusRoutesData_returnsUnsure(skips):
             json.dump(jsonObj, outfile, sort_keys=True, indent=4, ensure_ascii=False)
 
     else:
-        target = urlparse('http://datamall2.mytransport.sg/ltaodataservice/BusRoutes?skip='+skippos)
+        target = urlparse('http://datamall2.mytransport.sg/ltaodataservice/BusRoutes?$skip='+skippos)
         target.geturl()
         method = 'GET'
         body = ''
@@ -184,13 +185,13 @@ def generate_all_BusStopsRequest_info_jsonfile():
     return
 
 def generate_all_BusServicesRequest_info_jsonfile():
-    for i in range(1):
+    for i in range(2):
         generate_BusServicesData_returnsUnsure(i)
         print('done with generate_all_BusServicesRequest_info_jsonfile #'+str(i))
     return
 
 def generate_all_BusRoutesRequest_info_jsonfile():
-    for i in range(1):
+    for i in range(51):
         generate_BusRoutesData_returnsUnsure(i)
         print('done with generate_all_BusRoutesRequest_info_jsonfile #'+str(i))
     return
@@ -224,8 +225,101 @@ def search_jsonobj_busstop_busidinstop_returnslistofid(jsonobjtoload):
 #will comb through the busroutes dataset to find busstopcode
 def search_jsonobj_busroutes_busstopcode_returnslistofbsc(jsonobjtoload):
     listofbsc = []
-    for i in jsonobjtoload['Value']:
+    for i in jsonobjtoload['value']:
         listofbsc.append(i['BusStopCode'])
     return listofbsc
+
+#will comb through the busstops dataset to find busstopcode
+def search_jsonobj_busstops_busstopcode_returnslistofbsc(jsonobjtoload):
+    listofbsc = []
+    for i in jsonobjtoload['value']:
+        listofbsc.append(i['BusStopCode'])
+    return listofbsc
+
+#find index position of busstopcode from either BusRoutesRequest or BusStopsRequest jsonfiles, return list of index positions containing this busstopcode
+def search_jsononj_busstopcodeindexpos_BusRoutesRequestORBusStopsRequest_returnslistofindexpos(jsonobjtoload, busstopcode):
+    listofindexpos = []
+    for i in jsonobjtoload['value']:
+        if(i['BusStopCode']==str(busstopcode)):
+            listofindexpos.append(int(i))
+        else:
+            listofindexpos = None
+    return listofindexpos
+
+#find index position of busstopcode from Bus Arrivals, index of Bus Stop 
+def search_jsononj_busstopcodeindexpos_BusStopsRequest_returnslistofindexpos(jsonobjtoload, busstopcode):
+    indexpos = None
+    for i in jsonobjtoload['value']:
+        if(i['BusStopCode']==str(busstopcode)):
+            #print('Found Index!')
+            indexpos = i
+            return indexpos
+            break
+        else:
+            #print('Index not in file'+str(i))
+            indexpos = None
+    return indexpos
+
+
+#returns Description of Bus Stop (name of stop) from known json obj - BUsStopsRequest
+def search_jsonobj_forDesscription_returnsStrDescription(jsonobjtoload, i):
+    if(i == None):
+        return None
+
+    else:
+        for d in jsonobjtoload['value']:
+            if(d==i):
+                desc = i['Description']
+            else:
+                pass
+        return desc
+
+#returns Direction 1 or 2 of bus stop from known json obj - BusRoutesRequest
+def search_jsonobj_forDirection_returnsIntDirection(jsonobjtoload, indexpos):
+    direction = jsonobjtoload['value'][indexpos]['Direction']
+    return int(direction)
+
+#returns Distance from interchange of bus stop from known json obj - BusRoutesRequest
+def search_jsonobj_forDistance_returnsFloatDirection(jsonobjtoload, indexpos):
+    Distance = jsonobjtoload['value'][indexpos]['Distance']
+    return float(Distance)
+
+#returns Stop sequence from interchange of bus stop from known json obj - BusRoutesRequest
+def search_jsonobj_forStopSequence_returnsIntStopSequence(jsonobjtoload, indexpos):
+    StopSequence = jsonobjtoload['value'][indexpos]['Distance']
+    return int(StopSequence)
+
+# call once to get the Description (name) of Bus Stop
+def return_DescriptionforBusStop(busstopcode):
+    cont = True
+    while(cont==True):
+        for j in range(11):
+            #print('opening page: '+str(j))
+            jsob = open_jsondatafile_returnsjsonobj(j, 4)
+            inpos = search_jsononj_busstopcodeindexpos_BusStopsRequest_returnslistofindexpos(jsob, busstopcode)
+            desc = search_jsonobj_forDesscription_returnsStrDescription(jsob, inpos)
+            if(desc!=None):
+                cont = False
+                return desc
+                
+    return desc
+
+#from busstopsrequest
+def return_everyBusStop_busstopsrequest():
+    listofAllBusStops = []
+    for i in range(11):
+        jsob = open_jsondatafile_returnsjsonobj(i, 4)
+        listofAllBusStops += search_jsonobj_busstops_busstopcode_returnslistofbsc(jsob)
+
+    return listofAllBusStops
+
+#from busroutesrequest --> need to check if there is more busroutes data, appears to be missing info
+def return_everyBusStop_busroutesrequest():
+    listofAllBusStops=[]
+    for i in range(51):
+        jsob = open_jsondatafile_returnsjsonobj(i, 3)
+        listofAllBusStops += search_jsonobj_busstops_busstopcode_returnslistofbsc(jsob)
+
+    return listofAllBusStops
 
 

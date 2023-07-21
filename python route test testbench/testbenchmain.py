@@ -5,23 +5,6 @@ import JsonProcessingFunctions
 import BusCalculations
 import json
 
-def temp_jsonfile_arrivals():
-    f = open('bus_arrivals-test.json')
-    jsonobj = json.load(f)
-    return jsonobj
-
-def temp_jsonfile_route():
-    f = open('routeinfo.json')
-    jsonobj = json.load(f)
-    return jsonobj
-
-def temp_jsonfile_info():
-    f = open('bus_stop_no_info-test.json')
-    jsonobj = json.load(f)
-    return jsonobj
-
-
-
 #def find_busstop_from_route(stop):
 #    #go through every route_info file until BusStopCode matches stop, return index, 
 #    indexpos
@@ -37,38 +20,8 @@ def temp_jsonfile_info():
 #    indexpos
 #    return indexpos
 
-
-
-def generate_initialBusStopData(thisisastop, initialstop):
-    #to add
-
-    #BusStopCode = None     -> initial stop        //done
-    #Direction = None       -> bus_route_info           //
-    #Distance = None        -> bus_route_info           //
-    #StopSequence = None    -> bus_route_info           //
-    #IDofBus = None         -> bus_arrivals             //done
-    #TimesVisited = None    -> 1                        //done
-    #Description = None     -> bus_stop_no              //
-
-    initialdata_arrivalsdata = JsonProcessingFunctions.generate_jsonobj_bus_stop_bus_info(initialstop)
-    IDofBus = JsonProcessingFunctions.generate_jsonobj_busstop_busidinstop_returnslistofid(\
-              JsonProcessingFunctions.open_jsondatafile_returnsjsonobj('85039_BusArrivalRequest_BusStop_data.json'))
-
-
-    BusStopCode = initialstop 
-
-    
-    Description = None
-
-
-
-    TimesVisited = 1
-
-
-    #bsc, direc, distfromint, seq, busid, visited, desc
-    thisisastop.action_obtainvaluesforupdatefnthenaddtomap(BusStopCode, Direction, Distance, StopSequence. IDofBus, TimesVisited, Description)
-    print("First stop json data file created, stop added to map")
-    return
+#to contain every bus stop  (total stops in sg = )
+mapofbusstopinfo = dict()
 
 #will destroy itself when not needed
 def create_BusStopobj():
@@ -80,9 +33,40 @@ def create_Travellerobj():
     persononbus = TravellerClass.Traveller()
     return persononbus
 
-#to contain every bus stop  (total stops in sg = )
-mapofbusstopinfo = dict()
+def recurse_openjsondatafile(indexp, identifier, indextoload):
+    pass
 
+
+def generate_initialBusStopData(thisisastop, initialstop):
+    #to add
+
+    #BusStopCode = None     -> initial stop             //done
+    #Direction = None       -> bus_route_info           //
+    #Distance = None        -> bus_route_info           //initial distance is zero
+    #StopSequence = None    -> bus_route_info           //
+    #IDofBus = None         -> bus_arrivals             //done
+    #TimesVisited = None    -> 1                        //done
+    #Description = None     -> bus_stop_no              //
+
+    #generate BusArrivals data of initial stop to get list of bus services 
+    JsonProcessingFunctions.generate_BusArrivalData_returnsBusServiceID(initialstop)
+    BusArrivalsjsondata = JsonProcessingFunctions.open_jsondatafile_returnsjsonobj(initialstop, 1)
+
+
+    BusStopCode = initialstop 
+    Direction = None
+    Distance = 0.0
+    StopSequence = None
+    IDofBus = None
+    TimesVisited = 1
+    Description = JsonProcessingFunctions.return_DescriptionforBusStop(initialstop)
+
+    #bsc, direc, distfromint, seq, busid, visited, desc
+    thisisastop.action_obtainvaluesforupdatefnthenaddtomap(BusStopCode, Direction, Distance, StopSequence. IDofBus, TimesVisited, Description)
+    print("First stop json data file created, stop added to map")
+    return
+
+#probably need to define what maptouse contains?
 def convert_mapintojson(maptouse):
     makenewfilename = "mapdata.json"
     with open(makenewfilename, 'w') as outfile:
@@ -95,6 +79,17 @@ def convert_mapintojson(maptouse):
 if __name__ == "__main__":
     print("Starting")
 
+    JsonProcessingFunctions.generate_all_BusStopsRequest_info_jsonfile()
+    JsonProcessingFunctions.generate_all_BusServicesRequest_info_jsonfile()
+    JsonProcessingFunctions.generate_all_BusRoutesRequest_info_jsonfile()
+
+    listofstopsallstops = JsonProcessingFunctions.return_everyBusStop_busstopsrequest()
+    print(listofstopsallstops)
+    print(len(listofstopsallstops))
+
+    listofstopsallstops2 = JsonProcessingFunctions.return_everyBusStop_busroutesrequest()
+    print(listofstopsallstops2)
+    print(len(listofstopsallstops2))
 
     print('Ending')
 

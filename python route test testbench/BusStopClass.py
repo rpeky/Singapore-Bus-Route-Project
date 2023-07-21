@@ -112,13 +112,3 @@ class Bus_Stop():
     def __del__(self):
         print("Reached Destructor")
         print("Bus Stop added to map/list/json, deleting this stop, refer to map for values")
-
-
-
-
-    
-
-
-
-
-
