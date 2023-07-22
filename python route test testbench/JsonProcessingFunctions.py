@@ -17,6 +17,7 @@ from collections import OrderedDict
     #TimesVisited = int   //map 6
     #Description = str    //map 7 - Bus Stop Name
 
+#to blank out in final commit(?) not sure if its against user agreement if its on github
 headers = {'AccountKey' : '4BXSLAQ5T+C4NJ6TA9/qjA==',
            'accept' : 'application/json'  
           }
@@ -44,8 +45,6 @@ def generate_BusArrivalData_returnsBusServiceID(BusStopCode):
     #create file to read in future
     with open(str(BusStopCode)+"_BusArrivalRequest_BusStop_data.json","w") as outfile:
         json.dump(jsonObj, outfile, sort_keys=True, indent=4, ensure_ascii=False)
-
-    return
 
 ##API 2.2 Bus Services Request
 def generate_BusServicesData_returnsUnsure(skips):
@@ -132,7 +131,6 @@ def generate_BusRoutesData_returnsUnsure(skips):
         #create file to read in future
         with open(str(skips)+"_BusRoutesRequest_data.json","w") as outfile:
             json.dump(jsonObj, outfile, sort_keys=True, indent=4, ensure_ascii=False)
-    return
 
 ##API 2.4 Bus Stops Request
 #obtain Description from BusStopCode here
@@ -177,7 +175,6 @@ def generate_BusStopsRequest_togetallbusstop(skips): #need to loop 10 times (0 t
         #create file to read in future
         with open(str(skips)+"_BusStopsRequest_bus_stop_info.json","w") as outfile:
             json.dump(jsonObj, outfile, sort_keys=True, indent=4, ensure_ascii=False)
-    return
 
 
 #generates all needed files, run at start to update
