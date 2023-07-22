@@ -21,6 +21,8 @@ class Traveller():
 	#tracker is for me to print to follow the actions irl - will track every action
 	Tracker = []
 
+
+
 	## update functions
 	def update_addstopvisited(self):
 		self.TotalStopsVisited+=1

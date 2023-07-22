@@ -1,7 +1,5 @@
-from fileinput import filename
 import json
-from tkinter import EXCEPTION
-from turtle import update
+import JsonProcessingFunctions
 
 
 # to make a new bus stop and store the data in json format if has never been visited
@@ -87,7 +85,7 @@ class Bus_Stop():
         self.update_direction(direc)
         self.update_distance(distfromint)
         self.update_stopsequence(seq)
-        self.update_noofbus(busid)
+        self.update_IDofBus(busid)
         self.update_timesvisited(visited)
         self.update_description(desc)
         self.update_addstopdatafile()

@@ -1,10 +1,11 @@
 import json
-from unittest import skip
+from pickle import FALSE
 import urllib
 import urllib.request
 from urllib.parse import urlparse
 
 import httplib2 as http 
+from collections import OrderedDict
 
 #Functions to generate Bus Stop data
 # Stuff to obtain
@@ -178,6 +179,8 @@ def generate_BusStopsRequest_togetallbusstop(skips): #need to loop 10 times (0 t
             json.dump(jsonObj, outfile, sort_keys=True, indent=4, ensure_ascii=False)
     return
 
+
+#generates all needed files, run at start to update
 def generate_all_BusStopsRequest_info_jsonfile():
     for i in range(11):
         generate_BusStopsRequest_togetallbusstop(i)
@@ -197,16 +200,25 @@ def generate_all_BusRoutesRequest_info_jsonfile():
     return
 
 #loads json obj from json file
-def open_jsondatafile_returnsjsonobj(identifier, indextoload):
-    #filetypes expect int
-    #error    - 0 unexpected error // for matching api index with load index
-    #arrivals - 1 API 2.1 Bus Arrival Request
-    #services - 2 API 2.2 Bus Services Request
-    #routes   - 3 API 2.3 Bus Routes Request
-    #stops    - 4 API 2.4 Bus Stops Request
+    #@filetypes expect identifier, followed by int of suffix needed
 
+    #error      - 0 unexpected error // for matching api index with load index      errorindex
+    
+    ## API data
+
+    #arrivals   - 1 API 2.1 Bus Arrival Request                                     _BusArrivalRequest_BusStop_data.json
+    #services   - 2 API 2.2 Bus Services Request                                    _BusServicesRequest_data.json
+    #routes     - 3 API 2.3 Bus Routes Request                                      _BusRoutesRequest_data.json
+    #stops      - 4 API 2.4 Bus Stops Request                                       _BusStopsRequest_bus_stop_info.json   
+    
+    ## Processed / self made data
+    #composite  - 5 Bus Stop Data generated from processing API data                _busstop_data.json
+
+
+def open_jsondatafile_returnsjsonobj(identifier, indextoload):
     jsondatafilenamingsuffix = ['errorindex', '_BusArrivalRequest_BusStop_data.json', '_BusServicesRequest_data.json', \
-                                '_BusRoutesRequest_data.json', '_BusStopsRequest_bus_stop_info.json' ]
+                                '_BusRoutesRequest_data.json', '_BusStopsRequest_bus_stop_info.json', \
+                                '_busstop_data.json']
 
     filename = str(identifier)+str(jsondatafilenamingsuffix[int(indextoload)])
     f = open(filename)
@@ -220,16 +232,16 @@ def search_jsonobj_busstop_busidinstop_returnslistofid(jsonobjtoload):
     listofbusid = []
     for i in jsonobjtoload['Services']:
         listofbusid.append(i['ServiceNo'])
-    return listofbusid
+    return list(listofbusid)
 
-#will comb through the busroutes dataset to find busstopcode
+#will comb through the \busroutes\ dataset to find busstopcode
 def search_jsonobj_busroutes_busstopcode_returnslistofbsc(jsonobjtoload):
     listofbsc = []
     for i in jsonobjtoload['value']:
         listofbsc.append(i['BusStopCode'])
     return listofbsc
 
-#will comb through the busstops dataset to find busstopcode
+#will comb through the /busstops/ dataset to find busstopcode
 def search_jsonobj_busstops_busstopcode_returnslistofbsc(jsonobjtoload):
     listofbsc = []
     for i in jsonobjtoload['value']:
@@ -247,21 +259,20 @@ def search_jsononj_busstopcodeindexpos_BusRoutesRequestORBusStopsRequest_returns
     return listofindexpos
 
 #find index position of busstopcode from Bus Arrivals, index of Bus Stop 
-def search_jsononj_busstopcodeindexpos_BusStopsRequest_returnslistofindexpos(jsonobjtoload, busstopcode):
+def search_jsononj_busstopcodeindexpos_BusStopsRequest_returnsindexpos(jsonobjtoload, busstopcode):
     indexpos = None
     for i in jsonobjtoload['value']:
         if(i['BusStopCode']==str(busstopcode)):
             #print('Found Index!')
             indexpos = i
             return indexpos
-            break
         else:
             #print('Index not in file'+str(i))
             indexpos = None
     return indexpos
 
 
-#returns Description of Bus Stop (name of stop) from known json obj - BUsStopsRequest
+#search and returns Description of Bus Stop (name of stop) from known json obj - BusStopsRequest
 def search_jsonobj_forDesscription_returnsStrDescription(jsonobjtoload, i):
     if(i == None):
         return None
@@ -274,36 +285,94 @@ def search_jsonobj_forDesscription_returnsStrDescription(jsonobjtoload, i):
                 pass
         return desc
 
-#returns Direction 1 or 2 of bus stop from known json obj - BusRoutesRequest
-def search_jsonobj_forDirection_returnsIntDirection(jsonobjtoload, indexpos):
-    direction = jsonobjtoload['value'][indexpos]['Direction']
-    return int(direction)
+#search and returns Direction 1 or 2 of bus stop from known json obj - BusRoutesRequest
+def search_jsonobj_forDirection_returnsIntDirection(jsonobjtoload, i):
+    if(i == None):
+        return None
 
-#returns Distance from interchange of bus stop from known json obj - BusRoutesRequest
-def search_jsonobj_forDistance_returnsFloatDirection(jsonobjtoload, indexpos):
-    Distance = jsonobjtoload['value'][indexpos]['Distance']
-    return float(Distance)
+    else:
+        for d in jsonobjtoload['value']:
+            if(d==i):
+                direc = i['Direction']
+                print('found direction')
+            else:
+                pass
+        return direc
 
-#returns Stop sequence from interchange of bus stop from known json obj - BusRoutesRequest
-def search_jsonobj_forStopSequence_returnsIntStopSequence(jsonobjtoload, indexpos):
-    StopSequence = jsonobjtoload['value'][indexpos]['Distance']
-    return int(StopSequence)
+#search and returns Stop Sequence of bus stop from known json obj - BusRoutesRequest
+def search_jsonobj_forStopSequence_returnsIntStopSequence(jsonobjtoload, i):
+    if(i == None):
+        return None
 
-# call once to get the Description (name) of Bus Stop
+    else:
+        for d in jsonobjtoload['value']:
+            if(d==i):
+                sseq = i['StopSequence']
+                print('found stop sequence')
+            else:
+                pass
+        return int(sseq)
+
+#search and returns Distanceof bus stop from known json obj - BusRoutesRequest
+def search_jsonobj_forDistance_returnsFloatDistance(jsonobjtoload, i):
+    if(i == None):
+        return None
+
+    else:
+        for d in jsonobjtoload['value']:
+            if(d==i):
+                dist = i['Distance']
+                print('found distance')
+            else:
+                pass
+        return dist
+
+# super return, call once to get the Description (name) of Bus Stop
 def return_DescriptionforBusStop(busstopcode):
-    cont = True
-    while(cont==True):
-        for j in range(11):
-            #print('opening page: '+str(j))
-            jsob = open_jsondatafile_returnsjsonobj(j, 4)
-            inpos = search_jsononj_busstopcodeindexpos_BusStopsRequest_returnslistofindexpos(jsob, busstopcode)
+    for j in range(11):
+        #print('opening page: '+str(j))
+        jsob = open_jsondatafile_returnsjsonobj(j, 4)
+        inpos = search_jsononj_busstopcodeindexpos_BusStopsRequest_returnsindexpos(jsob, busstopcode)  
+        if(inpos!=None):
             desc = search_jsonobj_forDesscription_returnsStrDescription(jsob, inpos)
-            if(desc!=None):
-                cont = False
-                return desc
-                
-    return desc
+            return desc
+    
+# super return, call once to get Bus Services (IDofBus) of Bus Stop
+def return_BusServicesforBusStop(busstopcode):
+    jsob = open_jsondatafile_returnsjsonobj(busstopcode, 1)
+    return search_jsonobj_busstop_busidinstop_returnslistofid(jsob)
 
+# super return, call once to get Direction (1 or 2) of Bus Stop
+def return_DirectionforBusStop(busstopcode):
+    for i in range(51):
+        print('going through file '+str(i))
+        jsob = open_jsondatafile_returnsjsonobj(i, 3)
+        inpos = search_jsononj_busstopcodeindexpos_BusStopsRequest_returnsindexpos(jsob, busstopcode)        
+        if(inpos!=None):
+            direc = search_jsonobj_forDirection_returnsIntDirection(jsob, inpos)
+            return direc
+
+# super return, call once to get Stop Sequence of Bus Stop
+def return_StopSequenceforBusStop(busstopcode):
+    for i in range(51):
+        print('going through file '+str(i))
+        jsob = open_jsondatafile_returnsjsonobj(i, 3)
+        inpos = search_jsononj_busstopcodeindexpos_BusStopsRequest_returnsindexpos(jsob, busstopcode)        
+        if(inpos!=None):
+            sseq = search_jsonobj_forStopSequence_returnsIntStopSequence(jsob, inpos)
+            return sseq
+
+# super return, call once to get Distance from interchange of Bus Stop
+def return_DistancefromINTforBusStop(busstopcode):
+    for i in range(51):
+        print('going through file '+str(i))
+        jsob = open_jsondatafile_returnsjsonobj(i, 3)
+        inpos = search_jsononj_busstopcodeindexpos_BusStopsRequest_returnsindexpos(jsob, busstopcode)        
+        if(inpos!=None):
+            sseq = search_jsonobj_forDistance_returnsFloatDistance(jsob, inpos)
+            return sseq
+
+#both return_everyBusStop_busstopsrequest and return_everyBusStop_busroutesrequest
 #from busstopsrequest
 def return_everyBusStop_busstopsrequest():
     listofAllBusStops = []
@@ -311,15 +380,19 @@ def return_everyBusStop_busstopsrequest():
         jsob = open_jsondatafile_returnsjsonobj(i, 4)
         listofAllBusStops += search_jsonobj_busstops_busstopcode_returnslistofbsc(jsob)
 
-    return listofAllBusStops
+    fixedlist = list(OrderedDict.fromkeys(listofAllBusStops))
 
-#from busroutesrequest --> need to check if there is more busroutes data, appears to be missing info
+    return list(fixedlist)
+
+#from busroutesrequest #equivalent means 5082 bus stops total
 def return_everyBusStop_busroutesrequest():
     listofAllBusStops=[]
     for i in range(51):
         jsob = open_jsondatafile_returnsjsonobj(i, 3)
         listofAllBusStops += search_jsonobj_busstops_busstopcode_returnslistofbsc(jsob)
 
-    return listofAllBusStops
+    fixedlist = list(OrderedDict.fromkeys(listofAllBusStops))
+
+    return list(fixedlist)
 
 
