@@ -19,7 +19,7 @@ def check_ifBusArrivalsData_exist(busstopcode):
 #checks if folders exist, edit as more files are needed
 def check_osfolder():
     listoffoldersshouldexist = ['BusRoutesRequest_data', 'BusServicesRequest_data', 'BusStopsRequest_data', \
-                                'BusArrivalRequest_data', 'ProcessedBusStopData']
+                                'BusArrivalRequest_data', 'ProcessedBusStopData', 'WorkingMapData']
     
     for i in listoffoldersshouldexist:
         if(os.path.isdir(i)):

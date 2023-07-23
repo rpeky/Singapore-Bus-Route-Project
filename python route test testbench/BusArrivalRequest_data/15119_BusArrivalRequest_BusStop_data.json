@@ -4,7 +4,44 @@
         {
             "NextBus": {
                 "DestinationCode": "11379",
-                "EstimatedArrival": "2023-07-23T21:18:32+08:00",
+                "EstimatedArrival": "2023-07-23T23:48:14+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3067308333333334",
+                "Load": "SEA",
+                "Longitude": "103.79370216666666",
+                "OriginCode": "11379",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "",
+                "EstimatedArrival": "",
+                "Feature": "",
+                "Latitude": "",
+                "Load": "",
+                "Longitude": "",
+                "OriginCode": "",
+                "Type": "",
+                "VisitNumber": ""
+            },
+            "NextBus3": {
+                "DestinationCode": "",
+                "EstimatedArrival": "",
+                "Feature": "",
+                "Latitude": "",
+                "Load": "",
+                "Longitude": "",
+                "OriginCode": "",
+                "Type": "",
+                "VisitNumber": ""
+            },
+            "Operator": "SBST",
+            "ServiceNo": "200"
+        },
+        {
+            "NextBus": {
+                "DestinationCode": "16009",
+                "EstimatedArrival": "2023-07-24T00:08:09+08:00",
                 "Feature": "WAB",
                 "Latitude": "0.0",
                 "Load": "SEA",
@@ -36,7 +73,7 @@
                 "VisitNumber": ""
             },
             "Operator": "SBST",
-            "ServiceNo": "200"
+            "ServiceNo": "200A"
         }
     ],
     "odata.metadata": "http://datamall2.mytransport.sg/ltaodataservice/$metadata#BusArrivalv2/@Element"

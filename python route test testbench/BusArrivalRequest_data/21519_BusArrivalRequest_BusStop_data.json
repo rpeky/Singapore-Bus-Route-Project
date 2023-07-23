@@ -1,43 +1,5 @@
 {
     "BusStopCode": "21519",
-    "Services": [
-        {
-            "NextBus": {
-                "DestinationCode": "22009",
-                "EstimatedArrival": "2023-07-23T20:48:06+08:00",
-                "Feature": "WAB",
-                "Latitude": "1.3285533333333333",
-                "Load": "SEA",
-                "Longitude": "103.7205645",
-                "OriginCode": "22009",
-                "Type": "DD",
-                "VisitNumber": "1"
-            },
-            "NextBus2": {
-                "DestinationCode": "22009",
-                "EstimatedArrival": "2023-07-23T21:09:41+08:00",
-                "Feature": "WAB",
-                "Latitude": "1.3286511666666667",
-                "Load": "SDA",
-                "Longitude": "103.74440183333333",
-                "OriginCode": "22009",
-                "Type": "DD",
-                "VisitNumber": "1"
-            },
-            "NextBus3": {
-                "DestinationCode": "22009",
-                "EstimatedArrival": "2023-07-23T21:24:43+08:00",
-                "Feature": "WAB",
-                "Latitude": "1.3213828333333333",
-                "Load": "SEA",
-                "Longitude": "103.7443295",
-                "OriginCode": "22009",
-                "Type": "DD",
-                "VisitNumber": "1"
-            },
-            "Operator": "TTS",
-            "ServiceNo": "79"
-        }
-    ],
+    "Services": [],
     "odata.metadata": "http://datamall2.mytransport.sg/ltaodataservice/$metadata#BusArrivalv2/@Element"
 }

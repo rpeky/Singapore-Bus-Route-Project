@@ -1,6 +1,6 @@
 import json
 import JsonProcessingFunctions
-
+import os
 
 # to make a new bus stop and store the data in json format if has never been visited
 # if visited before, will exist in traveller obj list of visited stops, then access the json file to read/update
@@ -70,7 +70,11 @@ class Bus_Stop():
             #may need to rename file name to search in future?
             #or make super file
             makenewfilename = str(self.BusStopCode)+"_busstop_data.json"
-            with open(makenewfilename, 'w') as outfile:
+            cwd = os.getcwd()
+            newdir = os.path.join(cwd, 'ProcessedBusStopData')
+            full_path = os.path.join(newdir, makenewfilename)
+
+            with open(full_path, 'w') as outfile:
                 json.dump(stoptoadd_jsondata, outfile, sort_keys=False, indent=4, ensure_ascii=False)
             print("Created new stop file "+makenewfilename+"!\n")
 

@@ -14,6 +14,7 @@ class Traveller():
 	TotalDistanceTravelled = 0
 	TotalStopsVisited = 0
 	currentbusno = ""
+	currentstopno = ""
 	#Stored_Dist = 0
 	AllStopsVisited = False
 	OnBus = False
@@ -45,6 +46,10 @@ class Traveller():
 		self.currentbusno = newbusno
 		return
 
+	def update_newstop(self, newstopno):
+		self.currentstopno = newstopno
+		return
+
 	def update_newstopvisited_addstop(self, bsc):
 		self.StopsVisited.append(bsc)
 		return
@@ -52,8 +57,6 @@ class Traveller():
 	def update_addactiontotracker(self, action):
 		self.Tracker.append(action)
 		return
-
-
 
     ## decision functions
 	def decision_stayonbus(self):
@@ -76,11 +79,16 @@ class Traveller():
 
 	## check functions
 	def check_completedallstops(self):
-		pass
+		#known constant total stops is 5082, and dict removes duplicates, so compare number of stops visited to total
+		if(len(self.StopsVisited==5082)):
+			self.AllStopsVisited = True
+		else:
+			pass
 
 	def check_onbus_or_onstop(self):
 		return self.OnBus
 
+	#can take from 
 	def check_availiablebus(self):
 		pass
 
@@ -94,7 +102,7 @@ class Traveller():
 
 
 
-	def __init__(self, TotalDistanceTravelled = 0, StopsVisited = 0, currentbusno = "", Stored_Dist = 0, AllStopsVisited = False, OnBus = False):
+	def __init__(self, TotalDistanceTravelled = 0, StopsVisited = 0, currentbusno = "", currentstopno = "", Stored_Dist = 0, AllStopsVisited = False, OnBus = False):
 		print("New Traveller made")
 
 	def __del__(self):

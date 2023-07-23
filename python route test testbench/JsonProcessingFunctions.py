@@ -50,6 +50,7 @@ def generate_BusArrivalData_returnsBusServiceID(BusStopCode):
         json.dump(jsonObj, outfile, sort_keys=True, indent=4, ensure_ascii=False)
 
 ##API 2.2 Bus Services Request
+#can use to find home interchange and destination for specific bus
 def generate_BusServicesData_returnsUnsure(skips):
     skippos = str(skips*500)
     if skippos == 0:
@@ -229,7 +230,7 @@ def generate_all_BusArrivalRequest_info_jsonfile():
 #loads json obj from json file
     #@filetypes expect identifier, followed by int of suffix needed
 
-    #_subject_          _index_                                                             _file name template_                            _folder name_   
+    #_subject_          _index_                                                             _file name template_                            _folder name_               _additional comments_
     #error              - 0 unexpected error // for matching api index with load index      errorindex                                      errorindex  
     
     ## API data
@@ -241,14 +242,28 @@ def generate_all_BusArrivalRequest_info_jsonfile():
     
     ## Processed / self made data
     #composite          - 5 Bus Stop Data generated from processing API data                _busstop_data.json                              ProcessedBusStopData
+    #mapdata            - 6 Working Map Data Traveller will use                             workingmapdata.json                             WorkingMapData              Identifier will take in None            
 
-
+#to update whenever new folders/files are added
 def open_jsondatafile_returnsjsonobj(identifier, indextoload):
-    jsondatafilenamingsuffix = ['errorindex', '_BusArrivalRequest_BusStop_data.json', '_BusServicesRequest_data.json', \
-                                '_BusRoutesRequest_data.json', '_BusStopsRequest_bus_stop_info.json', \
-                                '_busstop_data.json']
-    listoffoldersshouldexist = ['errorindex', 'BusArrivalRequest_data', 'BusServicesRequest_data', 'BusRoutesRequest_data', \
-                                 'BusStopsRequest_data', 'ProcessedBusStopData']
+    jsondatafilenamingsuffix = [\
+                                'errorindex', \
+                                '_BusArrivalRequest_BusStop_data.json', \
+                                '_BusServicesRequest_data.json', \
+                                '_BusRoutesRequest_data.json', \
+                                '_BusStopsRequest_bus_stop_info.json', \
+                                '_busstop_data.json', \
+                                'workingmapdata.json'\
+                                ]
+    listoffoldersshouldexist = [\
+                                'errorindex', \
+                                'BusArrivalRequest_data', \
+                                'BusServicesRequest_data', \
+                                'BusRoutesRequest_data', \
+                                'BusStopsRequest_data', \
+                                'ProcessedBusStopData', \
+                                'WorkingMapData'\
+                                 ]
     filename = str(identifier)+str(jsondatafilenamingsuffix[int(indextoload)])
     cwd = os.getcwd()
     newdir = os.path.join(cwd, listoffoldersshouldexist[int(indextoload)])
