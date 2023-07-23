@@ -1,0 +1,80 @@
+{
+    "BusStopCode": "40251",
+    "Services": [
+        {
+            "NextBus": {
+                "DestinationCode": "52009",
+                "EstimatedArrival": "2023-07-23T20:50:46+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3311043333333332",
+                "Load": "SEA",
+                "Longitude": "103.7979745",
+                "OriginCode": "22009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "52009",
+                "EstimatedArrival": "2023-07-23T21:07:16+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3489436666666668",
+                "Load": "SEA",
+                "Longitude": "103.75423483333333",
+                "OriginCode": "22009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "52009",
+                "EstimatedArrival": "2023-07-23T21:17:59+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3443435",
+                "Load": "SEA",
+                "Longitude": "103.73443266666666",
+                "OriginCode": "22009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "Operator": "SBST",
+            "ServiceNo": "157"
+        },
+        {
+            "NextBus": {
+                "DestinationCode": "64009",
+                "EstimatedArrival": "2023-07-23T20:57:52+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.320959",
+                "Load": "SEA",
+                "Longitude": "103.78039116666666",
+                "OriginCode": "17009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "64009",
+                "EstimatedArrival": "2023-07-23T21:07:30+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3116831666666666",
+                "Load": "SEA",
+                "Longitude": "103.765264",
+                "OriginCode": "17009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "64009",
+                "EstimatedArrival": "2023-07-23T21:18:30+08:00",
+                "Feature": "WAB",
+                "Latitude": "0.0",
+                "Load": "SEA",
+                "Longitude": "0.0",
+                "OriginCode": "17009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "Operator": "SBST",
+            "ServiceNo": "165"
+        }
+    ],
+    "odata.metadata": "http://datamall2.mytransport.sg/ltaodataservice/$metadata#BusArrivalv2/@Element"
+}

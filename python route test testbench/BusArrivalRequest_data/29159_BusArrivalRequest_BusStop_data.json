@@ -1,0 +1,43 @@
+{
+    "BusStopCode": "29159",
+    "Services": [
+        {
+            "NextBus": {
+                "DestinationCode": "16009",
+                "EstimatedArrival": "2023-07-23T20:54:20+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3149951666666666",
+                "Load": "SEA",
+                "Longitude": "103.76500616666667",
+                "OriginCode": "16009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "16009",
+                "EstimatedArrival": "2023-07-23T21:04:07+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.2992425",
+                "Load": "SEA",
+                "Longitude": "103.76681483333333",
+                "OriginCode": "16009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "16009",
+                "EstimatedArrival": "2023-07-23T21:12:35+08:00",
+                "Feature": "WAB",
+                "Latitude": "0.0",
+                "Load": "SEA",
+                "Longitude": "0.0",
+                "OriginCode": "16009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "Operator": "SBST",
+            "ServiceNo": "201"
+        }
+    ],
+    "odata.metadata": "http://datamall2.mytransport.sg/ltaodataservice/$metadata#BusArrivalv2/@Element"
+}

@@ -1,0 +1,43 @@
+{
+    "BusStopCode": "48141",
+    "Services": [
+        {
+            "NextBus": {
+                "DestinationCode": "59009",
+                "EstimatedArrival": "2023-07-23T20:48:12+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.4126171666666667",
+                "Load": "SEA",
+                "Longitude": "103.7891875",
+                "OriginCode": "59009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "59009",
+                "EstimatedArrival": "2023-07-23T21:02:14+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3779833333333333",
+                "Load": "SEA",
+                "Longitude": "103.76622366666666",
+                "OriginCode": "59009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "59009",
+                "EstimatedArrival": "2023-07-23T21:07:21+08:00",
+                "Feature": "",
+                "Latitude": "1.4164343333333334",
+                "Load": "SEA",
+                "Longitude": "103.83272816666667",
+                "OriginCode": "59009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "Operator": "TTS",
+            "ServiceNo": "171"
+        }
+    ],
+    "odata.metadata": "http://datamall2.mytransport.sg/ltaodataservice/$metadata#BusArrivalv2/@Element"
+}

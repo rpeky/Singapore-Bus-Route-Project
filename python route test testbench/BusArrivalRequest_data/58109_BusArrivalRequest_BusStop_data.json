@@ -1,0 +1,117 @@
+{
+    "BusStopCode": "58109",
+    "Services": [
+        {
+            "NextBus": {
+                "DestinationCode": "59009",
+                "EstimatedArrival": "2023-07-23T20:46:26+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.4509865",
+                "Load": "SEA",
+                "Longitude": "103.82104",
+                "OriginCode": "46009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "59009",
+                "EstimatedArrival": "2023-07-23T20:58:28+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.462188",
+                "Load": "SEA",
+                "Longitude": "103.80383266666666",
+                "OriginCode": "46009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "59009",
+                "EstimatedArrival": "2023-07-23T21:07:15+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.4513093333333333",
+                "Load": "SDA",
+                "Longitude": "103.781825",
+                "OriginCode": "46009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "Operator": "TTS",
+            "ServiceNo": "856"
+        },
+        {
+            "NextBus": {
+                "DestinationCode": "46009",
+                "EstimatedArrival": "2023-07-23T20:46:34+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.449749",
+                "Load": "SEA",
+                "Longitude": "103.82135",
+                "OriginCode": "46009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "46009",
+                "EstimatedArrival": "2023-07-23T20:53:29+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.4473563333333335",
+                "Load": "SEA",
+                "Longitude": "103.80570566666667",
+                "OriginCode": "46009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "46009",
+                "EstimatedArrival": "2023-07-23T21:04:59+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.4386338333333333",
+                "Load": "SEA",
+                "Longitude": "103.78977066666667",
+                "OriginCode": "46009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "Operator": "TTS",
+            "ServiceNo": "858"
+        },
+        {
+            "NextBus": {
+                "DestinationCode": "58009",
+                "EstimatedArrival": "2023-07-23T20:44:37+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.4474418333333334",
+                "Load": "SEA",
+                "Longitude": "103.82239333333334",
+                "OriginCode": "58009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "58009",
+                "EstimatedArrival": "2023-07-23T20:54:24+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.4525385",
+                "Load": "SEA",
+                "Longitude": "103.8169895",
+                "OriginCode": "58009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "58009",
+                "EstimatedArrival": "2023-07-23T21:06:47+08:00",
+                "Feature": "WAB",
+                "Latitude": "0.0",
+                "Load": "SEA",
+                "Longitude": "0.0",
+                "OriginCode": "58009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "Operator": "TTS",
+            "ServiceNo": "859"
+        }
+    ],
+    "odata.metadata": "http://datamall2.mytransport.sg/ltaodataservice/$metadata#BusArrivalv2/@Element"
+}

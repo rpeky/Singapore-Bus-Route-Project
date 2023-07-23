@@ -1,5 +1,4 @@
 # import other .py files (for classes/functions)
-from ast import Return
 import BusStopClass
 import TravellerClass
 import JsonProcessingFunctions
@@ -19,8 +18,8 @@ def create_Travellerobj():
     persononbus = TravellerClass.Traveller()
     return persononbus
 
-def recurse_openjsondatafile(indexp, identifier, indextoload):
-    pass
+#def recurse_openjsondatafile(indexp, identifier, indextoload):
+#    pass
 
 def check_ifBusArrivalsData_exist(busstopcode):
     return os.path.isfile(str(busstopcode)+'_BusArrivalRequest_BusStop_data.json')
@@ -65,10 +64,52 @@ def convert_mapintojson(maptouse):
     print("Map converted")
     return
 
-# import os
+import os
+
+#checks if folders exist, edit as more files are needed
+def check_osfolder():
+    listoffoldersshouldexist = ['BusRoutesRequest_data', 'BusServicesRequest_data', 'BusStopsRequest_data', \
+                                'BusArrivalRequest_data', 'ProcessedBusStopData']
+    
+    for i in listoffoldersshouldexist:
+        if(os.path.isdir(i)):
+            pass
+        else:
+            os.mkdir(i)
+
+
 
 if __name__ == "__main__":
     print("Starting")
+
+    #testdic = {'a':'test1','b':[1,2,3,4,5],'c':'abcde'}
+    #filename = 'testfile.json'
+    #cwd = os.getcwd()
+    #listoffoldersshouldexist = ['BusRoutesRequest_data', 'BusServicesRequest_data', 'BusStopsRequest_data', \
+    #                            'BusArrivalRequest_data', 'ProcessedBusStopData']
+    #newdir = os.path.join(cwd,'ProcessedBusStopData')
+    #full_path = os.path.join(newdir, filename)
+    #with open(full_path, 'w') as outfile:
+    #    json.dump(testdic, outfile, sort_keys=True, indent=4, ensure_ascii=False)
+    
+    #JsonProcessingFunctions.generate_all_BusStopsRequest_info_jsonfile()
+    #JsonProcessingFunctions.generate_all_BusServicesRequest_info_jsonfile()
+    #JsonProcessingFunctions.generate_all_BusRoutesRequest_info_jsonfile()
+    #listofstopsallstops = JsonProcessingFunctions.return_everyBusStop_busstopsrequest()
+    #for i in listofstopsallstops:
+    #    print('Creating BusArrivalData' + i)
+    #    JsonProcessingFunctions.generate_BusArrivalData_returnsBusServiceID(i)
+
+
+
+
+
+    print('Ending')
+
+    
+
+
+
 
     #JsonProcessingFunctions.generate_all_BusStopsRequest_info_jsonfile()
     #JsonProcessingFunctions.generate_all_BusServicesRequest_info_jsonfile()
@@ -98,14 +139,6 @@ if __name__ == "__main__":
     #generate_BusStopData_processedjson(bob, 85029)
     #generate_BusStopData_processedjson(bob, 85091)
 
-    print(type(JsonProcessingFunctions.open_jsondatafile_returnsjsonobj(85091 , 5)))
+    #print(type(JsonProcessingFunctions.open_jsondatafile_returnsjsonobj(85091 , 5)))
 
     #print(JsonProcessingFunctions.return_BusServicesforBusStop(85039))
-    print('Ending')
-
-
-
-
-
-    
-

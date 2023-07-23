@@ -1,0 +1,43 @@
+{
+    "BusStopCode": "84169",
+    "Services": [
+        {
+            "NextBus": {
+                "DestinationCode": "84009",
+                "EstimatedArrival": "2023-07-23T20:49:22+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3098355",
+                "Load": "SEA",
+                "Longitude": "103.92958883333333",
+                "OriginCode": "52009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "84009",
+                "EstimatedArrival": "2023-07-23T21:01:35+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3156921666666666",
+                "Load": "SDA",
+                "Longitude": "103.90587083333334",
+                "OriginCode": "52009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "84009",
+                "EstimatedArrival": "2023-07-23T21:17:04+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3234321666666666",
+                "Load": "SEA",
+                "Longitude": "103.88137966666666",
+                "OriginCode": "52009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "Operator": "SBST",
+            "ServiceNo": "155"
+        }
+    ],
+    "odata.metadata": "http://datamall2.mytransport.sg/ltaodataservice/$metadata#BusArrivalv2/@Element"
+}

@@ -1,0 +1,117 @@
+{
+    "BusStopCode": "96229",
+    "Services": [
+        {
+            "NextBus": {
+                "DestinationCode": "97009",
+                "EstimatedArrival": "2023-07-23T20:46:53+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3376211666666666",
+                "Load": "SEA",
+                "Longitude": "103.950382",
+                "OriginCode": "65009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "97009",
+                "EstimatedArrival": "2023-07-23T20:59:03+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3539463333333333",
+                "Load": "SEA",
+                "Longitude": "103.93127516666667",
+                "OriginCode": "65009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "97009",
+                "EstimatedArrival": "2023-07-23T21:08:34+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3771665",
+                "Load": "SEA",
+                "Longitude": "103.92934483333333",
+                "OriginCode": "65009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "Operator": "GAS",
+            "ServiceNo": "118"
+        },
+        {
+            "NextBus": {
+                "DestinationCode": "84009",
+                "EstimatedArrival": "2023-07-23T20:48:24+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3274581666666667",
+                "Load": "SEA",
+                "Longitude": "103.94594933333333",
+                "OriginCode": "84009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "84009",
+                "EstimatedArrival": "2023-07-23T20:57:10+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3244866666666666",
+                "Load": "SEA",
+                "Longitude": "103.92956516666666",
+                "OriginCode": "84009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "84009",
+                "EstimatedArrival": "2023-07-23T21:08:17+08:00",
+                "Feature": "WAB",
+                "Latitude": "0.0",
+                "Load": "SEA",
+                "Longitude": "0.0",
+                "OriginCode": "84009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "Operator": "SBST",
+            "ServiceNo": "35M"
+        },
+        {
+            "NextBus": {
+                "DestinationCode": "97009",
+                "EstimatedArrival": "2023-07-23T20:46:50+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3293736666666667",
+                "Load": "SEA",
+                "Longitude": "103.95083783333334",
+                "OriginCode": "97009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "97009",
+                "EstimatedArrival": "2023-07-23T20:48:14+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3273741666666667",
+                "Load": "SEA",
+                "Longitude": "103.9456875",
+                "OriginCode": "97009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "97009",
+                "EstimatedArrival": "2023-07-23T21:01:07+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3086798333333334",
+                "Load": "SEA",
+                "Longitude": "103.9245065",
+                "OriginCode": "97009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "Operator": "SBST",
+            "ServiceNo": "47"
+        }
+    ],
+    "odata.metadata": "http://datamall2.mytransport.sg/ltaodataservice/$metadata#BusArrivalv2/@Element"
+}

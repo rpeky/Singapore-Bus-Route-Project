@@ -1,0 +1,80 @@
+{
+    "BusStopCode": "31151",
+    "Services": [
+        {
+            "NextBus": {
+                "DestinationCode": "44009",
+                "EstimatedArrival": "2023-07-23T20:45:47+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3724533333333333",
+                "Load": "SDA",
+                "Longitude": "103.69458316666666",
+                "OriginCode": "22009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "44009",
+                "EstimatedArrival": "2023-07-23T20:55:10+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3438703333333333",
+                "Load": "SDA",
+                "Longitude": "103.707186",
+                "OriginCode": "22009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "44009",
+                "EstimatedArrival": "2023-07-23T20:59:38+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3394108333333334",
+                "Load": "SEA",
+                "Longitude": "103.7047155",
+                "OriginCode": "22009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "Operator": "SMRT",
+            "ServiceNo": "172"
+        },
+        {
+            "NextBus": {
+                "DestinationCode": "45009",
+                "EstimatedArrival": "2023-07-23T20:47:05+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3841221666666668",
+                "Load": "SEA",
+                "Longitude": "103.69825633333333",
+                "OriginCode": "45009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "45009",
+                "EstimatedArrival": "2023-07-23T20:55:35+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.429246",
+                "Load": "SEA",
+                "Longitude": "103.70657066666666",
+                "OriginCode": "45009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "45009",
+                "EstimatedArrival": "2023-07-23T21:09:07+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.4176611666666667",
+                "Load": "SEA",
+                "Longitude": "103.70134933333334",
+                "OriginCode": "45009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "Operator": "SMRT",
+            "ServiceNo": "975"
+        }
+    ],
+    "odata.metadata": "http://datamall2.mytransport.sg/ltaodataservice/$metadata#BusArrivalv2/@Element"
+}

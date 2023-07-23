@@ -1,0 +1,117 @@
+{
+    "BusStopCode": "01341",
+    "Services": [
+        {
+            "NextBus": {
+                "DestinationCode": "66009",
+                "EstimatedArrival": "2023-07-23T20:50:42+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.2963656666666665",
+                "Load": "SEA",
+                "Longitude": "103.85621033333334",
+                "OriginCode": "11009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "66009",
+                "EstimatedArrival": "2023-07-23T21:05:52+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.2726585",
+                "Load": "SEA",
+                "Longitude": "103.8323925",
+                "OriginCode": "11009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "66009",
+                "EstimatedArrival": "2023-07-23T21:20:34+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.286572",
+                "Load": "SEA",
+                "Longitude": "103.803158",
+                "OriginCode": "11009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "Operator": "SBST",
+            "ServiceNo": "100"
+        },
+        {
+            "NextBus": {
+                "DestinationCode": "80009",
+                "EstimatedArrival": "2023-07-23T20:43:14+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3034451666666667",
+                "Load": "SEA",
+                "Longitude": "103.86501733333333",
+                "OriginCode": "47009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "80009",
+                "EstimatedArrival": "2023-07-23T20:50:45+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.2936903333333334",
+                "Load": "SEA",
+                "Longitude": "103.85447016666667",
+                "OriginCode": "47009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "80009",
+                "EstimatedArrival": "2023-07-23T21:07:14+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.2844481666666667",
+                "Load": "SEA",
+                "Longitude": "103.84344733333333",
+                "OriginCode": "47009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "Operator": "SMRT",
+            "ServiceNo": "961M"
+        },
+        {
+            "NextBus": {
+                "DestinationCode": "80009",
+                "EstimatedArrival": "2023-07-23T20:51:07+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.2995323333333333",
+                "Load": "SEA",
+                "Longitude": "103.85292883333334",
+                "OriginCode": "58009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "80009",
+                "EstimatedArrival": "2023-07-23T21:05:55+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3265931666666666",
+                "Load": "SEA",
+                "Longitude": "103.8417785",
+                "OriginCode": "58009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "80009",
+                "EstimatedArrival": "2023-07-23T21:22:42+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3736493333333333",
+                "Load": "SEA",
+                "Longitude": "103.82865433333333",
+                "OriginCode": "58009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "Operator": "TTS",
+            "ServiceNo": "980"
+        }
+    ],
+    "odata.metadata": "http://datamall2.mytransport.sg/ltaodataservice/$metadata#BusArrivalv2/@Element"
+}

@@ -1,0 +1,43 @@
+{
+    "BusStopCode": "98299",
+    "Services": [
+        {
+            "NextBus": {
+                "DestinationCode": "77009",
+                "EstimatedArrival": "2023-07-23T20:48:03+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3470851666666666",
+                "Load": "SDA",
+                "Longitude": "103.9630225",
+                "OriginCode": "10009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "77009",
+                "EstimatedArrival": "2023-07-23T20:58:44+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3404768333333332",
+                "Load": "SEA",
+                "Longitude": "103.95129816666666",
+                "OriginCode": "10009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "77009",
+                "EstimatedArrival": "2023-07-23T21:08:29+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3387268333333333",
+                "Load": "SEA",
+                "Longitude": "103.9295505",
+                "OriginCode": "10009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "Operator": "SBST",
+            "ServiceNo": "5"
+        }
+    ],
+    "odata.metadata": "http://datamall2.mytransport.sg/ltaodataservice/$metadata#BusArrivalv2/@Element"
+}

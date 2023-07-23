@@ -1,0 +1,43 @@
+{
+    "BusStopCode": "20249",
+    "Services": [
+        {
+            "NextBus": {
+                "DestinationCode": "16009",
+                "EstimatedArrival": "2023-07-23T20:44:07+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3227828333333334",
+                "Load": "SEA",
+                "Longitude": "103.73691133333334",
+                "OriginCode": "16009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "16009",
+                "EstimatedArrival": "2023-07-23T20:55:27+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3149951666666666",
+                "Load": "SEA",
+                "Longitude": "103.76500616666667",
+                "OriginCode": "16009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "16009",
+                "EstimatedArrival": "2023-07-23T21:04:50+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.2967131666666667",
+                "Load": "SEA",
+                "Longitude": "103.76697283333333",
+                "OriginCode": "16009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "Operator": "SBST",
+            "ServiceNo": "201"
+        }
+    ],
+    "odata.metadata": "http://datamall2.mytransport.sg/ltaodataservice/$metadata#BusArrivalv2/@Element"
+}

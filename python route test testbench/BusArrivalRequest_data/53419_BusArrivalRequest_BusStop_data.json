@@ -1,0 +1,43 @@
+{
+    "BusStopCode": "53419",
+    "Services": [
+        {
+            "NextBus": {
+                "DestinationCode": "53009",
+                "EstimatedArrival": "2023-07-23T20:48:10+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3478866666666667",
+                "Load": "SEA",
+                "Longitude": "103.8405235",
+                "OriginCode": "53009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "53009",
+                "EstimatedArrival": "2023-07-23T20:57:39+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3606621666666667",
+                "Load": "SEA",
+                "Longitude": "103.83212383333333",
+                "OriginCode": "53009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "53009",
+                "EstimatedArrival": "2023-07-23T21:06:28+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3553296666666668",
+                "Load": "SEA",
+                "Longitude": "103.846467",
+                "OriginCode": "53009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "Operator": "SBST",
+            "ServiceNo": "410W"
+        }
+    ],
+    "odata.metadata": "http://datamall2.mytransport.sg/ltaodataservice/$metadata#BusArrivalv2/@Element"
+}

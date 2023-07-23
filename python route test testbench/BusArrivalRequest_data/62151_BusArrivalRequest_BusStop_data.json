@@ -1,0 +1,43 @@
+{
+    "BusStopCode": "62151",
+    "Services": [
+        {
+            "NextBus": {
+                "DestinationCode": "66009",
+                "EstimatedArrival": "2023-07-23T20:48:27+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.337616",
+                "Load": "SEA",
+                "Longitude": "103.88713933333334",
+                "OriginCode": "66009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "66009",
+                "EstimatedArrival": "2023-07-23T21:06:30+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.310121",
+                "Load": "SEA",
+                "Longitude": "103.875612",
+                "OriginCode": "66009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "66009",
+                "EstimatedArrival": "2023-07-23T21:29:01+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.305221",
+                "Load": "SEA",
+                "Longitude": "103.88335566666666",
+                "OriginCode": "66009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "Operator": "SBST",
+            "ServiceNo": "158"
+        }
+    ],
+    "odata.metadata": "http://datamall2.mytransport.sg/ltaodataservice/$metadata#BusArrivalv2/@Element"
+}

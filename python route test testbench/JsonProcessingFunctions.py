@@ -1,10 +1,9 @@
 import json
-from pickle import FALSE
 import urllib
 import urllib.request
 from urllib.parse import urlparse
-
 import httplib2 as http 
+import os
 from collections import OrderedDict
 
 #Functions to generate Bus Stop data
@@ -42,8 +41,12 @@ def generate_BusArrivalData_returnsBusServiceID(BusStopCode):
         )
 
     jsonObj = json.loads(content)
-    #create file to read in future
-    with open(str(BusStopCode)+"_BusArrivalRequest_BusStop_data.json","w") as outfile:
+    #create file to read in future in BusArrivalRequest folder
+    filename = str(BusStopCode)+"_BusArrivalRequest_BusStop_data.json"
+    cwd = os.getcwd()
+    newdir = os.path.join(cwd, 'BusArrivalRequest_data')
+    full_path = os.path.join(newdir, filename)
+    with open(full_path, "w") as outfile:
         json.dump(jsonObj, outfile, sort_keys=True, indent=4, ensure_ascii=False)
 
 ##API 2.2 Bus Services Request
@@ -66,7 +69,11 @@ def generate_BusServicesData_returnsUnsure(skips):
 
         jsonObj = json.loads(content)
         #create file to read in future
-        with open("0_BusServicesRequest_data.json","w") as outfile:
+        filename = "0_BusServicesRequest_data.json"
+        cwd = os.getcwd()
+        newdir = os.path.join(cwd, 'BusServicesRequest_data')
+        full_path = os.path.join(newdir, filename)
+        with open(full_path, "w") as outfile:
             json.dump(jsonObj, outfile, sort_keys=True, indent=4, ensure_ascii=False)
 
     else:
@@ -86,7 +93,11 @@ def generate_BusServicesData_returnsUnsure(skips):
 
         jsonObj = json.loads(content)
         #create file to read in future
-        with open(str(skips)+"_BusServicesRequest_data.json","w") as outfile:
+        filename = str(skips)+"_BusServicesRequest_data.json"
+        cwd = os.getcwd()
+        newdir = os.path.join(cwd, 'BusServicesRequest_data')
+        full_path = os.path.join(newdir, filename)
+        with open(full_path, "w") as outfile:
             json.dump(jsonObj, outfile, sort_keys=True, indent=4, ensure_ascii=False)
 
 ##API 2.3 Bus Routes Request
@@ -109,7 +120,11 @@ def generate_BusRoutesData_returnsUnsure(skips):
 
         jsonObj = json.loads(content)
         #create file to read in future
-        with open("0_BusRoutesRequest_data.json","w") as outfile:
+        filename = "0_BusRoutesRequest_data.json"
+        cwd = os.getcwd()
+        newdir = os.path.join(cwd, 'BusRoutesRequest_data')
+        full_path = os.path.join(newdir, filename)
+        with open(full_path, "w") as outfile:
             json.dump(jsonObj, outfile, sort_keys=True, indent=4, ensure_ascii=False)
 
     else:
@@ -129,7 +144,11 @@ def generate_BusRoutesData_returnsUnsure(skips):
 
         jsonObj = json.loads(content)
         #create file to read in future
-        with open(str(skips)+"_BusRoutesRequest_data.json","w") as outfile:
+        filename = str(skips)+"_BusRoutesRequest_data.json"
+        cwd = os.getcwd()
+        newdir = os.path.join(cwd, 'BusRoutesRequest_data')
+        full_path = os.path.join(newdir, filename)
+        with open(full_path, "w") as outfile:
             json.dump(jsonObj, outfile, sort_keys=True, indent=4, ensure_ascii=False)
 
 ##API 2.4 Bus Stops Request
@@ -152,8 +171,12 @@ def generate_BusStopsRequest_togetallbusstop(skips): #need to loop 10 times (0 t
             )
 
         jsonObj = json.loads(content)
+        filename = "0_BusStopsRequest_bus_stop_info.json"
+        cwd = os.getcwd()
+        newdir = os.path.join(cwd, 'BusStopsRequest_data')
+        full_path = os.path.join(newdir, filename)
 
-        with open("0_BusStopsRequest_bus_stop_info.json","w") as outfile:
+        with open(full_path, "w") as outfile:
             json.dump(jsonObj, outfile, sort_keys=True, indent=4, ensure_ascii=False)
 
     else:
@@ -173,7 +196,11 @@ def generate_BusStopsRequest_togetallbusstop(skips): #need to loop 10 times (0 t
     
         jsonObj = json.loads(content)
         #create file to read in future
-        with open(str(skips)+"_BusStopsRequest_bus_stop_info.json","w") as outfile:
+        filename = str(skips)+"_BusStopsRequest_bus_stop_info.json"
+        cwd = os.getcwd()
+        newdir = os.path.join(cwd, 'BusStopsRequest_data')
+        full_path = os.path.join(newdir, filename)
+        with open(full_path, "w") as outfile:
             json.dump(jsonObj, outfile, sort_keys=True, indent=4, ensure_ascii=False)
 
 
@@ -181,44 +208,52 @@ def generate_BusStopsRequest_togetallbusstop(skips): #need to loop 10 times (0 t
 def generate_all_BusStopsRequest_info_jsonfile():
     for i in range(11):
         generate_BusStopsRequest_togetallbusstop(i)
-        print('done with generate_all_BusStopsRequest_info_jsonfile #'+str(i))
     return
 
 def generate_all_BusServicesRequest_info_jsonfile():
     for i in range(2):
         generate_BusServicesData_returnsUnsure(i)
-        print('done with generate_all_BusServicesRequest_info_jsonfile #'+str(i))
     return
 
 def generate_all_BusRoutesRequest_info_jsonfile():
     for i in range(51):
         generate_BusRoutesData_returnsUnsure(i)
-        print('done with generate_all_BusRoutesRequest_info_jsonfile #'+str(i))
+    return
+
+def generate_all_BusArrivalRequest_info_jsonfile():
+    listofstopsallstops = return_everyBusStop_busstopsrequest()
+    for i in listofstopsallstops:
+        generate_BusArrivalData_returnsBusServiceID(i)
     return
 
 #loads json obj from json file
     #@filetypes expect identifier, followed by int of suffix needed
 
-    #error      - 0 unexpected error // for matching api index with load index      errorindex
+    #_subject_          _index_                                                             _file name template_                            _folder name_   
+    #error              - 0 unexpected error // for matching api index with load index      errorindex                                      errorindex  
     
     ## API data
 
-    #arrivals   - 1 API 2.1 Bus Arrival Request                                     _BusArrivalRequest_BusStop_data.json
-    #services   - 2 API 2.2 Bus Services Request                                    _BusServicesRequest_data.json
-    #routes     - 3 API 2.3 Bus Routes Request                                      _BusRoutesRequest_data.json
-    #stops      - 4 API 2.4 Bus Stops Request                                       _BusStopsRequest_bus_stop_info.json   
+    #arrivals           - 1 API 2.1 Bus Arrival Request                                     _BusArrivalRequest_BusStop_data.json            BusArrivalRequest_data      
+    #services           - 2 API 2.2 Bus Services Request                                    _BusServicesRequest_data.json                   BusServicesRequest_data
+    #routes             - 3 API 2.3 Bus Routes Request                                      _BusRoutesRequest_data.json                     BusRoutesRequest_data
+    #stops              - 4 API 2.4 Bus Stops Request                                       _BusStopsRequest_bus_stop_info.json             BusStopsRequest_data
     
     ## Processed / self made data
-    #composite  - 5 Bus Stop Data generated from processing API data                _busstop_data.json
+    #composite          - 5 Bus Stop Data generated from processing API data                _busstop_data.json                              ProcessedBusStopData
 
 
 def open_jsondatafile_returnsjsonobj(identifier, indextoload):
     jsondatafilenamingsuffix = ['errorindex', '_BusArrivalRequest_BusStop_data.json', '_BusServicesRequest_data.json', \
                                 '_BusRoutesRequest_data.json', '_BusStopsRequest_bus_stop_info.json', \
                                 '_busstop_data.json']
-
+    listoffoldersshouldexist = ['errorindex', 'BusArrivalRequest_data', 'BusServicesRequest_data', 'BusRoutesRequest_data', \
+                                 'BusStopsRequest_data', 'ProcessedBusStopData']
     filename = str(identifier)+str(jsondatafilenamingsuffix[int(indextoload)])
-    f = open(filename)
+    cwd = os.getcwd()
+    newdir = os.path.join(cwd, listoffoldersshouldexist[int(indextoload)])
+    full_path = os.path.join(newdir, filename)
+    f = open(full_path)
     jsonobj = json.load(f)
     return jsonobj
 
@@ -291,7 +326,7 @@ def search_jsonobj_forDirection_returnsIntDirection(jsonobjtoload, i):
         for d in jsonobjtoload['value']:
             if(d==i):
                 direc = i['Direction']
-                print('found direction')
+                #print('found direction')
             else:
                 pass
         return direc
@@ -305,7 +340,7 @@ def search_jsonobj_forStopSequence_returnsIntStopSequence(jsonobjtoload, i):
         for d in jsonobjtoload['value']:
             if(d==i):
                 sseq = i['StopSequence']
-                print('found stop sequence')
+                #print('found stop sequence')
             else:
                 pass
         return int(sseq)
@@ -319,7 +354,7 @@ def search_jsonobj_forDistance_returnsFloatDistance(jsonobjtoload, i):
         for d in jsonobjtoload['value']:
             if(d==i):
                 dist = i['Distance']
-                print('found distance')
+                #print('found distance')
             else:
                 pass
         return dist
@@ -342,7 +377,7 @@ def return_BusServicesforBusStop(busstopcode):
 # super return, call once to get Direction (1 or 2) of Bus Stop
 def return_DirectionforBusStop(busstopcode):
     for i in range(51):
-        print('going through file '+str(i))
+        #print('going through file '+str(i))
         jsob = open_jsondatafile_returnsjsonobj(i, 3)
         inpos = search_jsononj_busstopcodeindexpos_BusStopsRequest_returnsindexpos(jsob, busstopcode)        
         if(inpos!=None):
@@ -352,7 +387,7 @@ def return_DirectionforBusStop(busstopcode):
 # super return, call once to get Stop Sequence of Bus Stop
 def return_StopSequenceforBusStop(busstopcode):
     for i in range(51):
-        print('going through file '+str(i))
+        #print('going through file '+str(i))
         jsob = open_jsondatafile_returnsjsonobj(i, 3)
         inpos = search_jsononj_busstopcodeindexpos_BusStopsRequest_returnsindexpos(jsob, busstopcode)        
         if(inpos!=None):
@@ -362,7 +397,7 @@ def return_StopSequenceforBusStop(busstopcode):
 # super return, call once to get Distance from interchange of Bus Stop
 def return_DistancefromINTforBusStop(busstopcode):
     for i in range(51):
-        print('going through file '+str(i))
+        #print('going through file '+str(i))
         jsob = open_jsondatafile_returnsjsonobj(i, 3)
         inpos = search_jsononj_busstopcodeindexpos_BusStopsRequest_returnsindexpos(jsob, busstopcode)        
         if(inpos!=None):
@@ -391,5 +426,4 @@ def return_everyBusStop_busroutesrequest():
     fixedlist = list(OrderedDict.fromkeys(listofAllBusStops))
 
     return list(fixedlist)
-
 

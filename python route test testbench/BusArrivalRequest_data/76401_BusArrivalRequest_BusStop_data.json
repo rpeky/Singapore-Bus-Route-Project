@@ -1,0 +1,43 @@
+{
+    "BusStopCode": "76401",
+    "Services": [
+        {
+            "NextBus": {
+                "DestinationCode": "75009",
+                "EstimatedArrival": "2023-07-23T20:53:47+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3546011666666666",
+                "Load": "SEA",
+                "Longitude": "103.94366616666667",
+                "OriginCode": "75009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "75009",
+                "EstimatedArrival": "2023-07-23T20:57:26+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3558528333333333",
+                "Load": "SEA",
+                "Longitude": "103.937713",
+                "OriginCode": "75009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "75009",
+                "EstimatedArrival": "2023-07-23T21:05:19+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3502176666666665",
+                "Load": "SEA",
+                "Longitude": "103.93239283333334",
+                "OriginCode": "75009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "Operator": "SBST",
+            "ServiceNo": "291"
+        }
+    ],
+    "odata.metadata": "http://datamall2.mytransport.sg/ltaodataservice/$metadata#BusArrivalv2/@Element"
+}

@@ -1,0 +1,43 @@
+{
+    "BusStopCode": "76049",
+    "Services": [
+        {
+            "NextBus": {
+                "DestinationCode": "74009",
+                "EstimatedArrival": "2023-07-23T20:47:43+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3516381666666666",
+                "Load": "SEA",
+                "Longitude": "103.92994183333333",
+                "OriginCode": "74009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "74009",
+                "EstimatedArrival": "2023-07-23T21:00:08+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3492163333333334",
+                "Load": "SEA",
+                "Longitude": "103.93553333333334",
+                "OriginCode": "74009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "74009",
+                "EstimatedArrival": "2023-07-23T21:10:33+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3568408333333333",
+                "Load": "SEA",
+                "Longitude": "103.9447775",
+                "OriginCode": "74009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "Operator": "SBST",
+            "ServiceNo": "298"
+        }
+    ],
+    "odata.metadata": "http://datamall2.mytransport.sg/ltaodataservice/$metadata#BusArrivalv2/@Element"
+}

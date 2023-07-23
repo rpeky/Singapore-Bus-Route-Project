@@ -1,0 +1,80 @@
+{
+    "BusStopCode": "65241",
+    "Services": [
+        {
+            "NextBus": {
+                "DestinationCode": "65009",
+                "EstimatedArrival": "2023-07-23T20:52:53+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3896095",
+                "Load": "SEA",
+                "Longitude": "103.90479466666666",
+                "OriginCode": "54009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "65009",
+                "EstimatedArrival": "2023-07-23T21:12:51+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3605455",
+                "Load": "SEA",
+                "Longitude": "103.885321",
+                "OriginCode": "54009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "",
+                "EstimatedArrival": "",
+                "Feature": "",
+                "Latitude": "",
+                "Load": "",
+                "Longitude": "",
+                "OriginCode": "",
+                "Type": "",
+                "VisitNumber": ""
+            },
+            "Operator": "GAS",
+            "ServiceNo": "136"
+        },
+        {
+            "NextBus": {
+                "DestinationCode": "65009",
+                "EstimatedArrival": "2023-07-23T20:56:09+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3967114999999999",
+                "Load": "SEA",
+                "Longitude": "103.91782516666666",
+                "OriginCode": "65009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "65009",
+                "EstimatedArrival": "2023-07-23T21:08:36+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.4041083333333333",
+                "Load": "SEA",
+                "Longitude": "103.90460416666667",
+                "OriginCode": "65009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "65009",
+                "EstimatedArrival": "2023-07-23T21:18:49+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.4024928333333333",
+                "Load": "SEA",
+                "Longitude": "103.9027435",
+                "OriginCode": "65009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "Operator": "GAS",
+            "ServiceNo": "381"
+        }
+    ],
+    "odata.metadata": "http://datamall2.mytransport.sg/ltaodataservice/$metadata#BusArrivalv2/@Element"
+}

@@ -1,0 +1,43 @@
+{
+    "BusStopCode": "59201",
+    "Services": [
+        {
+            "NextBus": {
+                "DestinationCode": "59009",
+                "EstimatedArrival": "2023-07-23T20:51:00+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.4316806666666666",
+                "Load": "SEA",
+                "Longitude": "103.83514583333333",
+                "OriginCode": "59009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "59009",
+                "EstimatedArrival": "2023-07-23T20:58:45+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.4363435",
+                "Load": "SEA",
+                "Longitude": "103.82852766666667",
+                "OriginCode": "59009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "59009",
+                "EstimatedArrival": "2023-07-23T21:04:48+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.4364031666666666",
+                "Load": "SEA",
+                "Longitude": "103.84213733333333",
+                "OriginCode": "59009",
+                "Type": "BD",
+                "VisitNumber": "1"
+            },
+            "Operator": "SBST",
+            "ServiceNo": "811"
+        }
+    ],
+    "odata.metadata": "http://datamall2.mytransport.sg/ltaodataservice/$metadata#BusArrivalv2/@Element"
+}

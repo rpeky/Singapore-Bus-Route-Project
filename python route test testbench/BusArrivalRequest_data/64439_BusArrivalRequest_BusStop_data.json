@@ -1,0 +1,43 @@
+{
+    "BusStopCode": "64439",
+    "Services": [
+        {
+            "NextBus": {
+                "DestinationCode": "64009",
+                "EstimatedArrival": "2023-07-23T20:50:34+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.375629",
+                "Load": "SEA",
+                "Longitude": "103.88013733333334",
+                "OriginCode": "64009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "64009",
+                "EstimatedArrival": "2023-07-23T21:02:26+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3763985",
+                "Load": "SEA",
+                "Longitude": "103.89127666666667",
+                "OriginCode": "64009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "64009",
+                "EstimatedArrival": "2023-07-23T21:16:00+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3713195",
+                "Load": "SEA",
+                "Longitude": "103.8932525",
+                "OriginCode": "64009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "Operator": "SBST",
+            "ServiceNo": "325"
+        }
+    ],
+    "odata.metadata": "http://datamall2.mytransport.sg/ltaodataservice/$metadata#BusArrivalv2/@Element"
+}

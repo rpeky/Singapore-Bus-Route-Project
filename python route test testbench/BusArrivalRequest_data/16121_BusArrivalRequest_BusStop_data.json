@@ -1,0 +1,43 @@
+{
+    "BusStopCode": "16121",
+    "Services": [
+        {
+            "NextBus": {
+                "DestinationCode": "28009",
+                "EstimatedArrival": "2023-07-23T20:45:18+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.2888258333333333",
+                "Load": "SEA",
+                "Longitude": "103.77802433333333",
+                "OriginCode": "28009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "28009",
+                "EstimatedArrival": "2023-07-23T21:02:47+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3156275",
+                "Load": "SEA",
+                "Longitude": "103.7651595",
+                "OriginCode": "28009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "28009",
+                "EstimatedArrival": "2023-07-23T21:16:50+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.34042",
+                "Load": "SEA",
+                "Longitude": "103.74430433333333",
+                "OriginCode": "28009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "Operator": "TTS",
+            "ServiceNo": "183"
+        }
+    ],
+    "odata.metadata": "http://datamall2.mytransport.sg/ltaodataservice/$metadata#BusArrivalv2/@Element"
+}

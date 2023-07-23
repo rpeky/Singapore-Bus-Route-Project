@@ -1,0 +1,43 @@
+{
+    "BusStopCode": "14509",
+    "Services": [
+        {
+            "NextBus": {
+                "DestinationCode": "14009",
+                "EstimatedArrival": "2023-07-23T20:46:57+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.2758858333333334",
+                "Load": "SEA",
+                "Longitude": "103.81346616666667",
+                "OriginCode": "52499",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "14009",
+                "EstimatedArrival": "2023-07-23T20:58:32+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.276306",
+                "Load": "SDA",
+                "Longitude": "103.832863",
+                "OriginCode": "52499",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "14009",
+                "EstimatedArrival": "2023-07-23T21:09:24+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.2879833333333333",
+                "Load": "SDA",
+                "Longitude": "103.8486735",
+                "OriginCode": "52499",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "Operator": "SBST",
+            "ServiceNo": "124"
+        }
+    ],
+    "odata.metadata": "http://datamall2.mytransport.sg/ltaodataservice/$metadata#BusArrivalv2/@Element"
+}

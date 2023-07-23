@@ -1,0 +1,43 @@
+{
+    "BusStopCode": "43339",
+    "Services": [
+        {
+            "NextBus": {
+                "DestinationCode": "43009",
+                "EstimatedArrival": "2023-07-23T20:46:33+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3512983333333333",
+                "Load": "SEA",
+                "Longitude": "103.73961133333333",
+                "OriginCode": "44009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "43009",
+                "EstimatedArrival": "2023-07-23T20:55:57+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3654916666666668",
+                "Load": "SEA",
+                "Longitude": "103.75137116666667",
+                "OriginCode": "44009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "43009",
+                "EstimatedArrival": "2023-07-23T21:08:04+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3755561666666667",
+                "Load": "SEA",
+                "Longitude": "103.74816216666666",
+                "OriginCode": "44009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "Operator": "SMRT",
+            "ServiceNo": "991"
+        }
+    ],
+    "odata.metadata": "http://datamall2.mytransport.sg/ltaodataservice/$metadata#BusArrivalv2/@Element"
+}

@@ -1,0 +1,43 @@
+{
+    "BusStopCode": "09139",
+    "Services": [
+        {
+            "NextBus": {
+                "DestinationCode": "02099",
+                "EstimatedArrival": "2023-07-23T20:52:58+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3160068333333332",
+                "Load": "SEA",
+                "Longitude": "103.78914316666666",
+                "OriginCode": "44989",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "02099",
+                "EstimatedArrival": "2023-07-23T21:07:21+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.348177",
+                "Load": "SEA",
+                "Longitude": "103.771057",
+                "OriginCode": "44989",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "02099",
+                "EstimatedArrival": "2023-07-23T21:22:17+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.380891",
+                "Load": "SEA",
+                "Longitude": "103.76093216666666",
+                "OriginCode": "44989",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "Operator": "SMRT",
+            "ServiceNo": "75"
+        }
+    ],
+    "odata.metadata": "http://datamall2.mytransport.sg/ltaodataservice/$metadata#BusArrivalv2/@Element"
+}
