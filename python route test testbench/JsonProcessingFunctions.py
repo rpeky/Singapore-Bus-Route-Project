@@ -228,7 +228,7 @@ def generate_all_BusArrivalRequest_info_jsonfile():
     return
 
 #loads json obj from json file
-    #@filetypes expect identifier, followed by int of suffix needed
+    #filetypes expect identifier, followed by int of suffix needed
 
     #_subject_          _index_                                                             _file name template_                            _folder name_               _additional comments_
     #error              - 0 unexpected error // for matching api index with load index      errorindex                                      errorindex  
