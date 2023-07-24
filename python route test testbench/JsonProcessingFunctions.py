@@ -279,7 +279,7 @@ def search_jsonobj_busstop_busidinstop_returnslistofid(jsonobjtoload):
     listofbusid = []
     for i in jsonobjtoload['Services']:
         listofbusid.append(i['ServiceNo'])
-    return list(listofbusid)
+    return listofbusid
 
 #will comb through the \busroutes\ dataset to find busstopcode
 def search_jsonobj_busroutes_busstopcode_returnslistofbsc(jsonobjtoload):

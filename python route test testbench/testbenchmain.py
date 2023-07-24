@@ -41,12 +41,12 @@ def generate_BusStopData_processedjson_firstvisit(thisisastop, busstopcode):
     #to add
 
     #BusStopCode = None     -> initial stop             //done
-    #Direction = None       -> bus_route_info           //
+    #Direction = None       -> bus_route_info           //done
     #Distance = None        -> bus_route_info           //initial distance is zero
-    #StopSequence = None    -> bus_route_info           //
+    #StopSequence = None    -> bus_route_info           //done
     #IDofBus = None         -> bus_arrivals             //done
-    #TimesVisited = None    -> 1                        //done
-    #Description = None     -> bus_stop_no              //
+    #TimesVisited = None    -> 0                        //done set to zero, increase using traveller obj for first visit
+    #Description = None     -> bus_stop_no              //done
     if(check_ifProcessedBusStopData_exist(busstopcode)!=True):
 
         print(str(busstopcode)+'_busstop_data.json does not exists')
@@ -55,12 +55,12 @@ def generate_BusStopData_processedjson_firstvisit(thisisastop, busstopcode):
             print(str(busstopcode)+'_BusArrivalRequest_BusStop_data.json does not exists')
             JsonProcessingFunctions.generate_BusArrivalData_returnsBusServiceID(busstopcode)
 
-        BusStopCode = busstopcode 
+        BusStopCode = str(busstopcode)
         Direction = JsonProcessingFunctions.return_DirectionforBusStop(busstopcode)
         Distance = JsonProcessingFunctions.return_DistancefromINTforBusStop(busstopcode)
         StopSequence = JsonProcessingFunctions.return_StopSequenceforBusStop(busstopcode)
         IDofBus = JsonProcessingFunctions.return_BusServicesforBusStop(busstopcode)
-        TimesVisited = 1
+        TimesVisited = 0
         Description = JsonProcessingFunctions.return_DescriptionforBusStop(busstopcode)
 
         #bsc, direc, distfromint, seq, busid, visited, desc
@@ -71,7 +71,8 @@ def generate_BusStopData_processedjson_firstvisit(thisisastop, busstopcode):
         print(str(busstopcode)+'_busstop_data.json exists, skip \n')
 
     else:
-        raise UnexpectedException("Unexpected Error")
+        pass
+        #raise UnexpectedException("Unexpected Error")
 
     #generate BusArrivals data of initial stop to get list of bus services if not existing
 
@@ -82,6 +83,7 @@ def generate_BusStopData_processedjson_firstvisit(thisisastop, busstopcode):
 def generate_All_BusStopData_processedjson_firstvisit(busob):
     listofAllBusStops = JsonProcessingFunctions.return_everyBusStop_busroutesrequest()
     for i in sorted(listofAllBusStops):
+        print(i)
         generate_BusStopData_processedjson_firstvisit(busob, i)
 
 #probably need to define what maptouse contains?
@@ -126,6 +128,7 @@ if __name__ == "__main__":
 
     bob = create_BusStopobj()
     generate_All_BusStopData_processedjson_firstvisit(bob)
+    #print(sorted(JsonProcessingFunctions.return_everyBusStop_busroutesrequest()))
     print('Done')
 
     print('Ending')

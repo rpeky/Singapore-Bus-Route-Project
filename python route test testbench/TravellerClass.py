@@ -1,3 +1,6 @@
+import json
+import JsonProcessingFunctions
+
 class Traveller():
 
 	"""
@@ -15,12 +18,13 @@ class Traveller():
 	TotalStopsVisited = 0
 	currentbusno = ""
 	currentstopno = ""
-	#Stored_Dist = 0
+	
 	AllStopsVisited = False
 	OnBus = False
 	StopsVisited = []
 	#tracker is for me to print to follow the actions irl - will track every action
 	Tracker = []
+	Stored_Dist = 0 #to calculate dist travelled
 
 
 
@@ -88,9 +92,10 @@ class Traveller():
 	def check_onbus_or_onstop(self):
 		return self.OnBus
 
-	#can take from 
-	def check_availiablebus(self):
-		pass
+	#returns list of bus in bus stop
+	def check_availiablebus_returnslistofbus(self):
+		jsob = JsonProcessingFunctions.open_jsondatafile_returnsjsonobj(self.currentstopno, 5)
+		return list(jsob['IDofBus'])
 
 	def check_currentstop(self):
 		return int(self.StopsVisited[self.TotalStopsVisited])

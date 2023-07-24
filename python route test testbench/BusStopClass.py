@@ -8,7 +8,7 @@ class Bus_Stop():
 
     """
                          //map 0 reserved for checking if exist (legacy) - can just check if element BusStopCode exists in list
-    BusStopCode = int    //map 1
+    BusStopCode = str    //map 1 save as str for file reasons, conver to int if needed
     Direction = int      //map 2
     Distance = float     //map 3
     StopSequence = int   //map 4
@@ -29,7 +29,7 @@ class Bus_Stop():
 
     ## update functions
     def update_busstopcode(self, bsc):
-        self.BusStopCode = int(bsc)
+        self.BusStopCode = str(bsc)
 
     def update_direction(self, direc):
         self.Direction = int(direc)
@@ -69,7 +69,7 @@ class Bus_Stop():
 
             #may need to rename file name to search in future?
             #or make super file
-            makenewfilename = str(self.BusStopCode)+"_busstop_data.json"
+            makenewfilename = self.BusStopCode+"_busstop_data.json"
             cwd = os.getcwd()
             newdir = os.path.join(cwd, 'ProcessedBusStopData')
             full_path = os.path.join(newdir, makenewfilename)
