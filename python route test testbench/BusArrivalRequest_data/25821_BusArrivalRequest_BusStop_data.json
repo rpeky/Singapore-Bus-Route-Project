@@ -1,5 +1,43 @@
 {
     "BusStopCode": "25821",
-    "Services": [],
+    "Services": [
+        {
+            "NextBus": {
+                "DestinationCode": "24009",
+                "EstimatedArrival": "2023-07-29T17:54:37+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3173810000000001",
+                "Load": "SEA",
+                "Longitude": "103.652214",
+                "OriginCode": "24009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "24009",
+                "EstimatedArrival": "2023-07-29T18:07:13+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3099863333333333",
+                "Load": "SEA",
+                "Longitude": "103.67861216666667",
+                "OriginCode": "24009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "24009",
+                "EstimatedArrival": "2023-07-29T18:15:01+08:00",
+                "Feature": "WAB",
+                "Latitude": "0.0",
+                "Load": "SEA",
+                "Longitude": "0.0",
+                "OriginCode": "24009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "Operator": "SBST",
+            "ServiceNo": "254"
+        }
+    ],
     "odata.metadata": "http://datamall2.mytransport.sg/ltaodataservice/$metadata#BusArrivalv2/@Element"
 }

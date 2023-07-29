@@ -4,18 +4,18 @@
         {
             "NextBus": {
                 "DestinationCode": "46009",
-                "EstimatedArrival": "2023-07-23T21:55:02+08:00",
+                "EstimatedArrival": "2023-07-29T18:00:43+08:00",
                 "Feature": "WAB",
-                "Latitude": "1.4411885",
+                "Latitude": "0.0",
                 "Load": "SEA",
-                "Longitude": "103.79550166666667",
+                "Longitude": "0.0",
                 "OriginCode": "46009",
                 "Type": "SD",
                 "VisitNumber": "1"
             },
             "NextBus2": {
                 "DestinationCode": "46009",
-                "EstimatedArrival": "2023-07-23T21:59:00+08:00",
+                "EstimatedArrival": "2023-07-29T18:07:43+08:00",
                 "Feature": "WAB",
                 "Latitude": "0.0",
                 "Load": "SEA",
@@ -26,13 +26,13 @@
             },
             "NextBus3": {
                 "DestinationCode": "46009",
-                "EstimatedArrival": "2023-07-23T22:05:00+08:00",
+                "EstimatedArrival": "2023-07-29T18:15:43+08:00",
                 "Feature": "WAB",
                 "Latitude": "0.0",
                 "Load": "SEA",
                 "Longitude": "0.0",
                 "OriginCode": "46009",
-                "Type": "BD",
+                "Type": "SD",
                 "VisitNumber": "1"
             },
             "Operator": "TTS",
@@ -41,7 +41,18 @@
         {
             "NextBus": {
                 "DestinationCode": "46009",
-                "EstimatedArrival": "2023-07-23T21:58:27+08:00",
+                "EstimatedArrival": "2023-07-29T17:58:32+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.4390963333333333",
+                "Load": "SEA",
+                "Longitude": "103.7916825",
+                "OriginCode": "46009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "46009",
+                "EstimatedArrival": "2023-07-29T18:04:28+08:00",
                 "Feature": "WAB",
                 "Latitude": "0.0",
                 "Load": "SEA",
@@ -50,26 +61,15 @@
                 "Type": "DD",
                 "VisitNumber": "1"
             },
-            "NextBus2": {
+            "NextBus3": {
                 "DestinationCode": "46009",
-                "EstimatedArrival": "2023-07-23T22:04:27+08:00",
+                "EstimatedArrival": "2023-07-29T18:10:57+08:00",
                 "Feature": "WAB",
                 "Latitude": "0.0",
                 "Load": "SEA",
                 "Longitude": "0.0",
                 "OriginCode": "46009",
                 "Type": "SD",
-                "VisitNumber": "1"
-            },
-            "NextBus3": {
-                "DestinationCode": "46009",
-                "EstimatedArrival": "2023-07-23T22:10:27+08:00",
-                "Feature": "WAB",
-                "Latitude": "0.0",
-                "Load": "SEA",
-                "Longitude": "0.0",
-                "OriginCode": "46009",
-                "Type": "DD",
                 "VisitNumber": "1"
             },
             "Operator": "SMRT",

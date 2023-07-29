@@ -4,23 +4,60 @@
         {
             "NextBus": {
                 "DestinationCode": "02099",
-                "EstimatedArrival": "2023-07-23T23:42:28+08:00",
+                "EstimatedArrival": "2023-07-29T17:53:46+08:00",
                 "Feature": "WAB",
-                "Latitude": "1.3035588333333332",
+                "Latitude": "1.2978048333333332",
                 "Load": "SEA",
-                "Longitude": "103.85391116666666",
+                "Longitude": "103.854804",
                 "OriginCode": "53009",
-                "Type": "SD",
+                "Type": "DD",
                 "VisitNumber": "1"
             },
             "NextBus2": {
                 "DestinationCode": "02099",
-                "EstimatedArrival": "2023-07-24T00:04:14+08:00",
+                "EstimatedArrival": "2023-07-29T18:03:53+08:00",
                 "Feature": "WAB",
-                "Latitude": "1.344181",
+                "Latitude": "1.3064836666666666",
                 "Load": "SEA",
-                "Longitude": "103.84729966666667",
+                "Longitude": "103.84929583333333",
                 "OriginCode": "53009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "02099",
+                "EstimatedArrival": "2023-07-29T18:19:15+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3317901666666667",
+                "Load": "SDA",
+                "Longitude": "103.84638283333334",
+                "OriginCode": "53009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "Operator": "SBST",
+            "ServiceNo": "56"
+        },
+        {
+            "NextBus": {
+                "DestinationCode": "80009",
+                "EstimatedArrival": "2023-07-29T18:03:29+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3053123333333332",
+                "Load": "SEA",
+                "Longitude": "103.8506955",
+                "OriginCode": "58009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "80009",
+                "EstimatedArrival": "2023-07-29T18:21:13+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3368805",
+                "Load": "SEA",
+                "Longitude": "103.8373535",
+                "OriginCode": "58009",
                 "Type": "SD",
                 "VisitNumber": "1"
             },
@@ -34,43 +71,6 @@
                 "OriginCode": "",
                 "Type": "",
                 "VisitNumber": ""
-            },
-            "Operator": "SBST",
-            "ServiceNo": "56"
-        },
-        {
-            "NextBus": {
-                "DestinationCode": "80009",
-                "EstimatedArrival": "2023-07-23T23:45:36+08:00",
-                "Feature": "WAB",
-                "Latitude": "1.3064436666666666",
-                "Load": "SEA",
-                "Longitude": "103.8493045",
-                "OriginCode": "58009",
-                "Type": "DD",
-                "VisitNumber": "1"
-            },
-            "NextBus2": {
-                "DestinationCode": "80009",
-                "EstimatedArrival": "2023-07-23T23:59:11+08:00",
-                "Feature": "WAB",
-                "Latitude": "1.3430563333333332",
-                "Load": "SEA",
-                "Longitude": "103.83831833333333",
-                "OriginCode": "58009",
-                "Type": "SD",
-                "VisitNumber": "1"
-            },
-            "NextBus3": {
-                "DestinationCode": "80009",
-                "EstimatedArrival": "2023-07-24T00:09:56+08:00",
-                "Feature": "WAB",
-                "Latitude": "1.3822655",
-                "Load": "SEA",
-                "Longitude": "103.82618133333334",
-                "OriginCode": "58009",
-                "Type": "SD",
-                "VisitNumber": "1"
             },
             "Operator": "TTS",
             "ServiceNo": "980"

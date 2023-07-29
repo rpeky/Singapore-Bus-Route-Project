@@ -1,5 +1,43 @@
 {
     "BusStopCode": "09191",
-    "Services": [],
+    "Services": [
+        {
+            "NextBus": {
+                "DestinationCode": "95129",
+                "EstimatedArrival": "2023-07-29T18:07:54+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.2962425",
+                "Load": "SDA",
+                "Longitude": "103.84995333333333",
+                "OriginCode": "95129",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "95129",
+                "EstimatedArrival": "2023-07-29T18:21:01+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.2941215000000001",
+                "Load": "SDA",
+                "Longitude": "103.86114133333334",
+                "OriginCode": "95129",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "95129",
+                "EstimatedArrival": "2023-07-29T18:35:27+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.2963273333333334",
+                "Load": "SEA",
+                "Longitude": "103.8958945",
+                "OriginCode": "95129",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "Operator": "GAS",
+            "ServiceNo": "36"
+        }
+    ],
     "odata.metadata": "http://datamall2.mytransport.sg/ltaodataservice/$metadata#BusArrivalv2/@Element"
 }

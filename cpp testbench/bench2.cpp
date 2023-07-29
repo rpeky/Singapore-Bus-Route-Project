@@ -34,7 +34,6 @@ int main() {
 	Json::Value root;
 	Json::Reader reader;
 
-
 	std::ifstream f(nameoffile);
 	std::cout << "parsing f file\n";
 	if (!f)

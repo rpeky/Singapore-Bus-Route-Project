@@ -1,10 +1,12 @@
 import json
+from poplib import POP3
 import urllib
 import urllib.request
 from urllib.parse import urlparse
 import httplib2 as http 
 import os
 from collections import OrderedDict
+from multiprocessing import Process
 
 #Functions to generate Bus Stop data
 # Stuff to obtain
@@ -51,7 +53,7 @@ def generate_BusArrivalData_returnsBusServiceID(BusStopCode):
 
 ##API 2.2 Bus Services Request
 #can use to find home interchange and destination for specific bus
-def generate_BusServicesData_returnsUnsure(skips):
+def generate_BusServicesData_returnsStopJsonData(skips):
     skippos = str(skips*500)
     if skippos == 0:
         target = urlparse('http://datamall2.mytransport.sg/ltaodataservice/BusServices')
@@ -102,7 +104,7 @@ def generate_BusServicesData_returnsUnsure(skips):
             json.dump(jsonObj, outfile, sort_keys=True, indent=4, ensure_ascii=False)
 
 ##API 2.3 Bus Routes Request
-def generate_BusRoutesData_returnsUnsure(skips):
+def generate_BusRoutesData_returnsStopJsonData(skips):
     skippos = str(skips*500)
     if skippos == 0:
         target = urlparse('http://datamall2.mytransport.sg/ltaodataservice/BusRoutes')
@@ -213,12 +215,12 @@ def generate_all_BusStopsRequest_info_jsonfile():
 
 def generate_all_BusServicesRequest_info_jsonfile():
     for i in range(2):
-        generate_BusServicesData_returnsUnsure(i)
+        generate_BusServicesData_returnsStopJsonData(i)
     return
 
 def generate_all_BusRoutesRequest_info_jsonfile():
     for i in range(51):
-        generate_BusRoutesData_returnsUnsure(i)
+        generate_BusRoutesData_returnsStopJsonData(i)
     return
 
 def generate_all_BusArrivalRequest_info_jsonfile():
@@ -226,6 +228,27 @@ def generate_all_BusArrivalRequest_info_jsonfile():
     for i in listofstopsallstops:
         generate_BusArrivalData_returnsBusServiceID(i)
     return
+
+def generate_allfourAPIrequestdata_intojsonfile():
+    p1=Process(target=generate_all_BusStopsRequest_info_jsonfile())
+    p2=Process(target=generate_all_BusServicesRequest_info_jsonfile())
+    p3=Process(target=generate_all_BusRoutesRequest_info_jsonfile())
+    p4=Process(target=generate_all_BusArrivalRequest_info_jsonfile())
+
+    p1.start()
+    p2.start()
+    p3.start()
+    p4.start()
+
+    p1.join()
+    p2.join()
+    p3.join()
+    p4.join()
+    return
+
+
+def generate_individualbusroute_fromProcessedData():
+    pass
 
 #loads json obj from json file
     #filetypes expect identifier, followed by int of suffix needed
@@ -317,7 +340,6 @@ def search_jsononj_busstopcodeindexpos_BusStopsRequest_returnsindexpos(jsonobjto
             #print('Index not in file'+str(i))
             indexpos = None
     return indexpos
-
 
 #search and returns Description of Bus Stop (name of stop) from known json obj - BusStopsRequest
 def search_jsonobj_forDesscription_returnsStrDescription(jsonobjtoload, i):
@@ -442,3 +464,6 @@ def return_everyBusStop_busroutesrequest():
 
     return list(fixedlist)
 
+def generate_individualroutesforbus(busserviceno):
+
+    return

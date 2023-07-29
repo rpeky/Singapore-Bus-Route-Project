@@ -18,15 +18,6 @@ class Bus_Stop():
 
 
     """
-    
-    BusStopCode = None 
-    Direction = None
-    Distance = None
-    StopSequence = None
-    IDofBus = None
-    TimesVisited = None
-    Description = None
-
     ## update functions
     def update_busstopcode(self, bsc):
         self.BusStopCode = str(bsc)
@@ -65,6 +56,7 @@ class Bus_Stop():
             "IDofBus": self.IDofBus,
             "TimesVisited": self.TimesVisited,
             "Description": self.Description
+            #"AdjacentStop": self.Neighbour // to add
             }
 
             #may need to rename file name to search in future?
@@ -76,7 +68,7 @@ class Bus_Stop():
 
             with open(full_path, 'w') as outfile:
                 json.dump(stoptoadd_jsondata, outfile, sort_keys=False, indent=4, ensure_ascii=False)
-            print("Created new stop file "+makenewfilename+"!\n")
+            #print("Created new stop file "+makenewfilename+"!\n")
 
         else:
             raise ValueError("Error, Missing Parameter when updating stop to map")
@@ -108,7 +100,15 @@ class Bus_Stop():
         return
 
     ## initialization and destruction
-    def __init__(self, bsc=None, direc=None, distfromint=None, seq=None, busid=None, visited=None, desc=None):
+    def __init__(self):
+        self.bsc=None
+        self.direc=None
+        self.distfromint=None
+        self.seq=None
+        self.busid=None
+        self.visited=None
+        self.desc=None
+        #self.Neighbour=None // to add
         print("Made a new Bus Stop")
 
     def __del__(self):

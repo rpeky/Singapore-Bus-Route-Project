@@ -14,20 +14,6 @@ class Traveller():
 	Tracker = list (of strings describing every action)
 	"""
 
-	TotalDistanceTravelled = 0
-	TotalStopsVisited = 0
-	currentbusno = ""
-	currentstopno = ""
-	
-	AllStopsVisited = False
-	OnBus = False
-	StopsVisited = []
-	#tracker is for me to print to follow the actions irl - will track every action
-	Tracker = []
-	Stored_Dist = 0 #to calculate dist travelled
-
-
-
 	## update functions
 	def update_addstopvisited(self):
 		self.TotalStopsVisited+=1
@@ -102,12 +88,16 @@ class Traveller():
 
 	## search functions
 	
-
-
-
-
-
-	def __init__(self, TotalDistanceTravelled = 0, StopsVisited = 0, currentbusno = "", currentstopno = "", Stored_Dist = 0, AllStopsVisited = False, OnBus = False):
+	def __init__(self):
+		self.TotalDistanceTravelled = 0
+		self.TotalStopsVisited = 0
+		self.currentbusno = ""
+		self.currentstopno = ""
+		self.AllStopsVisited = False
+		self.OnBus = False
+		self.StopsVisited = []
+		self.Tracker = []
+		self.Stored_Dist = 0
 		print("New Traveller made")
 
 	def __del__(self):

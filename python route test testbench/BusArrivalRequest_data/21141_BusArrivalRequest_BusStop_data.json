@@ -3,24 +3,24 @@
     "Services": [
         {
             "NextBus": {
-                "DestinationCode": "28009",
-                "EstimatedArrival": "2023-07-23T23:50:56+08:00",
+                "DestinationCode": "22009",
+                "EstimatedArrival": "2023-07-29T18:05:11+08:00",
                 "Feature": "WAB",
-                "Latitude": "1.3129821666666666",
+                "Latitude": "1.3218706666666666",
                 "Load": "SEA",
-                "Longitude": "103.71015316666667",
-                "OriginCode": "28009",
+                "Longitude": "103.74168733333333",
+                "OriginCode": "22009",
                 "Type": "DD",
                 "VisitNumber": "1"
             },
             "NextBus2": {
-                "DestinationCode": "28009",
-                "EstimatedArrival": "2023-07-24T00:14:12+08:00",
+                "DestinationCode": "22009",
+                "EstimatedArrival": "2023-07-29T18:36:07+08:00",
                 "Feature": "WAB",
-                "Latitude": "1.3495966666666668",
-                "Load": "SEA",
-                "Longitude": "103.71968633333333",
-                "OriginCode": "28009",
+                "Latitude": "1.3116931666666667",
+                "Load": "SDA",
+                "Longitude": "103.733471",
+                "OriginCode": "22009",
                 "Type": "DD",
                 "VisitNumber": "1"
             },
@@ -34,6 +34,43 @@
                 "OriginCode": "",
                 "Type": "",
                 "VisitNumber": ""
+            },
+            "Operator": "TTS",
+            "ServiceNo": "79"
+        },
+        {
+            "NextBus": {
+                "DestinationCode": "28009",
+                "EstimatedArrival": "2023-07-29T18:02:45+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3136126666666668",
+                "Load": "SEA",
+                "Longitude": "103.70979316666667",
+                "OriginCode": "28009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "28009",
+                "EstimatedArrival": "2023-07-29T18:18:13+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3270698333333333",
+                "Load": "SEA",
+                "Longitude": "103.720149",
+                "OriginCode": "28009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "28009",
+                "EstimatedArrival": "2023-07-29T18:35:13+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3480808333333334",
+                "Load": "SEA",
+                "Longitude": "103.72051016666667",
+                "OriginCode": "28009",
+                "Type": "DD",
+                "VisitNumber": "1"
             },
             "Operator": "TTS",
             "ServiceNo": "98"
