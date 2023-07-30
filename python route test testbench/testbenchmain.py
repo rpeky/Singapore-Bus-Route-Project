@@ -43,7 +43,7 @@ def generate_BusStopData_processedjson_firstvisit(thisisastop, busstopcode):
     #IDofBus = None         -> bus_arrivals             //done
     #TimesVisited = None    -> 0                        //done set to zero, increase using traveller obj for first visit
     #Description = None     -> bus_stop_no              //done
-    #Neighbour = None       -> to make bus route list to find adjacent stops
+    #Neighbour = None       -> t_busserviceroute        //done
     if(check_ifProcessedBusStopData_exist(busstopcode)!=True):
 
         #print(str(busstopcode)+'_busstop_data.json does not exists')
