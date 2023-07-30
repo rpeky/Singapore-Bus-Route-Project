@@ -15,7 +15,7 @@ class Bus_Stop():
     IDofBus = list       //map 5
     TimesVisited = int   //map 6
     Description = str    //map 7 - Bus Stop Name
-
+    Neighbour = list     //map 8 - adjacency list
 
     """
     ## update functions
@@ -41,13 +41,16 @@ class Bus_Stop():
     def update_description(self, desc):
         self.Description = str(desc)
 
+    def update_adjacentstop(self, neighbour):
+        self.Neighbour = list(neighbour)
+
     #might not need, should be able to directly edit the json file? not sure need finish up the rest first
     #def update_additionalvisit(self, bsc):
     #    pass
 
     # variables already converted to their proper types in action function before this is called
     def update_addstopdatafile(self):
-        if not[x for x in (self.BusStopCode, self.Direction, self.Distance, self.StopSequence, self.IDofBus, self.TimesVisited, self.Description) if x is None]:
+        if not[x for x in (self.BusStopCode, self.Direction, self.Distance, self.StopSequence, self.IDofBus, self.TimesVisited, self.Description, self.Neighbour) if x is None]:
             stoptoadd_jsondata = {
             "BusStopCode": self.BusStopCode,
             "Direction": self.Direction,
@@ -55,8 +58,8 @@ class Bus_Stop():
             "StopSequence": self.StopSequence,
             "IDofBus": self.IDofBus,
             "TimesVisited": self.TimesVisited,
-            "Description": self.Description
-            #"AdjacentStop": self.Neighbour // to add
+            "Description": self.Description,
+            "AdjacentStop": self.Neighbour
             }
 
             #may need to rename file name to search in future?
@@ -76,7 +79,7 @@ class Bus_Stop():
     ## action functions
 
     # action superfunction
-    def action_obtainvaluesforupdatefnthenaddtomap(self, bsc, direc, distfromint, seq, busid, visited, desc):
+    def action_obtainvaluesforupdatefnthenaddtomap(self, bsc, direc, distfromint, seq, busid, visited, desc, neighbour):
         self.update_busstopcode(bsc)
         self.update_direction(direc)
         self.update_distance(distfromint)
@@ -84,6 +87,7 @@ class Bus_Stop():
         self.update_IDofBus(busid)
         self.update_timesvisited(visited)
         self.update_description(desc)
+        self.update_adjacentstop(neighbour)
         self.update_addstopdatafile()
         self.action_clearinternalvalues()
         return
@@ -97,6 +101,7 @@ class Bus_Stop():
         self.noofbus = None
         self.TimesVisited = None
         self.Description = None
+        self.Neighbour = None
         return
 
     ## initialization and destruction
@@ -108,7 +113,7 @@ class Bus_Stop():
         self.busid=None
         self.visited=None
         self.desc=None
-        #self.Neighbour=None // to add
+        self.Neighbour=None 
         print("Made a new Bus Stop")
 
     def __del__(self):

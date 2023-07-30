@@ -266,6 +266,7 @@ def generate_individualbusroute_fromProcessedData():
     ## Processed / self made data
     #composite          - 5 Bus Stop Data generated from processing API data                _busstop_data.json                              ProcessedBusStopData
     #mapdata            - 6 Working Map Data Traveller will use                             workingmapdata.json                             WorkingMapData              Identifier will take in None            
+    #indvbusroute       - 7 Individual route each bus takes                                 _busserviceroute.json                           ProcessedServiceRouteData   
 
 #to update whenever new folders/files are added
 def open_jsondatafile_returnsjsonobj(identifier, indextoload):
@@ -276,7 +277,8 @@ def open_jsondatafile_returnsjsonobj(identifier, indextoload):
                                 '_BusRoutesRequest_data.json', \
                                 '_BusStopsRequest_bus_stop_info.json', \
                                 '_busstop_data.json', \
-                                'workingmapdata.json'\
+                                'workingmapdata.json',\
+                                '_busserviceroute.json'\
                                 ]
     listoffoldersshouldexist = [\
                                 'errorindex', \
@@ -284,8 +286,9 @@ def open_jsondatafile_returnsjsonobj(identifier, indextoload):
                                 'BusServicesRequest_data', \
                                 'BusRoutesRequest_data', \
                                 'BusStopsRequest_data', \
-                                'ProcessedBusStopData', \
-                                'WorkingMapData'\
+                                'w', \
+                                'WorkingMapData',\
+                                'ProcessedServiceRouteData'\
                                  ]
     filename = str(identifier)+str(jsondatafilenamingsuffix[int(indextoload)])
     cwd = os.getcwd()
@@ -464,6 +467,108 @@ def return_everyBusStop_busroutesrequest():
 
     return list(fixedlist)
 
-def generate_individualroutesforbus(busserviceno):
+# returns list of serviceno from json obj
+def search_jsonobj_busservices_serviceno_returnslistofserviceno(jsonobjtoload):
+    listofbusid = []
+    for i in jsonobjtoload['value']:
+        listofbusid.append(i['ServiceNo'])
+    return listofbusid
 
+#from busservicesrequest, returns all bus service no
+def return_everybusserviceno_givesalist():
+    listofAllBusServices=[]
+    for _ in range(2):
+        jsob=open_jsondatafile_returnsjsonobj(_,2)
+        listofAllBusServices+=search_jsonobj_busservices_serviceno_returnslistofserviceno(jsob)
+    return sorted(list(set(listofAllBusServices)))
+
+#search from busroutesrequest
+def findpagesthisbusisin(busno):
+    pgs=[]
+    for _ in range(51):
+        jsob=open_jsondatafile_returnsjsonobj(_,3)
+        for i in jsob['value']:
+            if(i['ServiceNo']==str(busno)):
+                pgs.append(_)
+                break
+            else:
+                pass    
+    return pgs
+
+#will return 2 set of routes, int 1 to int 2 then int 2 to int 1, combine to form one interchange loop if possible (general case, need check if theres bus that dosent follow this)
+def generate_individualroutesforbus_frombusroutesrequest(busserviceno):
+    routelist1=[]
+    routelist2=[]
+    pgs=findpagesthisbusisin(busserviceno)
+    
+    #checkwhich direction exists
+    route1exist,route2exist=False,False
+    for _ in range(2):
+        jsob=open_jsondatafile_returnsjsonobj(_,2)
+        for i in jsob['value']:
+            if(i['ServiceNo']==busserviceno and i['Direction']==1):
+                route1exist=True
+            if(i['ServiceNo']==busserviceno and i['Direction']==1):
+                route2exist=True
+    if(route1exist==True):
+        for pgno in pgs:
+            jsob=open_jsondatafile_returnsjsonobj(pgno,3)
+            for i in jsob['value']:
+                if(i['Direction']==1 and i['ServiceNo']==busserviceno):
+                    routelist1.append(i['BusStopCode'])
+                else:
+                    pass   
+    if(route2exist==True):
+        for pgno in pgs:
+            jsob=open_jsondatafile_returnsjsonobj(pgno,3)
+            for i in jsob['value']:
+                if(i['Direction']==2 and i['ServiceNo']==busserviceno):
+                    routelist2.append(i['BusStopCode'])
+                else:
+                    pass 
+    combinedroute=[routelist1,routelist2]
+    filename = busserviceno+"_busserviceroute.json"
+    cwd = os.getcwd()
+    newdir = os.path.join(cwd, 'ProcessedServiceRouteData')
+    full_path = os.path.join(newdir, filename)
+    with open(full_path, "w") as outfile:
+        json.dump(combinedroute, outfile, sort_keys=True, indent=4, ensure_ascii=False)
     return
+
+
+def generate_AllRoutesforEveryBus_returnsjsonfile():
+    busserviceslist=return_everybusserviceno_givesalist()
+    for bus in busserviceslist:
+        generate_individualroutesforbus_frombusroutesrequest(str(bus))
+    return
+
+def generate_Neighbour_returnslistofneighbours(busstopcode):
+    neighbours=[]
+    busstopinfo=return_BusServicesforBusStop(busstopcode)
+
+    print(busstopcode)
+    for bus in busstopinfo:
+        #skip if bus number=75A because depreciated, should not be included in 12109 bus stop arrival data
+        if(bus=='75A'):
+            continue
+        else:
+            #route info can contain 1 set, 1 compliment set or 2 sets of list
+            routeinfo=open_jsondatafile_returnsjsonobj(bus, 7)
+            #check which list active, if one in use easiest case, remove last stop because points to nowhere)
+            l1active = True if (len(routeinfo[0])>0 and routeinfo[0][-1]!=busstopcode and busstopcode in routeinfo[0])else False
+            l2active = True if (len(routeinfo[1])>0 and routeinfo[1][-1]!=busstopcode and busstopcode in routeinfo[1])else False
+            #check which list in use since every stop other than interchange is in either one of list (diected or loop)
+            if(l1active):
+                adjstopindex = int(routeinfo[0].index(busstopcode)) + 1
+                neighbours.append(routeinfo[0][adjstopindex])
+            if(l2active):
+                adjstopindex = int(routeinfo[1].index(busstopcode)) + 1
+                neighbours.append(routeinfo[1][adjstopindex])  
+    #remove duplicates
+    return list(set(neighbours))
+
+#def generate_Adjacencylistforallbusstop_returnslistofneighbours():
+#    listofAllBusStops = return_everyBusStop_busroutesrequest()
+#    for busstop in listofAllBusStops:
+#        pass
+#    return

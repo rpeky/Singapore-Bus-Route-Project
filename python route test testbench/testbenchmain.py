@@ -59,11 +59,11 @@ def generate_BusStopData_processedjson_firstvisit(thisisastop, busstopcode):
         IDofBus = JsonProcessingFunctions.return_BusServicesforBusStop(busstopcode)
         TimesVisited = 0
         Description = JsonProcessingFunctions.return_DescriptionforBusStop(busstopcode)
-        #Neighbour = 
+        Neighbour = JsonProcessingFunctions.generate_Neighbour_returnslistofneighbours(busstopcode)
 
         #bsc, direc, distfromint, seq, busid, visited, desc
         #print("First stop json data file created, stop added to map")
-        return thisisastop.action_obtainvaluesforupdatefnthenaddtomap(BusStopCode, Direction, Distance, StopSequence, IDofBus, TimesVisited, Description)
+        return thisisastop.action_obtainvaluesforupdatefnthenaddtomap(BusStopCode, Direction, Distance, StopSequence, IDofBus, TimesVisited, Description, Neighbour)
 
     elif(check_ifProcessedBusStopData_exist(busstopcode)!=True):
         print(str(busstopcode)+'_busstop_data.json exists, skip \n')
@@ -76,9 +76,7 @@ def generate_BusStopData_processedjson_firstvisit(thisisastop, busstopcode):
 
 def generate_All_BusStopData_processedjson_firstvisit(busob):
     listofAllBusStops = JsonProcessingFunctions.return_everyBusStop_busroutesrequest()
-    processes=[]
     for i in sorted(listofAllBusStops):
-        #print(i)
         generate_BusStopData_processedjson_firstvisit(busob, i)
     return
 
@@ -93,10 +91,14 @@ def convert_mapintojson(maptouse):
     print("Map converted")
     return
 
+def update_BusStopDataAdjstoplist_neighbour():
+    pass
+
 #checks if folders exist, edit as more files are needed
 def check_osfolder():
     listoffoldersshouldexist = ['BusRoutesRequest_data', 'BusServicesRequest_data', 'BusStopsRequest_data', \
-                                'BusArrivalRequest_data', 'ProcessedBusStopData', 'WorkingMapData']
+                                'BusArrivalRequest_data', 'ProcessedBusStopData', 'WorkingMapData', \
+                                'ProcessedServiceRouteData']
     
     for i in listoffoldersshouldexist:
         if(os.path.isdir(i)):
@@ -107,15 +109,14 @@ def check_osfolder():
 if __name__ == "__main__":
     starttime=time.process_time()
     print("Starting")
+
     check_osfolder()
     print('checked folder')
-    #JsonProcessingFunctions.generate_allfourAPIrequestdata_intojsonfile()
-    print('generated files')
-    bob = create_BusStopobj()
+    bob=create_BusStopobj()
     generate_All_BusStopData_processedjson_firstvisit(bob)
-    print(sorted(JsonProcessingFunctions.return_everyBusStop_busroutesrequest()))
-    print('Done')
-
+    #print(JsonProcessingFunctions.findpagesthisbusisin('75A'))
+    #print(JsonProcessingFunctions.return_everybusserviceno_givesalist())
+    #print(JsonProcessingFunctions.return_BusServicesforBusStop('12109'))
     print('Ending')
     print(time.process_time()-starttime)
 
