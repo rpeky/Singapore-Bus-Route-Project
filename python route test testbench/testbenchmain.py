@@ -10,7 +10,7 @@ import time
 from multiprocessing import Process
 
 #to contain every bus stop  (total stops in sg = )
-mapofbusstopinfo = dict()
+#mapofbusstopinfo = dict()
 
 #will destroy itself when not needed
 def create_BusStopobj():
@@ -93,34 +93,24 @@ def convert_mapintojson(maptouse):
     print("Map converted")
     return
 
-def update_BusStopDataAdjstoplist_neighbour():
-    pass
+
+
+
+
+
+
+
+
+
+
+
+
 
 if __name__ == "__main__":
     starttime=time.process_time()
     print("Starting")
 
-    #DataValidationCheckFunctions.datavalidationcheck_osfolder()
-    #print('checked folder')
-    #bob=create_BusStopobj()
-    #generate_All_BusStopData_processedjson_firstvisit(bob)
-    #print(JsonProcessingFunctions.findpagesthisbusisin('75A'))
-    #print(JsonProcessingFunctions.return_everybusserviceno_givesalist())
-    #print(JsonProcessingFunctions.return_BusServicesforBusStop('12109'))
-
-    DataValidationCheckFunctions.check_osfolder()
-    time.sleep(5)
-    DataValidationCheckFunctions.check_ifBusArrivalRequest_allbusarrivalrequestdata_exist()
-    time.sleep(5)
-    DataValidationCheckFunctions.check_ifBusServicesRequest_allbusservicesrequestdata_exist()
-    time.sleep(5)
-    DataValidationCheckFunctions.check_ifBusRoutesRequest_allbusroutesrequestdata_exist()
-    time.sleep(5)
-    DataValidationCheckFunctions.check_ifBusStopsRequest_allbusstopsrequestdata_exist()
-    time.sleep(5)
-    DataValidationCheckFunctions.check_ProcessedBusStopData_allprocessedbusstopdata_exist()
-    time.sleep(5)
-    DataValidationCheckFunctions.check_ProcessedServiceRouteData_allprocessedserviceroutedata_exist()
+    
 
     print('Ending')
     print(time.process_time()-starttime)
