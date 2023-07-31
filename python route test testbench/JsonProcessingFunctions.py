@@ -286,7 +286,7 @@ def open_jsondatafile_returnsjsonobj(identifier, indextoload):
                                 'BusServicesRequest_data', \
                                 'BusRoutesRequest_data', \
                                 'BusStopsRequest_data', \
-                                'w', \
+                                'ProcessedBusStopData', \
                                 'WorkingMapData',\
                                 'ProcessedServiceRouteData'\
                                  ]
@@ -456,7 +456,7 @@ def return_everyBusStop_busstopsrequest():
 
     return list(fixedlist)
 
-#from busroutesrequest #equivalent means 5082 bus stops total
+#from busroutesrequest #equivalent means 5083 bus stops total
 def return_everyBusStop_busroutesrequest():
     listofAllBusStops=[]
     for i in range(51):

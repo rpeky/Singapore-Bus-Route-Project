@@ -3,6 +3,7 @@ import BusStopClass
 import TravellerClass
 import JsonProcessingFunctions
 import BusCalculations
+import DataValidationCheckFunctions
 import json
 import os
 import time
@@ -35,6 +36,7 @@ def check_ifProcessedBusStopData_exist(busstopcode):
     full_path = os.path.join(newdir, filename)
     return os.path.isfile(full_path)
 
+
 def generate_BusStopData_processedjson_firstvisit(thisisastop, busstopcode):
     #BusStopCode = None     -> initial stop             //done
     #Direction = None       -> bus_route_info           //done
@@ -43,7 +45,7 @@ def generate_BusStopData_processedjson_firstvisit(thisisastop, busstopcode):
     #IDofBus = None         -> bus_arrivals             //done
     #TimesVisited = None    -> 0                        //done set to zero, increase using traveller obj for first visit
     #Description = None     -> bus_stop_no              //done
-    #Neighbour = None       -> t_busserviceroute        //done
+    #Neighbour = None       -> _busserviceroute        //done
     if(check_ifProcessedBusStopData_exist(busstopcode)!=True):
 
         #print(str(busstopcode)+'_busstop_data.json does not exists')
@@ -94,29 +96,32 @@ def convert_mapintojson(maptouse):
 def update_BusStopDataAdjstoplist_neighbour():
     pass
 
-#checks if folders exist, edit as more files are needed
-def check_osfolder():
-    listoffoldersshouldexist = ['BusRoutesRequest_data', 'BusServicesRequest_data', 'BusStopsRequest_data', \
-                                'BusArrivalRequest_data', 'ProcessedBusStopData', 'WorkingMapData', \
-                                'ProcessedServiceRouteData']
-    
-    for i in listoffoldersshouldexist:
-        if(os.path.isdir(i)):
-            pass
-        else:
-            os.mkdir(i)
-
 if __name__ == "__main__":
     starttime=time.process_time()
     print("Starting")
 
-    check_osfolder()
-    print('checked folder')
-    bob=create_BusStopobj()
-    generate_All_BusStopData_processedjson_firstvisit(bob)
+    #DataValidationCheckFunctions.datavalidationcheck_osfolder()
+    #print('checked folder')
+    #bob=create_BusStopobj()
+    #generate_All_BusStopData_processedjson_firstvisit(bob)
     #print(JsonProcessingFunctions.findpagesthisbusisin('75A'))
     #print(JsonProcessingFunctions.return_everybusserviceno_givesalist())
     #print(JsonProcessingFunctions.return_BusServicesforBusStop('12109'))
+
+    DataValidationCheckFunctions.check_osfolder()
+    time.sleep(5)
+    DataValidationCheckFunctions.check_ifBusArrivalRequest_allbusarrivalrequestdata_exist()
+    time.sleep(5)
+    DataValidationCheckFunctions.check_ifBusServicesRequest_allbusservicesrequestdata_exist()
+    time.sleep(5)
+    DataValidationCheckFunctions.check_ifBusRoutesRequest_allbusroutesrequestdata_exist()
+    time.sleep(5)
+    DataValidationCheckFunctions.check_ifBusStopsRequest_allbusstopsrequestdata_exist()
+    time.sleep(5)
+    DataValidationCheckFunctions.check_ProcessedBusStopData_allprocessedbusstopdata_exist()
+    time.sleep(5)
+    DataValidationCheckFunctions.check_ProcessedServiceRouteData_allprocessedserviceroutedata_exist()
+
     print('Ending')
     print(time.process_time()-starttime)
 
