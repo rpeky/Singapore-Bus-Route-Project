@@ -8,6 +8,7 @@ import json
 import os
 import time
 from multiprocessing import Process
+import GraphClass
 
 #to contain every bus stop  (total stops in sg = )
 #mapofbusstopinfo = dict()
@@ -94,25 +95,14 @@ def convert_mapintojson(maptouse):
     return
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 if __name__ == "__main__":
     starttime=time.process_time()
     print("Starting")
-
-    
-
-    print('Ending')
+    startstop=str(85091)
+    print(startstop)
+    graph=GraphClass.Graph()
+    graph.searchtilltheendoftime(startstop)
+    print('tour: ', graph.get_tour())
     print(time.process_time()-starttime)
 
     

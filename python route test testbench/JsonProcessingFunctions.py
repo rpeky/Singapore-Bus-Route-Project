@@ -441,8 +441,8 @@ def return_DistancefromINTforBusStop(busstopcode):
         jsob = open_jsondatafile_returnsjsonobj(i, 3)
         inpos = search_jsononj_busstopcodeindexpos_BusStopsRequest_returnsindexpos(jsob, busstopcode)        
         if(inpos!=None):
-            sseq = search_jsonobj_forDistance_returnsFloatDistance(jsob, inpos)
-            return sseq
+            dst = search_jsonobj_forDistance_returnsFloatDistance(jsob, inpos)
+            return dst
 
 #both return_everyBusStop_busstopsrequest and return_everyBusStop_busroutesrequest
 #from busstopsrequest
@@ -567,8 +567,20 @@ def generate_Neighbour_returnslistofneighbours(busstopcode):
     #remove duplicates
     return list(set(neighbours))
 
-#def generate_Adjacencylistforallbusstop_returnslistofneighbours():
-#    listofAllBusStops = return_everyBusStop_busroutesrequest()
-#    for busstop in listofAllBusStops:
-#        pass
-#    return
+def generate_Adjacencylistforallbusstop_returnsdictofneighbours_returnsjsonofsuperadjlist():
+    listofAllBusStops = return_everyBusStop_busstopsrequest()
+    superdictadjlist={}
+    for busstop in listofAllBusStops:
+        neighbourlist=generate_Neighbour_returnslistofneighbours(busstop)
+        dfromint=return_DistancefromINTforBusStop(busstop)
+        superdictadjlist[busstop]={\
+            'neighbours': neighbourlist,\
+            'distfromint': dfromint                   
+            }
+    filename = "Noneworkingmapdata.json"
+    cwd = os.getcwd()
+    newdir = os.path.join(cwd, 'WorkingMapData')
+    full_path = os.path.join(newdir, filename)
+    with open(full_path, "w") as outfile:
+        json.dump(superdictadjlist, outfile, sort_keys=True, indent=4, ensure_ascii=False)
+    return 

@@ -98,6 +98,13 @@ def check_ifBusStopsRequest_allbusstopsrequestdata_exist():
 
 #------------------------------------------------------------------------------------------------------------------
 # File index 5: WorkingMapData
+#Use This
+def check_ifWorkingMapData_individual_exist():
+    filename = "Noneworkingmapdata.json"
+    cwd = os.getcwd()
+    newdir = os.path.join(cwd, 'WorkingMapData')
+    full_path = os.path.join(newdir, filename)
+    return os.path.isfile(full_path)
 
 #------------------------------------------------------------------------------------------------------------------
 # File index 6: ProcessedBusStopData
