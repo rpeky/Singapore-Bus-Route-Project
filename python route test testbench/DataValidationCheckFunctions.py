@@ -24,7 +24,7 @@ import os
 def check_osfolder():
     listoffoldersshouldexist = ['BusArrivalRequest_data', 'BusServicesRequest_data', \
                                 'BusRoutesRequest_data', 'BusStopsRequest_data', 'ProcessedBusStopData', \
-                                'WorkingMapData','ProcessedServiceRouteData']
+                                'WorkingMapData','ProcessedServiceRouteData', 'GraphWorkingData']
     
     for i in listoffoldersshouldexist:
         if(os.path.isdir(i)):

@@ -265,7 +265,7 @@ def generate_individualbusroute_fromProcessedData():
     
     ## Processed / self made data
     #composite          - 5 Bus Stop Data generated from processing API data                _busstop_data.json                              ProcessedBusStopData
-    #mapdata            - 6 Working Map Data Traveller will use                             workingmapdata.json                             WorkingMapData              Identifier will take in None            
+    #mapdata            - 6 Working Map Data Traveller will use                             _workingmapdata.json                             WorkingMapData              Identifier will take in None            
     #indvbusroute       - 7 Individual route each bus takes                                 _busserviceroute.json                           ProcessedServiceRouteData   
 
 #to update whenever new folders/files are added
@@ -277,7 +277,7 @@ def open_jsondatafile_returnsjsonobj(identifier, indextoload):
                                 '_BusRoutesRequest_data.json', \
                                 '_BusStopsRequest_bus_stop_info.json', \
                                 '_busstop_data.json', \
-                                'workingmapdata.json',\
+                                '_workingmapdata.json',\
                                 '_busserviceroute.json'\
                                 ]
     listoffoldersshouldexist = [\
@@ -543,8 +543,15 @@ def generate_AllRoutesforEveryBus_returnsjsonfile():
     return
 
 def generate_Neighbour_returnslistofneighbours(busstopcode):
+
+    if(busstopcode=='59008'):
+        neighbours.append('59008')
+        return neighbours
+
     neighbours=[]
     busstopinfo=return_BusServicesforBusStop(busstopcode)
+
+
 
     print(busstopcode)
     for bus in busstopinfo:
@@ -571,16 +578,62 @@ def generate_Adjacencylistforallbusstop_returnsdictofneighbours_returnsjsonofsup
     listofAllBusStops = return_everyBusStop_busstopsrequest()
     superdictadjlist={}
     for busstop in listofAllBusStops:
-        neighbourlist=generate_Neighbour_returnslistofneighbours(busstop)
-        dfromint=return_DistancefromINTforBusStop(busstop)
-        superdictadjlist[busstop]={\
-            'neighbours': neighbourlist,\
-            'distfromint': dfromint                   
-            }
-    filename = "Noneworkingmapdata.json"
+        if(busstop == '59008'):
+            neighbourlist=generate_Neighbour_returnslistofneighbours(busstop)
+            dfromint=return_DistancefromINTforBusStop(busstop)
+            superdictadjlist[busstop]={\
+                'neighbours': '59091',\
+                'distfromint': dfromint, \
+                'timesvisited': 0
+                }
+            
+        else:
+            neighbourlist=generate_Neighbour_returnslistofneighbours(busstop)
+            dfromint=return_DistancefromINTforBusStop(busstop)
+            superdictadjlist[busstop]={\
+                'neighbours': neighbourlist,\
+                'distfromint': dfromint, \
+                'timesvisited': 0
+                }
+    filename = "MC_Noneworkingmapdata.json"
     cwd = os.getcwd()
     newdir = os.path.join(cwd, 'WorkingMapData')
     full_path = os.path.join(newdir, filename)
     with open(full_path, "w") as outfile:
         json.dump(superdictadjlist, outfile, sort_keys=True, indent=4, ensure_ascii=False)
     return 
+
+
+#def mergedict(d1,d2):
+#    res ={**d1,**d2}
+#    return dict(res)
+
+#def generate_SuperBusStopDataGraphDatabase():
+#    listofAllBusStops = return_everyBusStop_busstopsrequest()
+#    superdatabasedict={}
+#    print(listofAllBusStops)
+#    for i, busstop in enumerate(listofAllBusStops):
+
+#        print('---------------------------------------------------')
+#        if(i==0):
+#            jsobdictstop=dict(open_jsondatafile_returnsjsonobj(busstop,5))
+#            superdatabasedict = jsobdictstop.copy()
+#            print(superdatabasedict)
+#            print('+++++++++++++++++++++++++++++++++++++++')
+#        else:
+#            jsobdictstop=dict(open_jsondatafile_returnsjsonobj(busstop,5))
+#            tempdict=mergedict(superdatabasedict,jsobdictstop)
+#            print(superdatabasedict)
+#            print('+++++++++++++++++++++++++++++++++++++++')
+#            superdatabasedict = tempdict
+#            print(superdatabasedict)
+#            print('+++++++++++++++++++++++++++++++++++++++')
+
+#    filename = "superdatadict.json"
+#    cwd = os.getcwd()
+#    newdir = os.path.join(cwd, 'WorkingMapData')
+#    full_path = os.path.join(newdir, filename)
+#    with open(full_path, "w") as outfile:
+#        json.dump(superdatabasedict, outfile, sort_keys=True, indent=4, ensure_ascii=False)
+
+#    return 

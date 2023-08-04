@@ -2,13 +2,13 @@
 import BusStopClass
 import TravellerClass
 import JsonProcessingFunctions
-import BusCalculations
-import DataValidationCheckFunctions
+#import BusCalculations
+#import DataValidationCheckFunctions
 import json
 import os
 import time
-from multiprocessing import Process
-import GraphClass
+#from multiprocessing import Process
+#import GraphClass
 
 #to contain every bus stop  (total stops in sg = )
 #mapofbusstopinfo = dict()
@@ -98,11 +98,27 @@ def convert_mapintojson(maptouse):
 if __name__ == "__main__":
     starttime=time.process_time()
     print("Starting")
-    startstop=str(85091)
-    print(startstop)
-    graph=GraphClass.Graph()
-    graph.searchtilltheendoftime(startstop)
-    print('tour: ', graph.get_tour())
+    tob=create_Travellerobj()
+    tob.searchtillendoftime_v1('85039')
+    print(tob.gettour())
+    print(len(tob.gettour()))
+    print(tob.getsetvisited())
+    print(len(tob.getsetvisited()))
+
+    #JsonProcessingFunctions.generate_Adjacencylistforallbusstop_returnsdictofneighbours_returnsjsonofsuperadjlist()
+    #DataValidationCheckFunctions.check_osfolder()
+    #startstop=str(85091)
+    #print(startstop)
+    #graph=GraphClass.Graph()
+    #graph.searchtilltheendoftime(startstop)
+    #print('tour: ', graph.get_tour())
+    #graph=GraphClass.Graph()
+    #print(graph.returndir())
+    #l1=['99999','92365','24242','48484']
+    #l2=[0,1,1,0]
+    #l3=[1.3,2.2,5.7,0.2]
+    #a=min(zip(l2,l3,l1))
+    #print(a[2])
     print(time.process_time()-starttime)
 
     
