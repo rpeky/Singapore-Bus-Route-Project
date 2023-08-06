@@ -41,7 +41,7 @@ def generate_BusArrivalData_returnsBusServiceID(BusStopCode):
         body,
         headers
         )
-
+    print(content)
     jsonObj = json.loads(content)
     #create file to read in future in BusArrivalRequest folder
     filename = str(BusStopCode)+"_BusArrivalRequest_BusStop_data.json"
@@ -265,7 +265,7 @@ def generate_individualbusroute_fromProcessedData():
     
     ## Processed / self made data
     #composite          - 5 Bus Stop Data generated from processing API data                _busstop_data.json                              ProcessedBusStopData
-    #mapdata            - 6 Working Map Data Traveller will use                             _workingmapdata.json                             WorkingMapData              Identifier will take in None            
+    #mapdata            - 6 Working Map Data Traveller will use                             _workingmapdata.json                            WorkingMapData              Identifier will take in None            
     #indvbusroute       - 7 Individual route each bus takes                                 _busserviceroute.json                           ProcessedServiceRouteData   
 
 #to update whenever new folders/files are added
@@ -543,15 +543,13 @@ def generate_AllRoutesforEveryBus_returnsjsonfile():
     return
 
 def generate_Neighbour_returnslistofneighbours(busstopcode):
-
+    #edge case 59008 somehow has itself as a neighbour, forces the actual next stop 59091
     if(busstopcode=='59008'):
         neighbours.append('59008')
         return neighbours
 
     neighbours=[]
     busstopinfo=return_BusServicesforBusStop(busstopcode)
-
-
 
     print(busstopcode)
     for bus in busstopinfo:
@@ -568,10 +566,11 @@ def generate_Neighbour_returnslistofneighbours(busstopcode):
             if(l1active):
                 adjstopindex = int(routeinfo[0].index(busstopcode)) + 1
                 neighbours.append(routeinfo[0][adjstopindex])
+
             if(l2active):
                 adjstopindex = int(routeinfo[1].index(busstopcode)) + 1
                 neighbours.append(routeinfo[1][adjstopindex])  
-    #remove duplicates
+    #remove duplicates as a set, turn back to list
     return list(set(neighbours))
 
 def generate_Adjacencylistforallbusstop_returnsdictofneighbours_returnsjsonofsuperadjlist():

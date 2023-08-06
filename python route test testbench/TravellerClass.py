@@ -17,19 +17,18 @@ class Traveller():
 	Tracker = list (of strings describing every action)
 	"""
 	def __init__(self):
-		#self.TotalDistanceTravelled = 0
-		#self.TotalStopsVisited = 0
-		#self.currentbusno = ""
-		#self.currentstopno = ""
+		self.TotalDistanceTravelled = 0
+		self.TotalStopsVisited = 0
+		self.currentbusno = ""
 		self.AllStopsVisited = False
-		#self.OnBus = False
+		self.OnBus = False
 		self.StopsVisited = set()
 		self.tour = []
 		self.Stored_Dist = 0
 		self.copynecessarydata()
 		self.dictadjlist=JsonProcessingFunctions.open_jsondatafile_returnsjsonobj('WC',6)
 		self.memodict=dict()
-
+		self.superset=JsonProcessingFunctions.return_everyBusStop_busstopsrequest()
 
 		print("New Traveller made, traveller trapped in graph owo")
 	
@@ -61,10 +60,28 @@ class Traveller():
 			passcheck+=1
 
 			#if too inefficient
-			if(len(self.tour)>500000):
+			if(len(self.tour)>50000):
 				print('==============================================')
 				print('over 1000 stops passed, something probably went wrong')
 				print("check working copy json")
+				print('no of stops visited')
+				print(len(self.StopsVisited))
+				makenewfilename = "visitedstopsset.json"
+				cwd = os.getcwd()
+				newdir = os.path.join(cwd, 'WorkingMapData')
+				full_path = os.path.join(newdir, makenewfilename)
+				with open(full_path, 'w') as outfile:
+					json.dump(list(self.StopsVisited), outfile, sort_keys=False, indent=4, ensure_ascii=False)
+				print('filemade')
+
+				makenewfilename = "memodata.json"
+				cwd = os.getcwd()
+				newdir = os.path.join(cwd, 'WorkingMapData')
+				full_path = os.path.join(newdir, makenewfilename)
+				with open(full_path, 'w') as outfile:
+					json.dump(self.memodict, outfile, sort_keys=False, indent=4, ensure_ascii=False)
+				print('filemade')
+
 				del self.memodict
 
 				break
@@ -107,9 +124,6 @@ class Traveller():
 				for stop in neareststop:
 					#create relationship index
 					stopcompareindex=str(currstop)+str(stop)
-					
-
-
 					#if visited before, should be tracked in memodict, just pull out data
 					if (stopcompareindex in self.memodict):
 						print(stopcompareindex, 'exist')
@@ -157,8 +171,22 @@ class Traveller():
 				self.check_completedallstops()
 				raise Exception('Something went wrong, go back and fix it')
 
+		
 		return
-			
+		
+	
+	def searchtillendoftime_v2(self, startstop):
+		currstop=startstop
+		self.tour.append(currstop)
+		self.StopsVisited.add(currstop)
+		self.dictadjlist[currstop]['timesvisited']+=1
+		self.TotalStopsVisited=1
+		print(self.dictadjlist)
+		#while(self.AllStopsVisited==False):
+		#	pass
+
+		return
+
 	def gettour(self):
 		return self.tour
 
@@ -187,21 +215,7 @@ class Traveller():
 		self.currentbusno = newbusno
 		return
 
-	def update_newstop(self, newstopno):
-		self.currentstopno = newstopno
-		return
-
-	def update_newstopvisited_addstop(self, bsc):
-		self.StopsVisited.append(bsc)
-		return
-
-	def update_addactiontotracker(self, action):
-		self.Tracker.append(action)
-		return
-
     ## decision functions
-	def decision_stayonbus(self):
-		pass
 	
 	def decision_leavebus(self):
 		return self.update_alightbus()
@@ -218,14 +232,11 @@ class Traveller():
 
 	## check functions
 	def check_completedallstops(self):
-		#known constant total stops is 5082, and dict removes duplicates, so compare number of stops visited to total
-		if(len(self.StopsVisited)==5082):
+		#known constant total stops is 5082, and set removes duplicates, so compare number of stops visited to total
+		if(len(self.StopsVisited)==5083):
 			self.AllStopsVisited = True
 		else:
 			pass
-
-	def check_onbus_or_onstop(self):
-		return self.OnBus
 
 	#returns list of bus in bus stop
 	def check_availiablebus_returnslistofbus(self):

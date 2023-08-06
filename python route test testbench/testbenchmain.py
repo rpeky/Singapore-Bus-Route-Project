@@ -3,7 +3,7 @@ import BusStopClass
 import TravellerClass
 import JsonProcessingFunctions
 #import BusCalculations
-#import DataValidationCheckFunctions
+import DataValidationCheckFunctions
 import json
 import os
 import time
@@ -98,13 +98,17 @@ def convert_mapintojson(maptouse):
 if __name__ == "__main__":
     starttime=time.process_time()
     print("Starting")
-    tob=create_Travellerobj()
-    tob.searchtillendoftime_v1('85039')
-    print(tob.gettour())
-    print(len(tob.gettour()))
-    print(tob.getsetvisited())
-    print(len(tob.getsetvisited()))
-
+    JsonProcessingFunctions.generate_BusArrivalData_returnsBusServiceID(95161)
+    #JsonProcessingFunctions.generate_allfourAPIrequestdata_intojsonfile()
+    #tob=create_Travellerobj()
+    #tob.searchtillendoftime_v2('85039')
+    #tob.searchtillendoftime_v1('85039')
+    #print(tob.gettour())
+    #print(len(tob.gettour()))
+    #print(tob.getsetvisited())
+    #print(len(tob.getsetvisited()))
+    #print(tob.superset)
+    #JsonProcessingFunctions.generate_BusRoutesData_returnsStopJsonData_testv2(10)
     #JsonProcessingFunctions.generate_Adjacencylistforallbusstop_returnsdictofneighbours_returnsjsonofsuperadjlist()
     #DataValidationCheckFunctions.check_osfolder()
     #startstop=str(85091)
@@ -119,6 +123,7 @@ if __name__ == "__main__":
     #l3=[1.3,2.2,5.7,0.2]
     #a=min(zip(l2,l3,l1))
     #print(a[2])
+
     print(time.process_time()-starttime)
 
     

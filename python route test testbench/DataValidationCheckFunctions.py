@@ -20,7 +20,8 @@ import os
         #composite          - 5 Bus Stop Data generated from processing API data                _busstop_data.json                              ProcessedBusStopData
         #mapdata            - 6 Working Map Data Traveller will use                             workingmapdata.json                             WorkingMapData              Identifier will take in None            
         #indvbusroute       - 7 Individual route each bus takes                                 _busserviceroute.json                           ProcessedServiceRouteData   
-    #error index removed for file creation
+        
+        #error index removed for file creation
 def check_osfolder():
     listoffoldersshouldexist = ['BusArrivalRequest_data', 'BusServicesRequest_data', \
                                 'BusRoutesRequest_data', 'BusStopsRequest_data', 'ProcessedBusStopData', \

@@ -1,43 +1,5 @@
 {
     "BusStopCode": "49181",
-    "Services": [
-        {
-            "NextBus": {
-                "DestinationCode": "47009",
-                "EstimatedArrival": "2023-07-29T18:00:43+08:00",
-                "Feature": "WAB",
-                "Latitude": "1.4379453333333334",
-                "Load": "SEA",
-                "Longitude": "103.73578733333333",
-                "OriginCode": "44009",
-                "Type": "SD",
-                "VisitNumber": "1"
-            },
-            "NextBus2": {
-                "DestinationCode": "47009",
-                "EstimatedArrival": "2023-07-29T18:15:01+08:00",
-                "Feature": "WAB",
-                "Latitude": "1.3966138333333333",
-                "Load": "SEA",
-                "Longitude": "103.7543815",
-                "OriginCode": "44009",
-                "Type": "SD",
-                "VisitNumber": "1"
-            },
-            "NextBus3": {
-                "DestinationCode": "47009",
-                "EstimatedArrival": "2023-07-29T18:33:49+08:00",
-                "Feature": "WAB",
-                "Latitude": "0.0",
-                "Load": "SEA",
-                "Longitude": "0.0",
-                "OriginCode": "44009",
-                "Type": "SD",
-                "VisitNumber": "1"
-            },
-            "Operator": "SMRT",
-            "ServiceNo": "925"
-        }
-    ],
+    "Services": [],
     "odata.metadata": "http://datamall2.mytransport.sg/ltaodataservice/$metadata#BusArrivalv2/@Element"
 }
