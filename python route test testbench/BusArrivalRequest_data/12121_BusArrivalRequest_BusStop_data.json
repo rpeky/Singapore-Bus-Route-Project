@@ -4,18 +4,29 @@
         {
             "NextBus": {
                 "DestinationCode": "11009",
-                "EstimatedArrival": "2023-08-06T20:10:42+08:00",
+                "EstimatedArrival": "2023-08-07T12:46:48+08:00",
                 "Feature": "WAB",
-                "Latitude": "1.3024778333333333",
+                "Latitude": "1.304299",
                 "Load": "SEA",
-                "Longitude": "103.7871825",
+                "Longitude": "103.78812066666667",
                 "OriginCode": "11009",
                 "Type": "SD",
                 "VisitNumber": "1"
             },
             "NextBus2": {
                 "DestinationCode": "11009",
-                "EstimatedArrival": "2023-08-06T20:22:25+08:00",
+                "EstimatedArrival": "2023-08-07T13:05:56+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.2998181666666666",
+                "Load": "SEA",
+                "Longitude": "103.78575216666667",
+                "OriginCode": "11009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "11009",
+                "EstimatedArrival": "2023-08-07T13:15:34+08:00",
                 "Feature": "WAB",
                 "Latitude": "0.0",
                 "Load": "SEA",
@@ -24,19 +35,8 @@
                 "Type": "SD",
                 "VisitNumber": "1"
             },
-            "NextBus3": {
-                "DestinationCode": "",
-                "EstimatedArrival": "",
-                "Feature": "",
-                "Latitude": "",
-                "Load": "",
-                "Longitude": "",
-                "OriginCode": "",
-                "Type": "",
-                "VisitNumber": ""
-            },
             "Operator": "SBST",
-            "ServiceNo": "92M"
+            "ServiceNo": "92"
         }
     ],
     "odata.metadata": "http://datamall2.mytransport.sg/ltaodataservice/$metadata#BusArrivalv2/@Element"

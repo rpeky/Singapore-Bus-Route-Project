@@ -4,18 +4,29 @@
         {
             "NextBus": {
                 "DestinationCode": "82009",
-                "EstimatedArrival": "2023-08-06T20:14:11+08:00",
+                "EstimatedArrival": "2023-08-07T12:42:58+08:00",
                 "Feature": "WAB",
-                "Latitude": "1.3547368333333334",
+                "Latitude": "1.3465921666666667",
                 "Load": "SEA",
-                "Longitude": "103.86596116666666",
+                "Longitude": "103.88097866666666",
                 "OriginCode": "54009",
                 "Type": "SD",
                 "VisitNumber": "1"
             },
             "NextBus2": {
                 "DestinationCode": "82009",
-                "EstimatedArrival": "2023-08-06T20:29:28+08:00",
+                "EstimatedArrival": "2023-08-07T13:00:08+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3600938333333334",
+                "Load": "SEA",
+                "Longitude": "103.852733",
+                "OriginCode": "54009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "82009",
+                "EstimatedArrival": "2023-08-07T13:06:12+08:00",
                 "Feature": "WAB",
                 "Latitude": "0.0",
                 "Load": "SEA",
@@ -23,17 +34,6 @@
                 "OriginCode": "54009",
                 "Type": "SD",
                 "VisitNumber": "1"
-            },
-            "NextBus3": {
-                "DestinationCode": "",
-                "EstimatedArrival": "",
-                "Feature": "",
-                "Latitude": "",
-                "Load": "",
-                "Longitude": "",
-                "OriginCode": "",
-                "Type": "",
-                "VisitNumber": ""
             },
             "Operator": "SBST",
             "ServiceNo": "22"
@@ -41,29 +41,29 @@
         {
             "NextBus": {
                 "DestinationCode": "54009",
-                "EstimatedArrival": "2023-08-06T20:08:29+08:00",
+                "EstimatedArrival": "2023-08-07T12:52:08+08:00",
                 "Feature": "WAB",
-                "Latitude": "1.3553911666666667",
+                "Latitude": "1.3547331666666667",
                 "Load": "SEA",
-                "Longitude": "103.86761233333333",
+                "Longitude": "103.86597366666666",
                 "OriginCode": "54009",
                 "Type": "SD",
                 "VisitNumber": "1"
             },
             "NextBus2": {
                 "DestinationCode": "54009",
-                "EstimatedArrival": "2023-08-06T20:19:32+08:00",
+                "EstimatedArrival": "2023-08-07T12:58:49+08:00",
                 "Feature": "WAB",
-                "Latitude": "0.0",
+                "Latitude": "1.3674538333333333",
                 "Load": "SEA",
-                "Longitude": "0.0",
+                "Longitude": "103.850685",
                 "OriginCode": "54009",
                 "Type": "SD",
                 "VisitNumber": "1"
             },
             "NextBus3": {
                 "DestinationCode": "54009",
-                "EstimatedArrival": "2023-08-06T20:30:31+08:00",
+                "EstimatedArrival": "2023-08-07T13:08:04+08:00",
                 "Feature": "WAB",
                 "Latitude": "0.0",
                 "Load": "SEA",
@@ -78,33 +78,33 @@
         {
             "NextBus": {
                 "DestinationCode": "94009",
-                "EstimatedArrival": "2023-08-06T20:06:32+08:00",
+                "EstimatedArrival": "2023-08-07T12:50:29+08:00",
                 "Feature": "WAB",
-                "Latitude": "1.3515941666666667",
+                "Latitude": "1.3535518333333334",
                 "Load": "SEA",
-                "Longitude": "103.8753155",
+                "Longitude": "103.87283116666667",
                 "OriginCode": "65009",
                 "Type": "DD",
                 "VisitNumber": "1"
             },
             "NextBus2": {
                 "DestinationCode": "94009",
-                "EstimatedArrival": "2023-08-06T20:22:40+08:00",
+                "EstimatedArrival": "2023-08-07T13:04:45+08:00",
                 "Feature": "WAB",
-                "Latitude": "1.3793661666666668",
+                "Latitude": "1.3793748333333333",
                 "Load": "SEA",
-                "Longitude": "103.88611983333334",
+                "Longitude": "103.88613233333334",
                 "OriginCode": "65009",
                 "Type": "DD",
                 "VisitNumber": "1"
             },
             "NextBus3": {
                 "DestinationCode": "94009",
-                "EstimatedArrival": "2023-08-06T20:41:46+08:00",
+                "EstimatedArrival": "2023-08-07T13:20:04+08:00",
                 "Feature": "WAB",
-                "Latitude": "1.4060241666666666",
+                "Latitude": "1.4006833333333333",
                 "Load": "SEA",
-                "Longitude": "103.89758183333333",
+                "Longitude": "103.89639283333334",
                 "OriginCode": "65009",
                 "Type": "DD",
                 "VisitNumber": "1"
@@ -115,29 +115,18 @@
         {
             "NextBus": {
                 "DestinationCode": "77009",
-                "EstimatedArrival": "2023-08-06T20:12:50+08:00",
+                "EstimatedArrival": "2023-08-07T12:52:33+08:00",
                 "Feature": "WAB",
-                "Latitude": "1.3492038333333334",
+                "Latitude": "1.3514031666666666",
                 "Load": "SEA",
-                "Longitude": "103.866333",
-                "OriginCode": "53009",
-                "Type": "DD",
-                "VisitNumber": "1"
-            },
-            "NextBus2": {
-                "DestinationCode": "77009",
-                "EstimatedArrival": "2023-08-06T20:26:57+08:00",
-                "Feature": "WAB",
-                "Latitude": "1.3482935",
-                "Load": "SEA",
-                "Longitude": "103.8483255",
+                "Longitude": "103.86977016666667",
                 "OriginCode": "53009",
                 "Type": "SD",
                 "VisitNumber": "1"
             },
-            "NextBus3": {
+            "NextBus2": {
                 "DestinationCode": "77009",
-                "EstimatedArrival": "2023-08-06T20:38:48+08:00",
+                "EstimatedArrival": "2023-08-07T13:08:50+08:00",
                 "Feature": "WAB",
                 "Latitude": "0.0",
                 "Load": "SEA",
@@ -146,39 +135,50 @@
                 "Type": "DD",
                 "VisitNumber": "1"
             },
+            "NextBus3": {
+                "DestinationCode": "",
+                "EstimatedArrival": "",
+                "Feature": "",
+                "Latitude": "",
+                "Load": "",
+                "Longitude": "",
+                "OriginCode": "",
+                "Type": "",
+                "VisitNumber": ""
+            },
             "Operator": "SBST",
             "ServiceNo": "58"
         },
         {
             "NextBus": {
                 "DestinationCode": "65009",
-                "EstimatedArrival": "2023-08-06T20:07:17+08:00",
+                "EstimatedArrival": "2023-08-07T12:58:29+08:00",
                 "Feature": "WAB",
-                "Latitude": "1.35279",
+                "Latitude": "1.3678236666666668",
                 "Load": "SEA",
-                "Longitude": "103.88938583333334",
+                "Longitude": "103.88716233333334",
                 "OriginCode": "65009",
                 "Type": "DD",
                 "VisitNumber": "1"
             },
             "NextBus2": {
                 "DestinationCode": "65009",
-                "EstimatedArrival": "2023-08-06T20:21:15+08:00",
+                "EstimatedArrival": "2023-08-07T13:12:18+08:00",
                 "Feature": "WAB",
-                "Latitude": "1.3731886666666666",
+                "Latitude": "1.3821326666666667",
                 "Load": "SEA",
-                "Longitude": "103.89286183333333",
+                "Longitude": "103.90367033333334",
                 "OriginCode": "65009",
                 "Type": "DD",
                 "VisitNumber": "1"
             },
             "NextBus3": {
                 "DestinationCode": "65009",
-                "EstimatedArrival": "2023-08-06T20:34:47+08:00",
+                "EstimatedArrival": "2023-08-07T13:21:40+08:00",
                 "Feature": "WAB",
-                "Latitude": "1.3909813333333334",
+                "Latitude": "1.4005218333333334",
                 "Load": "SEA",
-                "Longitude": "103.91371683333334",
+                "Longitude": "103.90501083333334",
                 "OriginCode": "65009",
                 "Type": "DD",
                 "VisitNumber": "1"
@@ -188,71 +188,71 @@
         },
         {
             "NextBus": {
-                "DestinationCode": "55509",
-                "EstimatedArrival": "2023-08-06T20:13:00+08:00",
+                "DestinationCode": "03239",
+                "EstimatedArrival": "2023-08-07T12:42:46+08:00",
                 "Feature": "WAB",
-                "Latitude": "1.3638853333333334",
+                "Latitude": "1.3466081666666667",
                 "Load": "SEA",
-                "Longitude": "103.87412933333333",
+                "Longitude": "103.88098116666667",
                 "OriginCode": "55509",
-                "Type": "SD",
+                "Type": "DD",
                 "VisitNumber": "1"
             },
             "NextBus2": {
-                "DestinationCode": "55509",
-                "EstimatedArrival": "2023-08-06T20:27:31+08:00",
+                "DestinationCode": "03239",
+                "EstimatedArrival": "2023-08-07T12:57:27+08:00",
                 "Feature": "WAB",
-                "Latitude": "1.390898",
-                "Load": "SDA",
-                "Longitude": "103.85972583333333",
+                "Latitude": "1.36595",
+                "Load": "SEA",
+                "Longitude": "103.87512833333334",
                 "OriginCode": "55509",
                 "Type": "SD",
                 "VisitNumber": "1"
             },
             "NextBus3": {
-                "DestinationCode": "55509",
-                "EstimatedArrival": "2023-08-06T20:42:58+08:00",
+                "DestinationCode": "03239",
+                "EstimatedArrival": "2023-08-07T13:10:41+08:00",
                 "Feature": "WAB",
-                "Latitude": "0.0",
+                "Latitude": "1.3879388333333333",
                 "Load": "SEA",
-                "Longitude": "0.0",
+                "Longitude": "103.87054466666666",
                 "OriginCode": "55509",
                 "Type": "DD",
                 "VisitNumber": "1"
             },
             "Operator": "SBST",
-            "ServiceNo": "70M"
+            "ServiceNo": "70"
         },
         {
             "NextBus": {
                 "DestinationCode": "82009",
-                "EstimatedArrival": "2023-08-06T20:07:52+08:00",
+                "EstimatedArrival": "2023-08-07T12:44:24+08:00",
                 "Feature": "WAB",
-                "Latitude": "1.3597986666666666",
+                "Latitude": "1.3511651666666666",
                 "Load": "SEA",
-                "Longitude": "103.87395416666666",
-                "OriginCode": "55509",
-                "Type": "SD",
-                "VisitNumber": "1"
-            },
-            "NextBus2": {
-                "DestinationCode": "82009",
-                "EstimatedArrival": "2023-08-06T20:20:03+08:00",
-                "Feature": "WAB",
-                "Latitude": "1.3693158333333333",
-                "Load": "SEA",
-                "Longitude": "103.85857966666667",
+                "Longitude": "103.87927",
                 "OriginCode": "55509",
                 "Type": "DD",
                 "VisitNumber": "1"
             },
+            "NextBus2": {
+                "DestinationCode": "82009",
+                "EstimatedArrival": "2023-08-07T12:51:04+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3638861666666666",
+                "Load": "SEA",
+                "Longitude": "103.8741065",
+                "OriginCode": "55509",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
             "NextBus3": {
                 "DestinationCode": "82009",
-                "EstimatedArrival": "2023-08-06T20:32:57+08:00",
+                "EstimatedArrival": "2023-08-07T13:07:24+08:00",
                 "Feature": "WAB",
-                "Latitude": "1.3736921666666666",
+                "Latitude": "1.3690903333333333",
                 "Load": "SEA",
-                "Longitude": "103.8373815",
+                "Longitude": "103.849618",
                 "OriginCode": "55509",
                 "Type": "DD",
                 "VisitNumber": "1"
@@ -263,29 +263,29 @@
         {
             "NextBus": {
                 "DestinationCode": "14009",
-                "EstimatedArrival": "2023-08-06T20:11:28+08:00",
+                "EstimatedArrival": "2023-08-07T12:42:26+08:00",
                 "Feature": "WAB",
-                "Latitude": "1.3624848333333333",
+                "Latitude": "1.3440815",
                 "Load": "SEA",
-                "Longitude": "103.88775166666667",
+                "Longitude": "103.88275633333333",
                 "OriginCode": "67009",
                 "Type": "DD",
                 "VisitNumber": "1"
             },
             "NextBus2": {
                 "DestinationCode": "14009",
-                "EstimatedArrival": "2023-08-06T20:29:22+08:00",
+                "EstimatedArrival": "2023-08-07T13:01:53+08:00",
                 "Feature": "WAB",
-                "Latitude": "1.3846795",
+                "Latitude": "1.3698721666666667",
                 "Load": "SEA",
-                "Longitude": "103.90061033333333",
+                "Longitude": "103.8895165",
                 "OriginCode": "67009",
                 "Type": "DD",
                 "VisitNumber": "1"
             },
             "NextBus3": {
                 "DestinationCode": "14009",
-                "EstimatedArrival": "2023-08-06T20:42:22+08:00",
+                "EstimatedArrival": "2023-08-07T13:13:53+08:00",
                 "Feature": "WAB",
                 "Latitude": "0.0",
                 "Load": "SEA",

@@ -46,7 +46,7 @@ def generate_BusStopData_processedjson_firstvisit(thisisastop, busstopcode):
     #IDofBus = None         -> bus_arrivals             //done
     #TimesVisited = None    -> 0                        //done set to zero, increase using traveller obj for first visit
     #Description = None     -> bus_stop_no              //done
-    #Neighbour = None       -> _busserviceroute        //done
+    #Neighbour = None       -> _busserviceroute         //done
     if(check_ifProcessedBusStopData_exist(busstopcode)!=True):
 
         #print(str(busstopcode)+'_busstop_data.json does not exists')
@@ -98,31 +98,15 @@ def convert_mapintojson(maptouse):
 if __name__ == "__main__":
     starttime=time.process_time()
     print("Starting")
-    JsonProcessingFunctions.generate_BusArrivalData_returnsBusServiceID(95161)
-    #JsonProcessingFunctions.generate_allfourAPIrequestdata_intojsonfile()
-    #tob=create_Travellerobj()
-    #tob.searchtillendoftime_v2('85039')
-    #tob.searchtillendoftime_v1('85039')
-    #print(tob.gettour())
-    #print(len(tob.gettour()))
-    #print(tob.getsetvisited())
-    #print(len(tob.getsetvisited()))
-    #print(tob.superset)
-    #JsonProcessingFunctions.generate_BusRoutesData_returnsStopJsonData_testv2(10)
-    #JsonProcessingFunctions.generate_Adjacencylistforallbusstop_returnsdictofneighbours_returnsjsonofsuperadjlist()
     #DataValidationCheckFunctions.check_osfolder()
-    #startstop=str(85091)
-    #print(startstop)
-    #graph=GraphClass.Graph()
-    #graph.searchtilltheendoftime(startstop)
-    #print('tour: ', graph.get_tour())
-    #graph=GraphClass.Graph()
-    #print(graph.returndir())
-    #l1=['99999','92365','24242','48484']
-    #l2=[0,1,1,0]
-    #l3=[1.3,2.2,5.7,0.2]
-    #a=min(zip(l2,l3,l1))
-    #print(a[2])
+    #JsonProcessingFunctions.generate_allfourAPIrequestdata_intojsonfile()
+    #bob = create_BusStopobj()
+    #generate_All_BusStopData_processedjson_firstvisit(bob)
+    #JsonProcessingFunctions.generate_Adjacencylistforallbusstop_returnsdictofneighbours_returnsjsonofsuperadjlist()
+    tob = create_Travellerobj()
+    tob.searchtillendoftime_v1('85049')
+
+    #JsonProcessingFunctions.generate_BusArrivalData_returnsBusServiceID(95161)
 
     print(time.process_time()-starttime)
 

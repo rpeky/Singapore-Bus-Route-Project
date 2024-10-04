@@ -4,18 +4,18 @@
         {
             "NextBus": {
                 "DestinationCode": "44009",
-                "EstimatedArrival": "2023-08-06T20:03:58+08:00",
+                "EstimatedArrival": "2023-08-07T13:01:51+08:00",
                 "Feature": "WAB",
-                "Latitude": "1.3862886666666667",
-                "Load": "SDA",
-                "Longitude": "103.74610516666667",
+                "Latitude": "0.0",
+                "Load": "SEA",
+                "Longitude": "0.0",
                 "OriginCode": "44009",
                 "Type": "SD",
                 "VisitNumber": "1"
             },
             "NextBus2": {
                 "DestinationCode": "44009",
-                "EstimatedArrival": "2023-08-06T20:16:24+08:00",
+                "EstimatedArrival": "2023-08-07T13:12:10+08:00",
                 "Feature": "WAB",
                 "Latitude": "0.0",
                 "Load": "SEA",
@@ -26,7 +26,7 @@
             },
             "NextBus3": {
                 "DestinationCode": "44009",
-                "EstimatedArrival": "2023-08-06T20:29:24+08:00",
+                "EstimatedArrival": "2023-08-07T13:22:10+08:00",
                 "Feature": "WAB",
                 "Latitude": "0.0",
                 "Load": "SEA",
@@ -40,34 +40,71 @@
         },
         {
             "NextBus": {
-                "DestinationCode": "45009",
-                "EstimatedArrival": "2023-08-06T20:08:30+08:00",
+                "DestinationCode": "44531",
+                "EstimatedArrival": "2023-08-07T12:56:18+08:00",
                 "Feature": "WAB",
-                "Latitude": "1.3999876666666666",
+                "Latitude": "0.0",
                 "Load": "SEA",
-                "Longitude": "103.74980333333333",
+                "Longitude": "0.0",
+                "OriginCode": "44009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "44531",
+                "EstimatedArrival": "2023-08-07T13:16:18+08:00",
+                "Feature": "WAB",
+                "Latitude": "0.0",
+                "Load": "SEA",
+                "Longitude": "0.0",
+                "OriginCode": "44009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "",
+                "EstimatedArrival": "",
+                "Feature": "",
+                "Latitude": "",
+                "Load": "",
+                "Longitude": "",
+                "OriginCode": "",
+                "Type": "",
+                "VisitNumber": ""
+            },
+            "Operator": "SMRT",
+            "ServiceNo": "307A"
+        },
+        {
+            "NextBus": {
+                "DestinationCode": "45009",
+                "EstimatedArrival": "2023-08-07T12:42:35+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.392394",
+                "Load": "SEA",
+                "Longitude": "103.74495216666666",
                 "OriginCode": "45009",
-                "Type": "DD",
+                "Type": "SD",
                 "VisitNumber": "1"
             },
             "NextBus2": {
                 "DestinationCode": "45009",
-                "EstimatedArrival": "2023-08-06T20:13:17+08:00",
+                "EstimatedArrival": "2023-08-07T12:59:53+08:00",
                 "Feature": "WAB",
-                "Latitude": "1.4029621666666667",
+                "Latitude": "1.3964251666666667",
                 "Load": "SEA",
-                "Longitude": "103.74607383333333",
+                "Longitude": "103.74715",
                 "OriginCode": "45009",
                 "Type": "DD",
                 "VisitNumber": "1"
             },
             "NextBus3": {
                 "DestinationCode": "45009",
-                "EstimatedArrival": "2023-08-06T20:25:02+08:00",
+                "EstimatedArrival": "2023-08-07T13:08:08+08:00",
                 "Feature": "WAB",
-                "Latitude": "1.3918746666666666",
-                "Load": "SDA",
-                "Longitude": "103.74669133333333",
+                "Latitude": "1.3941605",
+                "Load": "SEA",
+                "Longitude": "103.752932",
                 "OriginCode": "45009",
                 "Type": "DD",
                 "VisitNumber": "1"

@@ -60,7 +60,7 @@ class Traveller():
 			passcheck+=1
 
 			#if too inefficient
-			if(len(self.tour)>50000):
+			if(len(self.tour)>20000):
 				print('==============================================')
 				print('over 1000 stops passed, something probably went wrong')
 				print("check working copy json")

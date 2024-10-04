@@ -18,8 +18,10 @@ from multiprocessing import Process
     #TimesVisited = int   //map 6
     #Description = str    //map 7 - Bus Stop Name
 
+api_key = os.getenv('API_KEY')
+
 #to blank out in final commit(?) not sure if its against user agreement if its on github
-headers = {'AccountKey' : '4BXSLAQ5T+C4NJ6TA9/qjA==',
+headers = {'AccountKey' : api_key,
            'accept' : 'application/json'  
           }
 
@@ -41,7 +43,6 @@ def generate_BusArrivalData_returnsBusServiceID(BusStopCode):
         body,
         headers
         )
-    print(content)
     jsonObj = json.loads(content)
     #create file to read in future in BusArrivalRequest folder
     filename = str(BusStopCode)+"_BusArrivalRequest_BusStop_data.json"
@@ -544,14 +545,15 @@ def generate_AllRoutesforEveryBus_returnsjsonfile():
 
 def generate_Neighbour_returnslistofneighbours(busstopcode):
     #edge case 59008 somehow has itself as a neighbour, forces the actual next stop 59091
-    if(busstopcode=='59008'):
-        neighbours.append('59008')
-        return neighbours
 
     neighbours=[]
     busstopinfo=return_BusServicesforBusStop(busstopcode)
 
-    print(busstopcode)
+    if(busstopcode=='59008'):
+        neighbours.append('59008')
+        return neighbours
+
+    #print(busstopcode)
     for bus in busstopinfo:
         #skip if bus number=75A because depreciated, should not be included in 12109 bus stop arrival data
         if(bus=='75A'):
