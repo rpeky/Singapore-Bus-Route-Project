@@ -7,9 +7,18 @@ import (
 	"os"
 )
 
-const baseURL = "http://datamall2.mytransport.sg/ltaodataservice"
+// consts
+// set 1 more just in case they increase the data, to manually validate 250426
+const (
+	baseURL = "http://datamall2.mytransport.sg/ltaodataservice"
+
+	NumBusStopRequest    = 12
+	NumBusServiceRequest = 3
+	NumBusRoutesRequest  = 52
+)
 
 // helper function to add the query to
+// master query function, just modify the endpoint
 func Query(endpoint string) ([]byte, error) {
 	// check if this device has the datamall API key
 	apiKey := os.Getenv("API_KEY")
@@ -41,6 +50,9 @@ func Query(endpoint string) ([]byte, error) {
 	// can just take the output and write directly later
 	return io.ReadAll(resp.Body)
 }
+
+/*-------------------------------------------------------------------------------*/
+/*----------------------API Get Call helpers-----------------------*/
 
 /*
 Refactoring generate_BusArrivalData_returnsBusServiceID(BusStopCode)
@@ -100,7 +112,7 @@ func QueryBusArrivalData(busStopCode string) ([]byte, error) {
 
 	// validate response is not empty
 	if len(resp) == 0 {
-		return nil, fmt.Errorf("empty response for bus stop %s", busStopCode)
+		return nil, fmt.Errorf("empty response for bus stop arrival data %s", busStopCode)
 	}
 
 	return resp, nil
@@ -137,9 +149,11 @@ Sample JSON response:
     }
 
 Notes:
-    - Direction 1 and Direction 2 should be treated separately.
-    - Loop services may use suffixes such as G/W, for example:
-      225G, 225W, 243G, 243W, 410G, 410W.
+	Loop services may use suffixes such as G/W, for example:
+	225G, 225W, 243G, 243W, 410G, 410W.
+
+	Emperically, the last time I ran this there was only 2 payloads of output
+
 */
 
 func QueryBusServicesData(skips int) ([]byte, error) {
@@ -162,3 +176,122 @@ func QueryBusServicesData(skips int) ([]byte, error) {
 
 	return resp, nil
 }
+
+/*
+Refactoring generate_BusRoutesData_returnsStopJsonData(skips)
+API 2.3: Bus Routes Request
+
+Endpoint:
+	/BusRoutes
+	/BusRoutes?$skip=<n>
+
+Sample JSON response:
+{
+    "odata.metadata": "http://datamall2.mytransport.sg/ltaodataservice/$metadataBusRoutes",
+    "value": [
+        {
+            "BusStopCode": "75009",
+            "Direction": 1,
+            "Distance": 0,
+            "Operator": "SBST",
+            "SAT_FirstBus": "0500",
+            "SAT_LastBus": "2300",
+            "SUN_FirstBus": "0500",
+            "SUN_LastBus": "2300",
+            "ServiceNo": "10",
+            "StopSequence": 1,
+            "WD_FirstBus": "0500",
+            "WD_LastBus": "2300"
+        },
+        {
+            "BusStopCode": "76059",
+            "Direction": 1,
+            "Distance": 0.6,
+            "Operator": "SBST",
+            "SAT_FirstBus": "0502",
+            "SAT_LastBus": "2302",
+            "SUN_FirstBus": "0502",
+            "SUN_LastBus": "2302",
+            "ServiceNo": "10",
+            "StopSequence": 2,
+            "WD_FirstBus": "0502",
+            "WD_LastBus": "2302"
+        },
+}
+
+Notes:
+	Emperically, the last time I ran this there were 51 payloads of output
+
+*/
+
+func QueryBusRoutesData(skips int) ([]byte, error) {
+	endpoint := "/BusRoutes"
+
+	// 2nd page onwards
+	if skips != 0 {
+		endpoint = fmt.Sprintf("/BusRoutes?$skip=%d", skips*500)
+	}
+
+	resp, err := Query(endpoint)
+	if err != nil {
+		return nil, err
+	}
+
+	// validate response is not empty
+	if len(resp) == 0 {
+		return nil, fmt.Errorf("empty response for bus route page %d", skips)
+	}
+
+	return resp, nil
+}
+
+/*
+Refactoring generate_BusStopsRequest_togetallbusstop(skips)
+API 2.4: Bus Stops Request
+
+Endpoint:
+	/BusStops
+	/BusStops?$skip=<n>
+
+Sample JSON response:
+{
+    "odata.metadata": "http://datamall2.mytransport.sg/ltaodataservice/$metadata#BusStops",
+    "value": [
+        {
+            "BusStopCode": "01012",
+            "Description": "Hotel Grand Pacific",
+            "Latitude": 1.29684825487647,
+            "Longitude": 103.85253591654006,
+            "RoadName": "Victoria St"
+        },
+}
+
+Notes:
+	Emperically, the last time I ran this there were 11 payloads of output
+
+*/
+
+func QueryBusStopsData(skips int) ([]byte, error) {
+	endpoint := "/BusStops"
+
+	// 2nd page onwards
+	if skips != 0 {
+		endpoint = fmt.Sprintf("/BusStops?$skip=%d", skips*500)
+	}
+
+	resp, err := Query(endpoint)
+	if err != nil {
+		return nil, err
+	}
+
+	// validate response is not empty
+	if len(resp) == 0 {
+		return nil, fmt.Errorf("empty response for bus stop data page %d", skips)
+	}
+
+	return resp, nil
+}
+
+/*-------------------------------------------------------------------------------*/
+/*----------------------Data generating functions-----------------------*/
+// makes the relevant api calls and generate the needed files
