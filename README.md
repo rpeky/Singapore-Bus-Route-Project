@@ -1,13 +1,20 @@
-# Singapore-Bus-Route-Project
+# Singapore Bus Route Project
 
-I thought of this while in the toilet one day
+Goal: construct a route that visits every bus stop in Singapore.
 
-End goal is to visit every single bus stop in Singapore
+The problem is modelled as a directed graph traversal problem, where:
+- vertices = bus stops
+- edges = valid bus transitions
+- objective = visit all vertices at least once, while minimising repetition
 
+---
 
-Active folder is 'python route test testbench'
+## Project Structure
 
-
-Read through the wiki for explanations for functions used
+```text
+prototype_py/   initial Python prototype (data pipeline + early traversal logic)
+go/             rewrite in Go (clean architecture + performance focus)
+docs/           LaTeX writeups (problem statement, system design, heuristics)
+```
 
 https://github.com/rpeky/Singapore-Bus-Route-Project/wiki

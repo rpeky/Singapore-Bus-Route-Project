@@ -1,0 +1,5 @@
+Build Latex:
+    latexmk -pdf [file]
+
+Clean auxilary files:
+    latexmk -c [file]
