@@ -293,5 +293,77 @@ func QueryBusStopsData(skips int) ([]byte, error) {
 }
 
 /*-------------------------------------------------------------------------------*/
-/*----------------------Data generating functions-----------------------*/
+/*----------------------Data fetching functions-----------------------*/
 // makes the relevant api calls and generate the needed files
+
+func FetchAllBusStops() error {
+	for page := 0; page < NumBusStopRequest; page++ {
+		data, err := QueryBusStopsData(page)
+		if err != nil {
+			return err
+		}
+
+		if err := WriteRawJSON(BusStopsPath(page), data); err != nil {
+			return err
+		}
+
+		fmt.Println("saved bus stops page", page)
+	}
+
+	return nil
+}
+
+func FetchAllBusServices() error {
+	for page := 0; page < NumBusServiceRequest; page++ {
+		data, err := QueryBusServicesData(page)
+		if err != nil {
+			return err
+		}
+
+		if err := WriteRawJSON(BusServicesPath(page), data); err != nil {
+			return err
+		}
+
+		fmt.Println("saved bus services page", page)
+	}
+
+	return nil
+}
+
+func FetchAllBusRoutes() error {
+	for page := 0; page < NumBusRoutesRequest; page++ {
+		data, err := QueryBusRoutesData(page)
+		if err != nil {
+			return err
+		}
+
+		if err := WriteRawJSON(BusRoutesPath(page), data); err != nil {
+			return err
+		}
+
+		fmt.Println("saved bus routes page", page)
+	}
+
+	return nil
+}
+
+func FetchStaticData() error {
+	// make sure the dirs are made (from files.go)
+	if err := EnsureDataDirs(); err != nil {
+		return err
+	}
+
+	if err := FetchAllBusStops(); err != nil {
+		return err
+	}
+
+	if err := FetchAllBusServices(); err != nil {
+		return err
+	}
+
+	if err := FetchAllBusRoutes(); err != nil {
+		return err
+	}
+
+	return nil
+}

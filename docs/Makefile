@@ -1,16 +1,18 @@
-TEXFILES := $(wildcard *.tex)
-PDFFILES := $(TEXFILES:.tex=.pdf)
+TEXDIR := tex
+
+TEXFILES := $(wildcard $(TEXDIR)/*.tex)
+PDFFILES := $(patsubst $(TEXDIR)/%.tex,%.pdf,$(TEXFILES))
 
 .PHONY: all clean distclean
 
 all: $(PDFFILES)
-	latexmk -c
+	$(MAKE) clean
 
-%.pdf: %.tex
-	latexmk -pdf $<
+%.pdf: $(TEXDIR)/%.tex
+	latexmk -pdf -jobname=$(basename $@) $<
 
 clean:
-	latexmk -c
+	rm -f *.aux *.log *.out *.toc *.fls *.fdb_latexmk *.synctex.gz
 
-distclean:
-	latexmk -C
+distclean: clean
+	rm -f *.pdf
