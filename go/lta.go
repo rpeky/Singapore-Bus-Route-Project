@@ -292,7 +292,7 @@ func QueryBusStopsData(skips int) ([]byte, error) {
 	return resp, nil
 }
 
-/*-------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------*/
 /*----------------------Data fetching functions-----------------------*/
 // makes the relevant api calls and generate the needed files
 
@@ -366,4 +366,126 @@ func FetchStaticData() error {
 	}
 
 	return nil
+}
+
+/*--------------------------------------------------------------------------*/
+/*----------------------Structs for json-----------------------*/
+
+// API 2.1 BusArrivalRequest
+// full unpack all data from payload
+type BusArrivalRequest struct {
+	ODataMetadata string       `json:"odata.metadata"`
+	BusStopCode   string       `json:"BusStopCode"`
+	ArrivalData   []BusArrival `json:"Services"`
+}
+
+type BusArrival struct {
+	ServiceNo string  `json:"ServiceNo"`
+	Operator  string  `json:"Operator"`
+	NextBus   NextBus `json:"NextBus"`
+	NextBus2  NextBus `json:"NextBus2"`
+	NextBus3  NextBus `json:"NextBus3"`
+}
+
+type NextBus struct {
+	OriginCode       string `json:"OriginCode"`
+	DestinationCode  string `json:"DestinationCode"`
+	EstimatedArrival string `json:"EstimatedArrival"`
+	Monitored        int    `json:"Monitored"`
+	Latitude         string `json:"Latitude"`
+	Longitude        string `json:"Longitude"`
+	VisitNumber      string `json:"VisitNumber"`
+	Load             string `json:"Load"`
+	Feature          string `json:"Feature"`
+	Type             string `json:"Type"`
+}
+
+// reduced unmarshall struct
+type BusArrivalReduced struct {
+	ODataMetadata   string                   `json:"odata.metadata"`
+	BusStopCode     string                   `json:"BusStopCode"`
+	ReducedServices []ArrivalServicesReduced `json:"Services"`
+}
+type ArrivalServicesReduced struct {
+	ServiceNo string `json:"ServiceNo"`
+}
+
+// API 2.2 BusServicesRequest
+type BusServicesRequest struct {
+	ODataMetadata string        `json:"odata.metadata"`
+	ServicesData  []BusServices `json:"value"` //there should be 500 entries
+}
+
+type BusServices struct {
+	ServiceNo       string `json:"ServiceNo"`
+	Operator        string `json:"Operator"`
+	Direction       int    `json:"Direction"`
+	Category        string `json:"Category"`
+	OriginCode      string `json:"OriginCode"`
+	DestinationCode string `json:"DestinationCode"`
+	AMPeakFreq      string `json:"AM_Peak_Freq"`
+	AMOffpeakFreq   string `json:"AM_Offpeak_Freq"`
+	PMPeakFreq      string `json:"PM_Peak_Freq"`
+	PMOffpeakFreq   string `json:"PM_Offpeak_Freq"`
+	LoopDesc        string `json:"LoopDesc"`
+}
+
+// API 2.3 BusRoutesRequest
+type BusRoutesRequest struct {
+	ODataMetadata string      `json:"odata.metadata"`
+	RouteData     []RouteData `json:"value"` //there should be 500 entries
+}
+
+type RouteData struct {
+	BusStopCode  string `json:"BusStopCode"`
+	Direction    int    `json:"Direction"`
+	Distance     int    `json:"Distance"`
+	Operator     string `json:"Operator"`
+	SATFirstBus  string `json:"SAT_FirstBus"`
+	SATLastBus   string `json:"SAT_LastBus"`
+	SUNFirstBus  string `json:"SUN_FirstBus"`
+	SUNLastBus   string `json:"SUN_LastBus"`
+	ServiceNo    string `json:"ServiceNo"`
+	StopSequence int    `json:"StopSequence"`
+	WDFirstBus   string `json:"WD_FirstBus"`
+	WDLastBus    string `json:"WD_LastBus"`
+}
+
+// reduced unmarshall struct
+type BusRoutesReduced struct {
+	ODataMetadata    string             `json:"odata.metadata"`
+	RouteDataReduced []RouteDataReduced `json:"value"` //there should be 500 entries
+}
+
+type RouteDataReduced struct {
+	BusStopCode  string `json:"BusStopCode"`
+	Direction    int    `json:"Direction"`
+	Distance     int    `json:"Distance"`
+	ServiceNo    string `json:"ServiceNo"`
+	StopSequence int    `json:"StopSequence"`
+}
+
+// API 2.4 BusStopsRequest
+type BusStopsRequest struct {
+	ODataMetadata string     `json:"odata.metadata"`
+	StopData      []StopData `json:"value"` //there should be 500 entries
+}
+
+type StopData struct {
+	BusStopCode string  `json:"BusStopCode"`
+	Description string  `json:"Description"`
+	Latitude    float32 `json:"Latitude"`
+	Longitude   float32 `json:"Longitude"`
+	RoadName    string  `json:"RoadName"`
+}
+
+// reduced unmarshall struct
+type BusStopsRequestReduced struct {
+	ODataMetadata   string            `json:"odata.metadata"`
+	StopDataReduced []StopDataReduced `json:"value"` //there should be 500 entries
+}
+
+type StopDataReduced struct {
+	BusStopCode string `json:"BusStopCode"`
+	Description string `json:"Description"`
 }
