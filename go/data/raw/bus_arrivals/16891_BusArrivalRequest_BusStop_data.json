@@ -1,0 +1,43 @@
+{
+    "BusStopCode": "16891",
+    "Services": [
+        {
+            "NextBus": {
+                "DestinationCode": "43009",
+                "EstimatedArrival": "2023-08-07T12:48:55+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3164443333333333",
+                "Load": "SEA",
+                "Longitude": "103.76486166666666",
+                "OriginCode": "43009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "43009",
+                "EstimatedArrival": "2023-08-07T13:01:25+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.344275",
+                "Load": "SEA",
+                "Longitude": "103.75437433333333",
+                "OriginCode": "43009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "43009",
+                "EstimatedArrival": "2023-08-07T13:12:29+08:00",
+                "Feature": "WAB",
+                "Latitude": "0.0",
+                "Load": "SEA",
+                "Longitude": "0.0",
+                "OriginCode": "43009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "Operator": "TTS",
+            "ServiceNo": "189"
+        }
+    ],
+    "odata.metadata": "http://datamall2.mytransport.sg/ltaodataservice/$metadata#BusArrivalv2/@Element"
+}

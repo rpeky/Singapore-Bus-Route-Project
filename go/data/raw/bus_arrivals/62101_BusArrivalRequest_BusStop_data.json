@@ -1,0 +1,80 @@
+{
+    "BusStopCode": "62101",
+    "Services": [
+        {
+            "NextBus": {
+                "DestinationCode": "52009",
+                "EstimatedArrival": "2023-08-07T12:58:33+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3151921666666666",
+                "Load": "SEA",
+                "Longitude": "103.89248216666667",
+                "OriginCode": "75009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "52009",
+                "EstimatedArrival": "2023-08-07T13:06:38+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3185303333333334",
+                "Load": "SEA",
+                "Longitude": "103.90993566666667",
+                "OriginCode": "75009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "52009",
+                "EstimatedArrival": "2023-08-07T13:22:00+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.331644",
+                "Load": "SEA",
+                "Longitude": "103.93433383333333",
+                "OriginCode": "75009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "Operator": "SBST",
+            "ServiceNo": "28"
+        },
+        {
+            "NextBus": {
+                "DestinationCode": "14009",
+                "EstimatedArrival": "2023-08-07T12:59:26+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3236601666666665",
+                "Load": "SEA",
+                "Longitude": "103.905339",
+                "OriginCode": "82009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "14009",
+                "EstimatedArrival": "2023-08-07T13:10:31+08:00",
+                "Feature": "WAB",
+                "Latitude": "0.0",
+                "Load": "SEA",
+                "Longitude": "0.0",
+                "OriginCode": "82009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "",
+                "EstimatedArrival": "",
+                "Feature": "",
+                "Latitude": "",
+                "Load": "",
+                "Longitude": "",
+                "OriginCode": "",
+                "Type": "",
+                "VisitNumber": ""
+            },
+            "Operator": "SBST",
+            "ServiceNo": "93"
+        }
+    ],
+    "odata.metadata": "http://datamall2.mytransport.sg/ltaodataservice/$metadata#BusArrivalv2/@Element"
+}

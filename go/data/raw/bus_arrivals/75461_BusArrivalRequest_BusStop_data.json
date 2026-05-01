@@ -1,0 +1,80 @@
+{
+    "BusStopCode": "75461",
+    "Services": [
+        {
+            "NextBus": {
+                "DestinationCode": "75009",
+                "EstimatedArrival": "2023-08-07T12:53:02+08:00",
+                "Feature": "WAB",
+                "Latitude": "0.0",
+                "Load": "SEA",
+                "Longitude": "0.0",
+                "OriginCode": "75009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "75009",
+                "EstimatedArrival": "2023-08-07T13:13:29+08:00",
+                "Feature": "WAB",
+                "Latitude": "0.0",
+                "Load": "SEA",
+                "Longitude": "0.0",
+                "OriginCode": "75009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "",
+                "EstimatedArrival": "",
+                "Feature": "",
+                "Latitude": "",
+                "Load": "",
+                "Longitude": "",
+                "OriginCode": "",
+                "Type": "",
+                "VisitNumber": ""
+            },
+            "Operator": "SBST",
+            "ServiceNo": "127"
+        },
+        {
+            "NextBus": {
+                "DestinationCode": "77009",
+                "EstimatedArrival": "2023-08-07T12:50:34+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.356935",
+                "Load": "SEA",
+                "Longitude": "103.94113216666666",
+                "OriginCode": "77009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "77009",
+                "EstimatedArrival": "2023-08-07T13:00:58+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3637533333333334",
+                "Load": "SEA",
+                "Longitude": "103.93816816666667",
+                "OriginCode": "77009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "77009",
+                "EstimatedArrival": "2023-08-07T13:12:01+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3759165",
+                "Load": "SEA",
+                "Longitude": "103.9368735",
+                "OriginCode": "77009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "Operator": "GAS",
+            "ServiceNo": "68"
+        }
+    ],
+    "odata.metadata": "http://datamall2.mytransport.sg/ltaodataservice/$metadata#BusArrivalv2/@Element"
+}

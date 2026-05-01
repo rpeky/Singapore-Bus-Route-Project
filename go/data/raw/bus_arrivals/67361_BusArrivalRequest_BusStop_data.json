@@ -1,0 +1,80 @@
+{
+    "BusStopCode": "67361",
+    "Services": [
+        {
+            "NextBus": {
+                "DestinationCode": "67759",
+                "EstimatedArrival": "2023-08-07T12:47:54+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3962183333333333",
+                "Load": "SEA",
+                "Longitude": "103.8947235",
+                "OriginCode": "67759",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "67759",
+                "EstimatedArrival": "2023-08-07T13:05:48+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3378836666666667",
+                "Load": "SEA",
+                "Longitude": "103.97759933333333",
+                "OriginCode": "67759",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "67759",
+                "EstimatedArrival": "2023-08-07T13:22:56+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3585633333333333",
+                "Load": "SEA",
+                "Longitude": "103.99073533333333",
+                "OriginCode": "67759",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "Operator": "SMRT",
+            "ServiceNo": "110"
+        },
+        {
+            "NextBus": {
+                "DestinationCode": "67009",
+                "EstimatedArrival": "2023-08-07T12:45:02+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3940825000000001",
+                "Load": "SEA",
+                "Longitude": "103.891043",
+                "OriginCode": "67009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "67009",
+                "EstimatedArrival": "2023-08-07T12:54:21+08:00",
+                "Feature": "WAB",
+                "Latitude": "0.0",
+                "Load": "SEA",
+                "Longitude": "0.0",
+                "OriginCode": "67009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "67009",
+                "EstimatedArrival": "2023-08-07T13:04:21+08:00",
+                "Feature": "WAB",
+                "Latitude": "0.0",
+                "Load": "SEA",
+                "Longitude": "0.0",
+                "OriginCode": "67009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "Operator": "SBST",
+            "ServiceNo": "372"
+        }
+    ],
+    "odata.metadata": "http://datamall2.mytransport.sg/ltaodataservice/$metadata#BusArrivalv2/@Element"
+}

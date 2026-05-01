@@ -1,0 +1,43 @@
+{
+    "BusStopCode": "67169",
+    "Services": [
+        {
+            "NextBus": {
+                "DestinationCode": "65009",
+                "EstimatedArrival": "2023-08-07T12:56:49+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3609063333333333",
+                "Load": "SEA",
+                "Longitude": "103.88631316666667",
+                "OriginCode": "65009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "65009",
+                "EstimatedArrival": "2023-08-07T13:09:34+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3654106666666666",
+                "Load": "SEA",
+                "Longitude": "103.89080283333334",
+                "OriginCode": "65009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "",
+                "EstimatedArrival": "",
+                "Feature": "",
+                "Latitude": "",
+                "Load": "",
+                "Longitude": "",
+                "OriginCode": "",
+                "Type": "",
+                "VisitNumber": ""
+            },
+            "Operator": "GAS",
+            "ServiceNo": "119"
+        }
+    ],
+    "odata.metadata": "http://datamall2.mytransport.sg/ltaodataservice/$metadata#BusArrivalv2/@Element"
+}

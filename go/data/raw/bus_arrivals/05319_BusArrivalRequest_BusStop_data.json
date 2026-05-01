@@ -1,0 +1,80 @@
+{
+    "BusStopCode": "05319",
+    "Services": [
+        {
+            "NextBus": {
+                "DestinationCode": "03239",
+                "EstimatedArrival": "2023-08-07T12:52:02+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.290669",
+                "Load": "SEA",
+                "Longitude": "103.8259295",
+                "OriginCode": "52499",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "03239",
+                "EstimatedArrival": "2023-08-07T13:07:19+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3154409999999999",
+                "Load": "SEA",
+                "Longitude": "103.80561283333333",
+                "OriginCode": "52499",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "",
+                "EstimatedArrival": "",
+                "Feature": "",
+                "Latitude": "",
+                "Load": "",
+                "Longitude": "",
+                "OriginCode": "",
+                "Type": "",
+                "VisitNumber": ""
+            },
+            "Operator": "SBST",
+            "ServiceNo": "186"
+        },
+        {
+            "NextBus": {
+                "DestinationCode": "03218",
+                "EstimatedArrival": "2023-08-07T12:48:42+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.2833813333333333",
+                "Load": "SEA",
+                "Longitude": "103.83593216666667",
+                "OriginCode": "45009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "03218",
+                "EstimatedArrival": "2023-08-07T13:02:38+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.2916926666666666",
+                "Load": "SEA",
+                "Longitude": "103.81532066666666",
+                "OriginCode": "45009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "03218",
+                "EstimatedArrival": "2023-08-07T13:17:35+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3124526666666667",
+                "Load": "SEA",
+                "Longitude": "103.79458533333333",
+                "OriginCode": "45009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "Operator": "SMRT",
+            "ServiceNo": "970"
+        }
+    ],
+    "odata.metadata": "http://datamall2.mytransport.sg/ltaodataservice/$metadata#BusArrivalv2/@Element"
+}

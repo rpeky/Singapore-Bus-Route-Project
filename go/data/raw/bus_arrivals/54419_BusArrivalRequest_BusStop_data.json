@@ -1,0 +1,43 @@
+{
+    "BusStopCode": "54419",
+    "Services": [
+        {
+            "NextBus": {
+                "DestinationCode": "55009",
+                "EstimatedArrival": "2023-08-07T12:50:44+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3745871666666667",
+                "Load": "SDA",
+                "Longitude": "103.85085166666667",
+                "OriginCode": "55009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "55009",
+                "EstimatedArrival": "2023-08-07T13:01:39+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3688706666666666",
+                "Load": "SEA",
+                "Longitude": "103.8481795",
+                "OriginCode": "55009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "55009",
+                "EstimatedArrival": "2023-08-07T13:10:00+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3710611666666668",
+                "Load": "SEA",
+                "Longitude": "103.8347605",
+                "OriginCode": "55009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "Operator": "SBST",
+            "ServiceNo": "265"
+        }
+    ],
+    "odata.metadata": "http://datamall2.mytransport.sg/ltaodataservice/$metadata#BusArrivalv2/@Element"
+}

@@ -1,0 +1,43 @@
+{
+    "BusStopCode": "01231",
+    "Services": [
+        {
+            "NextBus": {
+                "DestinationCode": "64009",
+                "EstimatedArrival": "2023-08-07T12:43:27+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.299193",
+                "Load": "SEA",
+                "Longitude": "103.85870616666666",
+                "OriginCode": "03239",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "64009",
+                "EstimatedArrival": "2023-08-07T12:53:09+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.2817161666666665",
+                "Load": "SEA",
+                "Longitude": "103.85082683333333",
+                "OriginCode": "03239",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "64009",
+                "EstimatedArrival": "2023-08-07T12:59:25+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.274031",
+                "Load": "SEA",
+                "Longitude": "103.84720733333333",
+                "OriginCode": "03239",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "Operator": "SBST",
+            "ServiceNo": "107"
+        }
+    ],
+    "odata.metadata": "http://datamall2.mytransport.sg/ltaodataservice/$metadata#BusArrivalv2/@Element"
+}

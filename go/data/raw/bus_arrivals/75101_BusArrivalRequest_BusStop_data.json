@@ -1,0 +1,80 @@
+{
+    "BusStopCode": "75101",
+    "Services": [
+        {
+            "NextBus": {
+                "DestinationCode": "75009",
+                "EstimatedArrival": "2023-08-07T12:47:14+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3584336666666665",
+                "Load": "SEA",
+                "Longitude": "103.934239",
+                "OriginCode": "75009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "75009",
+                "EstimatedArrival": "2023-08-07T12:55:38+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.349854",
+                "Load": "SEA",
+                "Longitude": "103.9339955",
+                "OriginCode": "75009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "75009",
+                "EstimatedArrival": "2023-08-07T13:02:23+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3539693333333334",
+                "Load": "SEA",
+                "Longitude": "103.941524",
+                "OriginCode": "75009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "Operator": "SBST",
+            "ServiceNo": "293"
+        },
+        {
+            "NextBus": {
+                "DestinationCode": "74009",
+                "EstimatedArrival": "2023-08-07T12:51:10+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3546953333333334",
+                "Load": "SEA",
+                "Longitude": "103.93160733333333",
+                "OriginCode": "74009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "74009",
+                "EstimatedArrival": "2023-08-07T12:54:32+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3500986666666668",
+                "Load": "SEA",
+                "Longitude": "103.933402",
+                "OriginCode": "74009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "74009",
+                "EstimatedArrival": "2023-08-07T13:07:01+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3568415",
+                "Load": "SEA",
+                "Longitude": "103.944371",
+                "OriginCode": "74009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "Operator": "SBST",
+            "ServiceNo": "298"
+        }
+    ],
+    "odata.metadata": "http://datamall2.mytransport.sg/ltaodataservice/$metadata#BusArrivalv2/@Element"
+}

@@ -1,0 +1,43 @@
+{
+    "BusStopCode": "44929",
+    "Services": [
+        {
+            "NextBus": {
+                "DestinationCode": "45009",
+                "EstimatedArrival": "2023-08-07T12:47:48+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3881848333333333",
+                "Load": "SEA",
+                "Longitude": "103.76402416666667",
+                "OriginCode": "44009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "45009",
+                "EstimatedArrival": "2023-08-07T12:54:19+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3832849999999999",
+                "Load": "SEA",
+                "Longitude": "103.7609045",
+                "OriginCode": "44009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "45009",
+                "EstimatedArrival": "2023-08-07T13:06:34+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3823838333333334",
+                "Load": "SEA",
+                "Longitude": "103.74297883333334",
+                "OriginCode": "44009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "Operator": "SMRT",
+            "ServiceNo": "976"
+        }
+    ],
+    "odata.metadata": "http://datamall2.mytransport.sg/ltaodataservice/$metadata#BusArrivalv2/@Element"
+}

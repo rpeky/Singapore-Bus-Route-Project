@@ -1,0 +1,43 @@
+{
+    "BusStopCode": "46729",
+    "Services": [
+        {
+            "NextBus": {
+                "DestinationCode": "46009",
+                "EstimatedArrival": "2023-08-07T12:42:17+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.4534546666666666",
+                "Load": "SEA",
+                "Longitude": "103.80153766666666",
+                "OriginCode": "54009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "46009",
+                "EstimatedArrival": "2023-08-07T12:55:50+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.4508741666666667",
+                "Load": "SEA",
+                "Longitude": "103.82874233333334",
+                "OriginCode": "54009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "46009",
+                "EstimatedArrival": "2023-08-07T12:56:24+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.4507851666666667",
+                "Load": "SEA",
+                "Longitude": "103.82857683333333",
+                "OriginCode": "54009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "Operator": "TTS",
+            "ServiceNo": "169"
+        }
+    ],
+    "odata.metadata": "http://datamall2.mytransport.sg/ltaodataservice/$metadata#BusArrivalv2/@Element"
+}

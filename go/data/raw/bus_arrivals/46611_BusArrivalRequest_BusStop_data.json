@@ -1,0 +1,117 @@
+{
+    "BusStopCode": "46611",
+    "Services": [
+        {
+            "NextBus": {
+                "DestinationCode": "46009",
+                "EstimatedArrival": "2023-08-07T12:53:15+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.4429411666666667",
+                "Load": "SEA",
+                "Longitude": "103.76946883333333",
+                "OriginCode": "46009",
+                "Type": "BD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "46009",
+                "EstimatedArrival": "2023-08-07T13:15:21+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.4359283333333333",
+                "Load": "SEA",
+                "Longitude": "103.7853085",
+                "OriginCode": "46009",
+                "Type": "BD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "",
+                "EstimatedArrival": "",
+                "Feature": "",
+                "Latitude": "",
+                "Load": "",
+                "Longitude": "",
+                "OriginCode": "",
+                "Type": "",
+                "VisitNumber": ""
+            },
+            "Operator": "SMRT",
+            "ServiceNo": "912"
+        },
+        {
+            "NextBus": {
+                "DestinationCode": "46009",
+                "EstimatedArrival": "2023-08-07T12:45:33+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.4293738333333332",
+                "Load": "SEA",
+                "Longitude": "103.773202",
+                "OriginCode": "46008",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "46009",
+                "EstimatedArrival": "2023-08-07T12:53:26+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.4428073333333333",
+                "Load": "SEA",
+                "Longitude": "103.76937333333333",
+                "OriginCode": "46008",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "46009",
+                "EstimatedArrival": "2023-08-07T13:05:49+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.4319568333333335",
+                "Load": "SDA",
+                "Longitude": "103.78594833333334",
+                "OriginCode": "46008",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "Operator": "SMRT",
+            "ServiceNo": "912B"
+        },
+        {
+            "NextBus": {
+                "DestinationCode": "46009",
+                "EstimatedArrival": "2023-08-07T12:57:37+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.4368193333333332",
+                "Load": "SEA",
+                "Longitude": "103.78548216666667",
+                "OriginCode": "46008",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "46009",
+                "EstimatedArrival": "2023-08-07T13:13:02+08:00",
+                "Feature": "WAB",
+                "Latitude": "0.0",
+                "Load": "SEA",
+                "Longitude": "0.0",
+                "OriginCode": "46008",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "",
+                "EstimatedArrival": "",
+                "Feature": "",
+                "Latitude": "",
+                "Load": "",
+                "Longitude": "",
+                "OriginCode": "",
+                "Type": "",
+                "VisitNumber": ""
+            },
+            "Operator": "SMRT",
+            "ServiceNo": "913M"
+        }
+    ],
+    "odata.metadata": "http://datamall2.mytransport.sg/ltaodataservice/$metadata#BusArrivalv2/@Element"
+}

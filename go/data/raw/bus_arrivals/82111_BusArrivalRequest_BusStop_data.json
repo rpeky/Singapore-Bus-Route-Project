@@ -1,0 +1,43 @@
+{
+    "BusStopCode": "82111",
+    "Services": [
+        {
+            "NextBus": {
+                "DestinationCode": "84009",
+                "EstimatedArrival": "2023-08-07T12:43:12+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3153315",
+                "Load": "SEA",
+                "Longitude": "103.8940575",
+                "OriginCode": "22009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "84009",
+                "EstimatedArrival": "2023-08-07T13:06:00+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.2725435",
+                "Load": "SEA",
+                "Longitude": "103.83629933333333",
+                "OriginCode": "22009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "84009",
+                "EstimatedArrival": "2023-08-07T13:16:24+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.2720368333333334",
+                "Load": "SEA",
+                "Longitude": "103.80661266666667",
+                "OriginCode": "22009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "Operator": "SBST",
+            "ServiceNo": "30"
+        }
+    ],
+    "odata.metadata": "http://datamall2.mytransport.sg/ltaodataservice/$metadata#BusArrivalv2/@Element"
+}

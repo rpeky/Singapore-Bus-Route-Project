@@ -1,0 +1,43 @@
+{
+    "BusStopCode": "78209",
+    "Services": [
+        {
+            "NextBus": {
+                "DestinationCode": "75009",
+                "EstimatedArrival": "2023-08-07T12:50:23+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3740115",
+                "Load": "SDA",
+                "Longitude": "103.9498325",
+                "OriginCode": "65009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "75009",
+                "EstimatedArrival": "2023-08-07T12:59:43+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3745158333333334",
+                "Load": "SEA",
+                "Longitude": "103.94177166666667",
+                "OriginCode": "65009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "75009",
+                "EstimatedArrival": "2023-08-07T13:14:49+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3984561666666666",
+                "Load": "SEA",
+                "Longitude": "103.90699533333333",
+                "OriginCode": "65009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "Operator": "GAS",
+            "ServiceNo": "3"
+        }
+    ],
+    "odata.metadata": "http://datamall2.mytransport.sg/ltaodataservice/$metadata#BusArrivalv2/@Element"
+}

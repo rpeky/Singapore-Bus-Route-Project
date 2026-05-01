@@ -1,0 +1,43 @@
+{
+    "BusStopCode": "31071",
+    "Services": [
+        {
+            "NextBus": {
+                "DestinationCode": "45009",
+                "EstimatedArrival": "2023-08-07T12:46:24+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3731008333333334",
+                "Load": "SEA",
+                "Longitude": "103.71276366666666",
+                "OriginCode": "45009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "45009",
+                "EstimatedArrival": "2023-08-07T12:57:52+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3793073333333332",
+                "Load": "SEA",
+                "Longitude": "103.74052533333334",
+                "OriginCode": "45009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "45009",
+                "EstimatedArrival": "2023-08-07T13:13:52+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3802921666666668",
+                "Load": "SEA",
+                "Longitude": "103.76358916666666",
+                "OriginCode": "45009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "Operator": "SMRT",
+            "ServiceNo": "975"
+        }
+    ],
+    "odata.metadata": "http://datamall2.mytransport.sg/ltaodataservice/$metadata#BusArrivalv2/@Element"
+}

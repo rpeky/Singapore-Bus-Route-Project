@@ -1,0 +1,239 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{enumitem}
+
+\title{Greedy Graph Coverage for Bus Network Traversal}
+\author{Ryan Pek}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem Definition}
+
+We model the Singapore bus network as a directed graph:
+
+\begin{itemize}
+    \item Vertices: bus stops
+    \item Directed edges: valid next-stop transitions from bus routes
+\end{itemize}
+
+The goal is to construct a traversal that:
+
+\begin{enumerate}
+    \item Visits every valid bus stop at least once
+    \item Minimizes total travel cost (initially edge count, later time)
+\end{enumerate}
+
+This corresponds to a \textbf{graph coverage problem}:
+
+\begin{quote}
+Find a walk that visits all vertices at least once, minimizing repetition.
+\end{quote}
+
+\section{Baseline Approach}
+
+The simplest approach is greedy:
+
+\begin{itemize}
+    \item From current stop, move to the nearest unvisited neighbour
+\end{itemize}
+
+This fails due to:
+
+\begin{itemize}
+    \item Directed graph constraints
+    \item Dead-ends and cycles
+    \item Local minima (getting trapped in visited regions)
+\end{itemize}
+
+\section{Improved Method: Path-Greedy Traversal}
+
+We define the following algorithm:
+
+\subsection*{Algorithm}
+
+At each step:
+
+\begin{enumerate}
+    \item Let $v$ be the current stop
+    \item Find the nearest unvisited valid stop $u$ using BFS (or Dijkstra)
+    \item Compute shortest path $P(v, u)$
+    \item Traverse $P$, allowing revisits
+    \item Mark all newly visited stops
+    \item Repeat until all valid stops are visited
+\end{enumerate}
+
+If no path exists:
+
+\begin{itemize}
+    \item Restart at another unvisited stop (new segment)
+\end{itemize}
+
+\subsection*{Key Idea}
+
+\begin{quote}
+Replace local greedy decisions with global shortest-path jumps.
+\end{quote}
+
+\section{Graph Model}
+
+Let:
+
+\begin{itemize}
+    \item $G = (V, E)$ be a directed graph
+    \item $V$ = set of bus stops
+    \item $E$ = directed edges from bus routes
+\end{itemize}
+
+Define valid stops:
+
+\[
+V_{valid} = \{ v \in V \mid \deg^{+}(v) > 0 \}
+\]
+
+\section{Metrics}
+
+We evaluate algorithms using:
+
+\subsection*{Coverage Ratio}
+
+\[
+\text{coverage} = \frac{\text{unique visited stops}}{|V_{valid}|}
+\]
+
+\subsection*{Efficiency Ratio}
+
+\[
+\text{efficiency} = \frac{\text{tour length}}{\text{unique visited stops}}
+\]
+
+\subsection*{Revisit Overhead}
+
+\[
+\text{overhead} = \frac{\text{tour length} - \text{unique visited stops}}{\text{unique visited stops}}
+\]
+
+\section{Experimental Result}
+
+For the Singapore bus graph:
+
+\begin{itemize}
+    \item Valid stops: 5017
+    \item Tour length: 8334
+\end{itemize}
+
+\[
+\text{efficiency} = \frac{8334}{5017} \approx 1.66
+\]
+
+\[
+\text{overhead} \approx 66\%
+\]
+
+This indicates:
+
+\begin{itemize}
+    \item Full coverage achieved
+    \item Moderate repetition due to graph structure constraints
+\end{itemize}
+
+\section{Discussion}
+
+The main limitations arise from:
+
+\begin{itemize}
+    \item Directed graph structure
+    \item Lack of strong connectivity
+    \item Local cycles
+\end{itemize}
+
+The algorithm avoids local traps by:
+
+\begin{itemize}
+    \item Using shortest paths to escape visited regions
+    \item Allowing revisits strategically
+\end{itemize}
+
+\section{Future Work}
+
+\subsection*{Weighted Graph (Time Optimization)}
+
+Replace BFS with Dijkstra:
+
+\[
+\text{edge weight} = \text{travel time}
+\]
+
+Possible components:
+
+\begin{itemize}
+    \item Bus travel duration
+    \item Waiting time
+    \item Transfer penalties
+\end{itemize}
+
+\subsection*{Graph Decomposition}
+
+Partition graph into clusters:
+
+\begin{itemize}
+    \item Strongly Connected Components (SCCs)
+    \item Weakly Connected Components
+    \item Community clusters
+\end{itemize}
+
+Strategy:
+
+\begin{enumerate}
+    \item Fully cover local cluster
+    \item Move between clusters via high-connectivity nodes
+\end{enumerate}
+
+\subsection*{Centrality-Based Optimization}
+
+Use:
+
+\begin{itemize}
+    \item Betweenness centrality to identify hubs
+    \item Degree heuristics to guide traversal
+\end{itemize}
+
+\subsection*{Closed Tour Extension}
+
+To return to start:
+
+\begin{itemize}
+    \item Append shortest path from final node back to start
+\end{itemize}
+
+This becomes:
+
+\begin{quote}
+Directed graph traveling salesman variant (asymmetric TSP)
+\end{quote}
+
+\section{Conclusion}
+
+We developed a practical graph traversal method:
+
+\begin{itemize}
+    \item Greedy local strategies are insufficient
+    \item Global shortest-path guidance is necessary
+    \item Directed constraints introduce unavoidable overhead
+\end{itemize}
+
+The resulting algorithm:
+
+\begin{quote}
+Achieves full coverage with manageable repetition, and serves as a baseline for further optimization toward real-world travel efficiency.
+\end{quote}
+
+\end{document}

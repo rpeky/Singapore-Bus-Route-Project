@@ -1,0 +1,80 @@
+{
+    "BusStopCode": "59559",
+    "Services": [
+        {
+            "NextBus": {
+                "DestinationCode": "54009",
+                "EstimatedArrival": "2023-08-07T12:46:36+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.4268915",
+                "Load": "SEA",
+                "Longitude": "103.83533233333333",
+                "OriginCode": "46009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "54009",
+                "EstimatedArrival": "2023-08-07T12:50:03+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.4347925",
+                "Load": "SEA",
+                "Longitude": "103.83468616666667",
+                "OriginCode": "46009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "54009",
+                "EstimatedArrival": "2023-08-07T13:02:01+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.4595958333333332",
+                "Load": "SEA",
+                "Longitude": "103.82657283333333",
+                "OriginCode": "46009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "Operator": "TTS",
+            "ServiceNo": "169"
+        },
+        {
+            "NextBus": {
+                "DestinationCode": "55509",
+                "EstimatedArrival": "2023-08-07T12:43:46+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.4228283333333334",
+                "Load": "SEA",
+                "Longitude": "103.83395516666667",
+                "OriginCode": "55509",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "55509",
+                "EstimatedArrival": "2023-08-07T13:01:00+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.4323308333333333",
+                "Load": "SEA",
+                "Longitude": "103.839921",
+                "OriginCode": "55509",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "55509",
+                "EstimatedArrival": "2023-08-07T13:21:29+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.4243686666666666",
+                "Load": "SEA",
+                "Longitude": "103.84493866666666",
+                "OriginCode": "55509",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "Operator": "SBST",
+            "ServiceNo": "860"
+        }
+    ],
+    "odata.metadata": "http://datamall2.mytransport.sg/ltaodataservice/$metadata#BusArrivalv2/@Element"
+}

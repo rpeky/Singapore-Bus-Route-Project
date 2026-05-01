@@ -1,0 +1,43 @@
+{
+    "BusStopCode": "01349",
+    "Services": [
+        {
+            "NextBus": {
+                "DestinationCode": "11009",
+                "EstimatedArrival": "2023-08-07T12:46:06+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3118893333333332",
+                "Load": "SEA",
+                "Longitude": "103.876166",
+                "OriginCode": "66009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "11009",
+                "EstimatedArrival": "2023-08-07T12:54:00+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3235676666666667",
+                "Load": "SEA",
+                "Longitude": "103.88132183333333",
+                "OriginCode": "66009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "11009",
+                "EstimatedArrival": "2023-08-07T13:09:59+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3483301666666667",
+                "Load": "SEA",
+                "Longitude": "103.872498",
+                "OriginCode": "66009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "Operator": "SBST",
+            "ServiceNo": "100"
+        }
+    ],
+    "odata.metadata": "http://datamall2.mytransport.sg/ltaodataservice/$metadata#BusArrivalv2/@Element"
+}

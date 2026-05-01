@@ -1,0 +1,43 @@
+{
+    "BusStopCode": "93199",
+    "Services": [
+        {
+            "NextBus": {
+                "DestinationCode": "95129",
+                "EstimatedArrival": "2023-08-07T12:46:48+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3082091666666666",
+                "Load": "SEA",
+                "Longitude": "103.9215",
+                "OriginCode": "95129",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "95129",
+                "EstimatedArrival": "2023-08-07T12:55:11+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3009788333333334",
+                "Load": "SEA",
+                "Longitude": "103.902664",
+                "OriginCode": "95129",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "95129",
+                "EstimatedArrival": "2023-08-07T13:04:34+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.2954856666666668",
+                "Load": "SDA",
+                "Longitude": "103.86124433333333",
+                "OriginCode": "95129",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "Operator": "GAS",
+            "ServiceNo": "36"
+        }
+    ],
+    "odata.metadata": "http://datamall2.mytransport.sg/ltaodataservice/$metadata#BusArrivalv2/@Element"
+}

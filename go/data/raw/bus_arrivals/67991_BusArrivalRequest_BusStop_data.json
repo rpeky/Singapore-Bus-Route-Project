@@ -1,0 +1,43 @@
+{
+    "BusStopCode": "67991",
+    "Services": [
+        {
+            "NextBus": {
+                "DestinationCode": "64009",
+                "EstimatedArrival": "2023-08-07T12:42:50+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3952608333333334",
+                "Load": "SEA",
+                "Longitude": "103.871193",
+                "OriginCode": "64009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "64009",
+                "EstimatedArrival": "2023-08-07T12:57:24+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3940928333333333",
+                "Load": "SEA",
+                "Longitude": "103.89068316666666",
+                "OriginCode": "64009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "64009",
+                "EstimatedArrival": "2023-08-07T13:08:22+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3839443333333334",
+                "Load": "SEA",
+                "Longitude": "103.89306816666667",
+                "OriginCode": "64009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "Operator": "SBST",
+            "ServiceNo": "102"
+        }
+    ],
+    "odata.metadata": "http://datamall2.mytransport.sg/ltaodataservice/$metadata#BusArrivalv2/@Element"
+}

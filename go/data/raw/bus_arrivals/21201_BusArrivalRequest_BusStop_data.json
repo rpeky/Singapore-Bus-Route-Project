@@ -1,0 +1,43 @@
+{
+    "BusStopCode": "21201",
+    "Services": [
+        {
+            "NextBus": {
+                "DestinationCode": "22009",
+                "EstimatedArrival": "2023-08-07T12:53:37+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3261166666666666",
+                "Load": "SEA",
+                "Longitude": "103.745796",
+                "OriginCode": "46009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "22009",
+                "EstimatedArrival": "2023-08-07T13:11:21+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3472033333333333",
+                "Load": "SEA",
+                "Longitude": "103.756453",
+                "OriginCode": "46009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "22009",
+                "EstimatedArrival": "2023-08-07T13:22:13+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3637476666666668",
+                "Load": "SEA",
+                "Longitude": "103.7678095",
+                "OriginCode": "46009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "Operator": "SMRT",
+            "ServiceNo": "178"
+        }
+    ],
+    "odata.metadata": "http://datamall2.mytransport.sg/ltaodataservice/$metadata#BusArrivalv2/@Element"
+}

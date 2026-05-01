@@ -1,0 +1,154 @@
+{
+    "BusStopCode": "43621",
+    "Services": [
+        {
+            "NextBus": {
+                "DestinationCode": "43009",
+                "EstimatedArrival": "2023-08-07T13:04:07+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3080308333333335",
+                "Load": "SEA",
+                "Longitude": "103.7881595",
+                "OriginCode": "03239",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "43009",
+                "EstimatedArrival": "2023-08-07T13:07:59+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3073401666666666",
+                "Load": "SEA",
+                "Longitude": "103.79214666666667",
+                "OriginCode": "03239",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "43009",
+                "EstimatedArrival": "2023-08-07T13:08:14+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3068505",
+                "Load": "SEA",
+                "Longitude": "103.79378116666666",
+                "OriginCode": "03239",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "Operator": "TTS",
+            "ServiceNo": "106"
+        },
+        {
+            "NextBus": {
+                "DestinationCode": "28009",
+                "EstimatedArrival": "2023-08-07T12:54:53+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3267081666666667",
+                "Load": "SEA",
+                "Longitude": "103.82973916666667",
+                "OriginCode": "66009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "28009",
+                "EstimatedArrival": "2023-08-07T13:15:10+08:00",
+                "Feature": "WAB",
+                "Latitude": "0.0",
+                "Load": "SEA",
+                "Longitude": "0.0",
+                "OriginCode": "66009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "",
+                "EstimatedArrival": "",
+                "Feature": "",
+                "Latitude": "",
+                "Load": "",
+                "Longitude": "",
+                "OriginCode": "",
+                "Type": "",
+                "VisitNumber": ""
+            },
+            "Operator": "SBST",
+            "ServiceNo": "506"
+        },
+        {
+            "NextBus": {
+                "DestinationCode": "43009",
+                "EstimatedArrival": "2023-08-07T12:47:58+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3404406666666666",
+                "Load": "SEA",
+                "Longitude": "103.772421",
+                "OriginCode": "02101",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "43009",
+                "EstimatedArrival": "2023-08-07T12:57:22+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3310821666666666",
+                "Load": "SEA",
+                "Longitude": "103.795343",
+                "OriginCode": "02099",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "43009",
+                "EstimatedArrival": "2023-08-07T13:12:07+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3066503333333332",
+                "Load": "SEA",
+                "Longitude": "103.81923016666667",
+                "OriginCode": "02099",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "Operator": "TTS",
+            "ServiceNo": "77"
+        },
+        {
+            "NextBus": {
+                "DestinationCode": "46009",
+                "EstimatedArrival": "2023-08-07T12:53:20+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3081058333333333",
+                "Load": "SEA",
+                "Longitude": "103.76592233333334",
+                "OriginCode": "14009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "46009",
+                "EstimatedArrival": "2023-08-07T13:01:39+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.2884963333333332",
+                "Load": "SEA",
+                "Longitude": "103.79312383333334",
+                "OriginCode": "14009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "46009",
+                "EstimatedArrival": "2023-08-07T13:12:11+08:00",
+                "Feature": "WAB",
+                "Latitude": "0.0",
+                "Load": "SEA",
+                "Longitude": "0.0",
+                "OriginCode": "14009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "Operator": "TTS",
+            "ServiceNo": "963"
+        }
+    ],
+    "odata.metadata": "http://datamall2.mytransport.sg/ltaodataservice/$metadata#BusArrivalv2/@Element"
+}

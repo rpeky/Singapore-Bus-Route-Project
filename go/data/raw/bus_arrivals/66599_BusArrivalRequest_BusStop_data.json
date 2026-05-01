@@ -1,0 +1,43 @@
+{
+    "BusStopCode": "66599",
+    "Services": [
+        {
+            "NextBus": {
+                "DestinationCode": "66009",
+                "EstimatedArrival": "2023-08-07T12:45:52+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3750681666666666",
+                "Load": "SEA",
+                "Longitude": "103.874791",
+                "OriginCode": "66009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "66009",
+                "EstimatedArrival": "2023-08-07T12:55:58+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3625273333333334",
+                "Load": "SEA",
+                "Longitude": "103.87325883333334",
+                "OriginCode": "66009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "66009",
+                "EstimatedArrival": "2023-08-07T13:04:25+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3555623333333333",
+                "Load": "SDA",
+                "Longitude": "103.8700665",
+                "OriginCode": "66009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "Operator": "SBST",
+            "ServiceNo": "315"
+        }
+    ],
+    "odata.metadata": "http://datamall2.mytransport.sg/ltaodataservice/$metadata#BusArrivalv2/@Element"
+}

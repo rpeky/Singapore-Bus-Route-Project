@@ -1,0 +1,80 @@
+{
+    "BusStopCode": "58309",
+    "Services": [
+        {
+            "NextBus": {
+                "DestinationCode": "47009",
+                "EstimatedArrival": "2023-08-07T12:45:39+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.4357805",
+                "Load": "SEA",
+                "Longitude": "103.82281216666667",
+                "OriginCode": "47009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "47009",
+                "EstimatedArrival": "2023-08-07T12:52:37+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.4319361666666666",
+                "Load": "SEA",
+                "Longitude": "103.8351275",
+                "OriginCode": "47009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "47009",
+                "EstimatedArrival": "2023-08-07T12:54:44+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.429686",
+                "Load": "SEA",
+                "Longitude": "103.8352865",
+                "OriginCode": "47009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "Operator": "TTS",
+            "ServiceNo": "965"
+        },
+        {
+            "NextBus": {
+                "DestinationCode": "46009",
+                "EstimatedArrival": "2023-08-07T12:49:06+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.4311911666666666",
+                "Load": "SEA",
+                "Longitude": "103.826586",
+                "OriginCode": "75009",
+                "Type": "SD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "46009",
+                "EstimatedArrival": "2023-08-07T12:56:17+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.4290233333333333",
+                "Load": "SEA",
+                "Longitude": "103.83521933333333",
+                "OriginCode": "75009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "46009",
+                "EstimatedArrival": "2023-08-07T12:58:05+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.4227546666666666",
+                "Load": "SEA",
+                "Longitude": "103.83491516666666",
+                "OriginCode": "75009",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "Operator": "TTS",
+            "ServiceNo": "969"
+        }
+    ],
+    "odata.metadata": "http://datamall2.mytransport.sg/ltaodataservice/$metadata#BusArrivalv2/@Element"
+}

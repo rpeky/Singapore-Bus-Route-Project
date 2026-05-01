@@ -1,0 +1,43 @@
+{
+    "BusStopCode": "96081",
+    "Services": [
+        {
+            "NextBus": {
+                "DestinationCode": "99009",
+                "EstimatedArrival": "2023-08-07T12:48:43+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3312051666666667",
+                "Load": "SEA",
+                "Longitude": "103.94764483333333",
+                "OriginCode": "10499",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "NextBus2": {
+                "DestinationCode": "99009",
+                "EstimatedArrival": "2023-08-07T13:02:55+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3226351666666667",
+                "Load": "SEA",
+                "Longitude": "103.92260033333334",
+                "OriginCode": "10499",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "NextBus3": {
+                "DestinationCode": "99009",
+                "EstimatedArrival": "2023-08-07T13:16:10+08:00",
+                "Feature": "WAB",
+                "Latitude": "1.3164753333333334",
+                "Load": "SEA",
+                "Longitude": "103.889959",
+                "OriginCode": "10499",
+                "Type": "DD",
+                "VisitNumber": "1"
+            },
+            "Operator": "GAS",
+            "ServiceNo": "2"
+        }
+    ],
+    "odata.metadata": "http://datamall2.mytransport.sg/ltaodataservice/$metadata#BusArrivalv2/@Element"
+}
